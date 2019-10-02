@@ -1,4 +1,4 @@
-package com.example.goazen.ui.home;
+package com.example.goazen.ui.servicios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
