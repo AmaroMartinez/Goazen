@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 
-public class HomeFragment extends Fragment {
+public class ServiciosFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ServiciosViewModel serviciosViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        serviciosViewModel =
+                ViewModelProviders.of(this).get(ServiciosViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_servicios, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        serviciosViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
