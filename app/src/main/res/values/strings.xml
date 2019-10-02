@@ -12,4 +12,13 @@
     <string name="menu_contacto">Contacto</string>
     <string name="menu_recibos">Recibos</string>
     <string name="menu_logout">Log out</string>
+
+    <string name="limpieza_general">Limpieza General</string>
+    <string name="cocina">Cocina</string>
+    <string name="plancha">Plancha</string>
+    <string name="lavanderia">Lavanderia</string>
+    <string name="regado_plantas">Regado de Plantas</string>
+    <string name="limpieza_cristales">Limpieza de Cristales</string>
+    <string name="paseo_mascotas">Paseo de Mascotas</string>
+
 </resources>
