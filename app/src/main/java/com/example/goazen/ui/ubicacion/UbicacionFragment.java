@@ -23,7 +23,7 @@ public class UbicacionFragment extends Fragment {
         ubicacionViewModel =
                 ViewModelProviders.of(this).get(UbicacionViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ubicacion, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
+        final TextView textView = root.findViewById(R.id.text_ubicacion);
         ubicacionViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
