@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.goazen.ui.ubicacion.UbicacionFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
 
     <fragment
