@@ -8,13 +8,13 @@
     <fragment
 
         android:id="@+id/nav_servicio"
-        android:name="com.example.goazen.ui.home.HomeFragment"
+        android:name="com.example.goazen.ui.servicios.ServiciosFragment"
         android:label="@string/menu_servicio"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_servicios" />
 
     <fragment
         android:id="@+id/nav_ubic"
-        android:name="com.example.goazen.ui.gallery.GalleryFragment"
+        android:name="com.example.goazen.ui.ubicacion.UbicacionFragment"
         android:label="@string/menu_ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
 
