@@ -1,4 +1,4 @@
-package com.example.goazen.ui.home;
+package com.example.goazen.ui.ubicacion;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 
-public class HomeFragment extends Fragment {
+public class UbicacionFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private UbicacionViewModel ubicacionViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        ubicacionViewModel =
+                ViewModelProviders.of(this).get(UbicacionViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_ubicacion, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
+        ubicacionViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
