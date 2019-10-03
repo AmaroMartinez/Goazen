@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_home"
+
+    // ScrollView para
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/limpieza_cristales"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/limpieza_cristales" />
+
+            <Button
+                android:id="@+id/limpieza_general"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/limpieza_general" />
+
+            <Button
+                android:id="@+id/cocina"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/cocina" />
+
+            <Button
+                android:id="@+id/lavanderia"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/lavanderia" />
+
+            <Button
+                android:id="@+id/regado_plantas"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/regado_plantas" />
+
+            <Button
+                android:id="@+id/plancha"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/plancha" />
+
+            <Button
+                android:id="@+id/paseo_mascotas"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/paseo_mascotas" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
