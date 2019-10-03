@@ -23,19 +23,19 @@
             android:layout_height="match_parent" >
 
             <RadioButton
-                android:id="@+id/rb_Hora_10:00"
+                android:id="@+id/rb_Hora_10_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="10:00" />
 
             <RadioButton
-                android:id="@+id/rb_hora_11:00"
+                android:id="@+id/rb_hora_11_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="11:00" />
 
             <RadioButton
-                android:id="@+id/rb_Hora_12:00"
+                android:id="@+id/rb_Hora_12_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="12:00" />

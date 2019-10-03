@@ -38,7 +38,7 @@
                 android:id="@+id/limpieza_general"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/limpieza_general" />
+                android:text="@string/st_limpieza_general" />
 
             <Space
                 android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:id="@+id/limpieza_cristales"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/limpieza_cristales" />
+                android:text="@string/st_limpieza_cristales" />
 
 
             <Space
@@ -59,7 +59,7 @@
                 android:id="@+id/cocina"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/cocina" />
+                android:text="@string/st_cocina" />
 
             <Space
                 android:layout_width="match_parent"
@@ -69,7 +69,7 @@
                 android:id="@+id/lavanderia"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/lavanderia" />
+                android:text="@string/st_lavanderia" />
 
             <Space
                 android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                 android:id="@+id/plancha"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/plancha" />
+                android:text="@string/st_plancha" />
 
             <Space
                 android:layout_width="match_parent"
