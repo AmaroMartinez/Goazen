@@ -1,4 +1,6 @@
 <resources>
+
+    //String de configuración de la app
     <string name="app_name">Goazen</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,11 +9,19 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    //Titulos de las opciones de menu
     <string name="menu_servicio">Servicios</string>
     <string name="menu_ubicacion">ubicación</string>
     <string name="menu_contacto">Contacto</string>
     <string name="menu_recibos">Recibos</string>
     <string name="menu_logout">Log out</string>
+
+    //Strings para el activity_main_drawer
+    <string name="titulo_op_menu">Menu</string>
+    <string name="titulo_op_menu2">Login</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="limpieza_general">Limpieza General</string>
     <string name="cocina">Cocina</string>

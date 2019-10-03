@@ -22,10 +22,10 @@
             android:title="@string/menu_recibos" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/titulo_op_menu2">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_log_out"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_logout" />
         </menu>
