@@ -79,7 +79,7 @@
                 android:id="@+id/btn_regado_plantas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/regado_plantas" />
+                android:text="@string/st_regado_plantas" />
 
             <Space
                 android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                 android:id="@+id/btn_paseo_mascotas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/paseo_mascotas" />
+                android:text="@string/st_paseo_mascotas" />
 
             <Space
                 android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                         android:id="@+id/btn_cancelar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cancelar" />
+                        android:text="@string/st_cancelar" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
                         android:id="@+id/btn_contratar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/contratar" />
+                        android:text="@string/st_contratar" />
 
                     <Space
                         android:layout_width="wrap_content"
