@@ -6,8 +6,8 @@
     android:layout_height="match_parent">
 
 
-    // ScrollView para
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="41dp"
@@ -19,63 +19,121 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/text_home"
+
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/limpieza_cristales"
+                android:id="@+id/btn_limpieza_general"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/limpieza_cristales" />
+                android:text="@string/st_limpieza_general" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/limpieza_general"
+                android:id="@+id/btn_limpieza_cristales"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/limpieza_general" />
+                android:text="@string/st_limpieza_cristales" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/cocina"
+                android:id="@+id/btn_cocina"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/cocina" />
+                android:text="@string/st_cocina" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/lavanderia"
+                android:id="@+id/btn_lavanderia"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/lavanderia" />
+                android:text="@string/st_lavanderia" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/regado_plantas"
+                android:id="@+id/btn_plancha"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/regado_plantas" />
+                android:text="@string/st_plancha" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/plancha"
+                android:id="@+id/btn_regado_plantas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/plancha" />
+                android:text="@string/st_regado_plantas" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/paseo_mascotas"
+                android:id="@+id/btn_paseo_mascotas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
-                android:text="@string/paseo_mascotas" />
+                android:text="@string/st_paseo_mascotas" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="53dp" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/btn_cancelar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/st_cancelar" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/btn_contratar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/st_contratar" />
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         </LinearLayout>
     </ScrollView>
