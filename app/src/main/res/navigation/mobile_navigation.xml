@@ -9,26 +9,26 @@
 
         android:id="@+id/nav_servicio"
         android:name="com.example.goazen.ui.servicios.ServiciosFragment"
-        android:label="@string/menu_servicio"
+        android:label="@string/st_menu_servicio"
         tools:layout="@layout/fragment_servicios" />
 
     <fragment
         android:id="@+id/nav_ubic"
         android:name="com.example.goazen.ui.ubicacion.UbicacionFragment"
-        android:label="@string/menu_ubicacion"
+        android:label="@string/st_menu_ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
 
 
     <fragment
         android:id="@+id/nav_recibos"
         android:name="com.example.goazen.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_recibos"
+        android:label="@string/st_menu_recibos"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_contacto"
         android:name="com.example.goazen.ui.tools.ToolsFragment"
-        android:label="@string/menu_contacto"
+        android:label="@string/st_menu_contacto"
         tools:layout="@layout/fragment_tools" />
     <activity
         android:id="@+id/calendario"
