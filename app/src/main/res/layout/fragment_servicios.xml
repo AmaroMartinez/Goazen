@@ -7,7 +7,7 @@
 
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="41dp"
@@ -20,22 +20,12 @@
             android:orientation="vertical">
 
 
-            <TextView
-                android:id="@+id/text_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/limpieza_general"
+                android:id="@+id/btn_limpieza_general"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/limpieza_general" />
@@ -45,7 +35,7 @@
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/limpieza_cristales"
+                android:id="@+id/btn_limpieza_cristales"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/limpieza_cristales" />
@@ -56,7 +46,7 @@
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/cocina"
+                android:id="@+id/btn_cocina"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/cocina" />
@@ -66,7 +56,7 @@
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/lavanderia"
+                android:id="@+id/btn_lavanderia"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/lavanderia" />
@@ -76,7 +66,7 @@
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/plancha"
+                android:id="@+id/btn_plancha"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/plancha" />
@@ -86,7 +76,7 @@
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/regado_plantas"
+                android:id="@+id/btn_regado_plantas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/regado_plantas" />
@@ -96,7 +86,7 @@
                 android:layout_height="53dp" />
 
             <Button
-                android:id="@+id/paseo_mascotas"
+                android:id="@+id/btn_paseo_mascotas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
                 android:text="@string/paseo_mascotas" />
@@ -120,7 +110,7 @@
                         android:layout_weight="1" />
 
                     <Button
-                        android:id="@+id/cancelar"
+                        android:id="@+id/btn_cancelar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/cancelar" />
@@ -131,7 +121,7 @@
                         android:layout_weight="1" />
 
                     <Button
-                        android:id="@+id/contratar"
+                        android:id="@+id/btn_contratar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/contratar" />
