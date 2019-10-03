@@ -30,5 +30,9 @@
     <string name="regado_plantas">Regado de Plantas</string>
     <string name="limpieza_cristales">Limpieza de Cristales</string>
     <string name="paseo_mascotas">Paseo de Mascotas</string>
+    <string name="contratar">Contratar</string>
+    <string name="cancelar">Cancelar</string>
+
+
 
 </resources>
