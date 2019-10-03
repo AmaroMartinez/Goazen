@@ -2,6 +2,7 @@ package com.example.goazen;
 
 import android.os.Bundle;
 
+import com.example.goazen.ui.send.SendFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_servicio, R.id.nav_ubic, R.id.nav_recibos,
-                R.id.nav_contacto, R.id.nav_share)
+                R.id.nav_contacto, R.id.nav_log_out)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -66,4 +67,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }
