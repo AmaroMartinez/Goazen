@@ -5,90 +5,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_home"
+
+    // ScrollView para
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="35dp">
 
-    <Button
-        android:id="@+id/limpieza_general"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/limpieza_general"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_home"
-        app:layout_constraintVertical_bias="0.075" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/cocina"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/cocina"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/limpieza_general"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/plancha"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/plancha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cocina"
-        app:layout_constraintVertical_bias="0.0" />
+            <Button
+                android:id="@+id/limpieza_cristales"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/limpieza_cristales" />
 
-    <Button
-        android:id="@+id/lavanderia"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/lavanderia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plancha"
-        app:layout_constraintVertical_bias="0.0" />
+            <Button
+                android:id="@+id/limpieza_general"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/limpieza_general" />
 
-    <Button
-        android:id="@+id/regado_plantas"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/regado_plantas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lavanderia" />
+            <Button
+                android:id="@+id/cocina"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/cocina" />
 
-    <Button
-        android:id="@+id/limpieza_cristales"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/limpieza_cristales"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regado_plantas" />
+            <Button
+                android:id="@+id/lavanderia"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/lavanderia" />
 
-    <Button
-        android:id="@+id/paseo_mascotas"
-        android:layout_width="197dp"
-        android:layout_height="87dp"
-        android:text="@string/paseo_mascotas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/limpieza_cristales"
-        app:layout_constraintVertical_bias="0.0" />
+            <Button
+                android:id="@+id/regado_plantas"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/regado_plantas" />
+
+            <Button
+                android:id="@+id/plancha"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/plancha" />
+
+            <Button
+                android:id="@+id/paseo_mascotas"
+                android:layout_width="197dp"
+                android:layout_height="87dp"
+                android:text="@string/paseo_mascotas" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
