@@ -1,20 +1,20 @@
 <resources>
 
     //String de configuración de la app
-    <string name="app_name">Goazen</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="st_app_name">Goazen</string>
+    <string name="st_navigation_drawer_open">Open navigation drawer</string>
+    <string name="st_navigation_drawer_close">Close navigation drawer</string>
+    <string name="st_nav_header_title">Android Studio</string>
+    <string name="st_nav_header_subtitle">android.studio@android.com</string>
+    <string name="st_nav_header_desc">Navigation header</string>
+    <string name="st_action_settings">Settings</string>
 
     //Titulos de las opciones de menu
-    <string name="menu_servicio">Servicios</string>
-    <string name="menu_ubicacion">ubicación</string>
-    <string name="menu_contacto">Contacto</string>
-    <string name="menu_recibos">Recibos</string>
-    <string name="menu_logout">Log out</string>
+    <string name="st_menu_servicio">Servicios</string>
+    <string name="st_menu_ubicacion">ubicación</string>
+    <string name="st_menu_contacto">Contacto</string>
+    <string name="st_menu_recibos">Recibos</string>
+    <string name="st_menu_logout">Log out</string>
 
     //Strings para el activity_main_drawer
     <string name="titulo_op_menu">Menu</string>
@@ -23,16 +23,22 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="limpieza_general">Limpieza General</string>
-    <string name="cocina">Cocina</string>
-    <string name="plancha">Plancha</string>
-    <string name="lavanderia">Lavanderia</string>
-    <string name="regado_plantas">Regado de Plantas</string>
-    <string name="limpieza_cristales">Limpieza de Cristales</string>
-    <string name="paseo_mascotas">Paseo de Mascotas</string>
-    <string name="contratar">Contratar</string>
-    <string name="cancelar">Cancelar</string>
+    // Opciones de servicios
+    <string name="st_limpieza_general">Limpieza General</string>
+    <string name="st_cocina">Cocina</string>
+    <string name="st_plancha">Plancha</string>
+    <string name="st_lavanderia">Lavanderia</string>
+    <string name="st_regado_plantas">Regado de Plantas</string>
+    <string name="st_limpieza_cristales">Limpieza de Cristales</string>
+    <string name="st_paseo_mascotas">Paseo de Mascotas</string>
+    <string name="st_contratar">Contratar</string>
+    <string name="st_cancelar">Cancelar</string>
 
+    //String fragmet horario calendario
+    <string name="st_mensaje_horario">Seleccione una hora para el servicio que ha seleccionado.</string>
+    <string name="st_primera_hora">10:00</string>
+    <string name="st_segunda_hora">11:00</string>
+    <string name="st_tercera_hora">12:00</string>
 
 
 </resources>

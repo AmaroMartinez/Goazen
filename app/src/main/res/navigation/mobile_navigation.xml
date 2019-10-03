@@ -30,5 +30,10 @@
         android:name="com.example.goazen.ui.tools.ToolsFragment"
         android:label="@string/menu_contacto"
         tools:layout="@layout/fragment_tools" />
+    <activity
+        android:id="@+id/calendario"
+        android:name="com.example.goazen.ui.servicios.Calendario"
+        android:label="activity_calendario"
+        tools:layout="@layout/activity_calendario" />
 
 </navigation>
