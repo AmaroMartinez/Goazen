@@ -38,21 +38,22 @@ public class UbicacionFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_ubicacion, container, false);
 
-        //initialize map
+        //Inicializa el mapa
         mapView = (MapView) rootView.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
 
+            //La posición del mapa y el nombre del marcador
             LatLng position = new LatLng(43.257385, -2.933527);
-            String markerText = "Hurtado de Amezaga 1 Edificio Nervión";
+            String markerText = "Goazen";
             @Override
             public void onMapReady(GoogleMap googleMap) {
                 Log.i("DEBUG", "onMapReady");
 
-                    //add marker
+                    //Añade el marcador
                     Marker marker  = googleMap.addMarker(new MarkerOptions().position(position).title(markerText));
 
-                    //zoom to position with level 16
+                    //Zoom del mapa
                     CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 19);
                     googleMap.animateCamera(cameraUpdate);
 
@@ -60,8 +61,6 @@ public class UbicacionFragment extends Fragment  {
         });
 
         return rootView;
-
-
     }
 
     @Override
