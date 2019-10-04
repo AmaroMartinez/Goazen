@@ -13,11 +13,11 @@
             android:icon="@drawable/ic_menu_ubicacion"
             android:title="@string/st_menu_ubicacion" />
         <item
-            android:id="@+id/nav_recibos"
+            android:id="@+id/nav_contacto"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/st_menu_contacto" />
         <item
-            android:id="@+id/nav_contacto"
+            android:id="@+id/nav_recibos"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/st_menu_recibos" />
     </group>
