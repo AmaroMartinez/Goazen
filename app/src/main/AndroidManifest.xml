@@ -27,7 +27,7 @@
         </activity>
 
 
-        //Meta-data para el funcionamiento del mapa
+        <!--Meta-data para el funcionamiento del mapa-->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBBEi4g21muf9ndZL8PN2VFc9a95WJRw_o" />
@@ -48,7 +48,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 
-    //Permimsos necesarios para el funcinamiento del mapa
+    <!--Permimsos necesarios para el funcinamiento del mapa-->
     <permission
         android:name="a.b.c.d.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
