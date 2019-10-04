@@ -21,7 +21,7 @@
         <com.github.sundeepk.compactcalendarview.CompactCalendarView
             android:id="@+id/compactcalendar_view"
             android:layout_width="match_parent"
-            android:layout_height="235dp"
+            android:layout_height="242dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             app:compactCalendarBackgroundColor="@color/color_fondo_caled"
@@ -34,37 +34,62 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/tv_calendario"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:gravity="center"
             android:text="@string/st_mensaje_horario"
             android:textAlignment="center"
             android:visibility="invisible" />
 
         <RadioGroup
+            android:id="@+id/rg_calendario"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="135dp"
+            tools:visibility="invisible">
 
             <RadioButton
                 android:id="@+id/rb_Hora_10_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/st_primera_hora"
-                android:visibility="invisible" />
+                android:text="@string/st_primera_hora" />
 
             <RadioButton
                 android:id="@+id/rb_Hora_11_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/st_segunda_hora"
-                android:visibility="invisible" />
+                android:text="@string/st_segunda_hora" />
 
             <RadioButton
                 android:id="@+id/rb_Hora_12_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/st_tercera_hora"
-                android:visibility="invisible" />
+                android:text="@string/st_tercera_hora" />
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/ll_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/color_boton_cancelar"
+                android:text="@string/st_boton_cancelar" />
+
+            <Button
+                android:id="@+id/btn_asignar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/color_boton_asignar"
+                android:text="@string/st_boton_asignar" />
+        </LinearLayout>
 
     </LinearLayout>
 

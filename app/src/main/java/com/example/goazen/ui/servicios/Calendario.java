@@ -3,10 +3,10 @@ package com.example.goazen.ui.servicios;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.goazen.R;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
@@ -20,6 +20,13 @@ public class Calendario extends AppCompatActivity {
     /*Declaramos las variables necesarias para el calendario*/
     CompactCalendarView calendario;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("dd - mm - yyyy", Locale.getDefault());
+
+    //Declaramos las variables necesarias para el guardado de datos.
+    int dia;
+
+    //Declaramos los objetos necesarios
+    TextView tv = (TextView)findViewById(R.id.tv_calendario);
+    RadioGroup rg = (RadioGroup)findViewById(R.id.rg_calendario);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,13 @@ public class Calendario extends AppCompatActivity {
         calendario.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
-                int dia = dateClicked.getDay();
+
+                //Guaradamos el día
+                dia = dateClicked.getDay();
+
+                //Hacemos visibles las horas disponibles
+                tv.setVisibility(View.VISIBLE);
+                rg.setVisibility(View.VISIBLE);
 
             }
 
@@ -49,5 +62,13 @@ public class Calendario extends AppCompatActivity {
                 actionBar.setTitle(dateFormatMonth.format(firstDayOfNewMonth));
             }
         });
+
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+            }
+        });
+
     }
 }
