@@ -9,19 +9,63 @@
     tools:ignore="ExtraText">
 
     //Creamos la opcion de calendario
-    <com.github.sundeepk.compactcalendarview.CompactCalendarView
-        android:id="@+id/compactcalendar_view"
-        android:layout_width="fill_parent"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_height="250dp"
-        app:compactCalendarTargetHeight="250dp"
-        app:compactCalendarTextSize="12sp"
-        app:compactCalendarBackgroundColor="@color/color_fondo_caled"
-        app:compactCalendarTextColor="@color/color_texto_calend"
-        app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
-        app:compactCalendarCurrentDayBackgroundColor="@color/color_dia_actual"
-        app:compactCalendarMultiEventIndicatorColor="#000056"
-        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/LinerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="28dp">
+
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            android:id="@+id/compactcalendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="235dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:compactCalendarBackgroundColor="@color/color_fondo_caled"
+            app:compactCalendarCurrentDayBackgroundColor="@color/color_dia_actual"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
+            app:compactCalendarMultiEventIndicatorColor="#000056"
+            app:compactCalendarTargetHeight="250dp"
+            app:compactCalendarTextColor="@color/color_texto_calend"
+            app:compactCalendarTextSize="12sp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/st_mensaje_horario"
+            android:textAlignment="center"
+            android:visibility="invisible" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:id="@+id/rb_Hora_10_00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st_primera_hora"
+                android:visibility="invisible" />
+
+            <RadioButton
+                android:id="@+id/rb_Hora_11_00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st_segunda_hora"
+                android:visibility="invisible" />
+
+            <RadioButton
+                android:id="@+id/rb_Hora_12_00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/st_tercera_hora"
+                android:visibility="invisible" />
+        </RadioGroup>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
