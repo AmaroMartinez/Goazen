@@ -11,7 +11,7 @@
 
     //Titulos de las opciones de menu
     <string name="st_menu_servicio">Servicios</string>
-    <string name="st_menu_ubicacion">ubicación</string>
+    <string name="st_menu_ubicacion">Ubicación</string>
     <string name="st_menu_contacto">Contacto</string>
     <string name="st_menu_recibos">Recibos</string>
     <string name="st_menu_logout">Log out</string>
@@ -19,6 +19,10 @@
     //Strings para el activity_main_drawer
     <string name="titulo_op_menu">Menu</string>
     <string name="titulo_op_menu2">Login</string>
+
+    //String para el textview del fragment de ubicación
+    <string name="ubicacion">Hurtado de Amezaga 1 Edificio Nervión</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

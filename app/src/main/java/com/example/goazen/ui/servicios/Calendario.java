@@ -41,7 +41,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onDayClick(Date dateClicked) {
                 int dia = dateClicked.getDay();
-                
+
             }
 
             @Override
