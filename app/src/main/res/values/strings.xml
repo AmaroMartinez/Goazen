@@ -21,7 +21,7 @@
     <string name="titulo_op_menu2">Login</string>
 
     //String para el textview del fragment de ubicación
-    <string name="ubicacion">Hurtado de Amezaga 1 Edificio Nervión</string>
+    <string name="st_dir_ubicacion">Hurtado de Amezaga 1 Edificio Nervión</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
