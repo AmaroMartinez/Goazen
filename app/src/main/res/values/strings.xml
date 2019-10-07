@@ -57,7 +57,7 @@
 
     //Botones calendario
     <string name="st_boton_asignar"> Asignar</string>
-    <string name="st_boton_cancelar"> Cancelar</string>
+    <string name="st_boton_atras"> Atras</string>
 
 
 </resources>

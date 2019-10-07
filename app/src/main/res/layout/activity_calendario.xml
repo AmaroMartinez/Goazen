@@ -70,26 +70,46 @@
         <LinearLayout
             android:id="@+id/ll_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="47dp"
             android:orientation="horizontal"
             android:visibility="invisible">
 
             <Button
-                android:id="@+id/btn_cancelar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/color_boton_cancelar"
-                android:text="@string/st_boton_cancelar" />
-
-            <Button
                 android:id="@+id/btn_asignar"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/color_boton_asignar"
                 android:text="@string/st_boton_asignar" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="78dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_boton_atras"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <Space
+                android:layout_width="392dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_atras"
+                android:layout_width="179dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/st_boton_atras" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
