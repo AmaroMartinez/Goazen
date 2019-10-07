@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class Calendario extends AppCompatActivity {
 
     /*Declaramos las variables necesarias para el calendario*/
@@ -22,23 +25,32 @@ public class Calendario extends AppCompatActivity {
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("dd - mm - yyyy", Locale.getDefault());
 
     //Declaramos las variables necesarias para el guardado de datos.
-    int dia;
+    private int dia;
 
     //Declaramos los objetos necesarios
-    TextView tv = (TextView)findViewById(R.id.tv_calendario);
-    RadioGroup rg = (RadioGroup)findViewById(R.id.rg_calendario);
+    private TextView tv_calendario;
+    private RadioGroup rg_calendario;
+    private LinearLayout ll_contenedor_botones;
+    private Button btn_aceptar;
+    private Button btn_Cancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
 
+        tv_calendario = findViewById(R.id.tv_calendario);
+        rg_calendario = findViewById(R.id.rg_calendario);
+        ll_contenedor_botones = findViewById(R.id.ll_horizontal);
+        btn_aceptar = findViewById(R.id.btn_asignar);
+        btn_Cancelar = findViewById(R.id.btn_cancelar);
+
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setTitle(null);
 
         //Inicializamos el calendario
-        calendario = (CompactCalendarView)findViewById(R.id.compactcalendar_view);
+        calendario = findViewById(R.id.compactcalendar_view);
 
         calendario.setUseThreeLetterAbbreviation(true);
 
@@ -52,8 +64,8 @@ public class Calendario extends AppCompatActivity {
                 dia = dateClicked.getDay();
 
                 //Hacemos visibles las horas disponibles
-                tv.setVisibility(View.VISIBLE);
-                rg.setVisibility(View.VISIBLE);
+                tv_calendario.setVisibility(View.VISIBLE);
+                rg_calendario.setVisibility(View.VISIBLE);
 
             }
 
@@ -63,10 +75,18 @@ public class Calendario extends AppCompatActivity {
             }
         });
 
-        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        rg_calendario.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
+                ll_contenedor_botones.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btn_aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
             }
         });
 
