@@ -7,6 +7,13 @@
 
     <fragment
 
+        android:id="@+id/nav_perfil"
+        android:name="com.example.goazen.ui.perfil.PerfilFragment"
+        android:label="@string/st_menu_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+
         android:id="@+id/nav_servicio"
         android:name="com.example.goazen.ui.servicios.ServiciosFragment"
         android:label="@string/st_menu_servicio"
@@ -27,9 +34,9 @@
 
     <fragment
         android:id="@+id/nav_contacto"
-        android:name="com.example.goazen.ui.tools.ToolsFragment"
+        android:name="com.example.goazen.ui.contacto.ContactoFragment"
         android:label="@string/st_menu_contacto"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_contacto" />
     <activity
         android:id="@+id/calendario"
         android:name="com.example.goazen.ui.servicios.Calendario"

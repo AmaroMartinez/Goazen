@@ -1,9 +1,10 @@
-package com.example.goazen.ui.tools;
+package com.example.goazen.ui.contacto;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -14,22 +15,30 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 
-public class ToolsFragment extends Fragment {
+public class ContactoFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private ContactoViewModel contactoViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        
+        contactoViewModel =
+                ViewModelProviders.of(this).get(ContactoViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_contacto, container, false);
+
+        contactoViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+
             }
-        });
+        }
+        );
+
         return root;
     }
+
+
+
+
 }
