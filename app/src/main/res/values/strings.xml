@@ -34,6 +34,9 @@
     <string name="st_contacto_Mensaje">Deja tu pregunta o sugerencia </string>
     <string name="st_contacto_Boton_Enviar">Enviar </string>
 
+    //Strings para Recibos
+    <string name="st_recibo_descarga">Descargar</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

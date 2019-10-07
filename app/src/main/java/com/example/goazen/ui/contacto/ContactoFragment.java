@@ -22,7 +22,7 @@ public class ContactoFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        
+
         contactoViewModel =
                 ViewModelProviders.of(this).get(ContactoViewModel.class);
         View root = inflater.inflate(R.layout.fragment_contacto, container, false);
