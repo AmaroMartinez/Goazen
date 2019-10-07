@@ -10,6 +10,7 @@
     <string name="st_action_settings">Settings</string>
 
     //Titulos de las opciones de menu
+    <string name="st_menu_perfil">Editar Perfil</string>
     <string name="st_menu_servicio">Servicios</string>
     <string name="st_menu_ubicacion">Ubicación</string>
     <string name="st_menu_contacto">Contacto</string>
@@ -18,7 +19,7 @@
 
     //Strings para el activity_main_drawer
     <string name="titulo_op_menu">Menu</string>
-    <string name="titulo_op_menu2">Login</string>
+    <string name="titulo_op_menu2">Perfil</string>
 
     //String para el textview del fragment de ubicación
     <string name="st_dir_ubicacion">Hurtado de Amezaga 1 Edificio Nervión</string>
