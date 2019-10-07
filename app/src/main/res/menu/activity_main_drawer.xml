@@ -25,6 +25,10 @@
     <item android:title="@string/titulo_op_menu2">
         <menu>
             <item
+                android:id="@+id/nav_perfil"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/st_menu_perfil" />
+            <item
                 android:id="@+id/nav_log_out"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/st_menu_logout" />
