@@ -1,4 +1,4 @@
-package com.example.goazen.ui.prefil;
+package com.example.goazen.ui.perfil;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
