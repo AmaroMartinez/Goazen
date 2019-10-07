@@ -23,6 +23,16 @@
     //String para el textview del fragment de ubicación
     <string name="st_dir_ubicacion">Hurtado de Amezaga 1 Edificio Nervión</string>
 
+    //Strings para Contactos
+    <string name="st_contacto_n">Contacta con nosotros</string>
+    <string name="st_contacto_Tel_0">Telefono:</string>
+    <string name="st_contacto_Tel_1">944443322</string>
+    <string name="st_contacto_Tel_2">606121314</string>
+    <string name="st_contacto_Correo_0">E-mail:</string>
+    <string name="st_contacto_Correo_1">goazenbilbao@gmail.com</string>
+    <string name="st_contacto_Mensaje">Deja tu pregunta o sugerencia </string>
+    <string name="st_contacto_Boton_Enviar">Enviar </string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
