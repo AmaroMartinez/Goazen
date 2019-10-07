@@ -14,7 +14,7 @@
             android:title="@string/st_menu_ubicacion" />
         <item
             android:id="@+id/nav_contacto"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_recibos"
             android:title="@string/st_menu_contacto" />
         <item
             android:id="@+id/nav_recibos"

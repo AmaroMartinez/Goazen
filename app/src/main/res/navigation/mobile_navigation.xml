@@ -21,9 +21,9 @@
 
     <fragment
         android:id="@+id/nav_recibos"
-        android:name="com.example.goazen.ui.slideshow.SlideshowFragment"
+        android:name="com.example.goazen.ui.recibos.RecibosFragment"
         android:label="@string/st_menu_recibos"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_recibos" />
 
     <fragment
         android:id="@+id/nav_contacto"
