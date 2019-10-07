@@ -1,6 +1,9 @@
 package com.example.goazen;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -17,8 +20,24 @@ public class LoginActivity extends AppCompatActivity {
 
         desplegableusuarios = (Spinner) findViewById(R.id.desplegable_usuarios);
 
-        String[] usuarios = {"Cliente","Trabajador","Administrador"};
+        String[] usuarios = {"","Cliente","Trabajador","Administrador"};
         desplegableusuarios.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, usuarios));
+
+        desplegableusuarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (desplegableusuarios.getSelectedItem().toString().equals("Cliente")){
+                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(myIntent);
+
+                };
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 }
