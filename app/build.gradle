@@ -36,5 +36,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     /*Necesitamos esta dependencia para el calendario*/
     implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
 }
