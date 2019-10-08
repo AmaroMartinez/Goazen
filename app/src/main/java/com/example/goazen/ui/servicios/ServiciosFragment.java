@@ -13,11 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.goazen.PopUpPagos;
 import com.example.goazen.R;
 
 public class ServiciosFragment extends Fragment {
-
-
 
     private Button btnlimpiezageneral;
     private Button btnlimpiezacristales;
@@ -120,6 +119,14 @@ public class ServiciosFragment extends Fragment {
         serviciosViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
+            }
+        });
+
+        btncontratar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent popUp = new Intent(getContext(), PopUpPagos.class);
+                startActivity(popUp);
             }
         });
         return root;

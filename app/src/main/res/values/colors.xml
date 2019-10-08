@@ -5,13 +5,13 @@
     <color name="colorAccent">#000000</color>
 
     //Colores para anotar las contrataciones en el calendario
-    <color name="color_limpieza_general"></color>
-    <color name="color_limpieza_cristales"></color>
-    <color name="color_ocina"></color>
-    <color name="color_lavanderia"></color>
-    <color name="color_plancha"></color>
-    <color name="color_regado_plantas"></color>
-    <color name="color_paseo_mascotas"></color>
+    <color name="color_limpieza_general">#FF5D00</color>
+    <color name="color_limpieza_cristales">#0400FF</color>
+    <color name="color_cocina">#27FF00</color>
+    <color name="color_lavanderia">#FFE400</color>
+    <color name="color_plancha">#000000</color>
+    <color name="color_regado_plantas">#FF00F3</color>
+    <color name="color_paseo_mascotas">#370774</color>
 
     //Colores para el calendario
     <color name="color_texto_calend">#000000</color>
@@ -23,6 +23,9 @@
     //Colores para los botones de asignacion y cancelación
     <color name="color_boton_asignar">#61ff00</color>
     <color name="color_boton_cancelar">#ff0000</color>
+
+    //Colores para la ventana de pagos
+    <color name="color_texto_selección">#ff0000</color>
 
 
 </resources>

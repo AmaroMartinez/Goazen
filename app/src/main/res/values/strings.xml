@@ -10,6 +10,7 @@
     <string name="st_action_settings">Settings</string>
 
     //Titulos de las opciones de menu
+    <string name="st_menu_perfil">Editar Perfil</string>
     <string name="st_menu_servicio">Servicios</string>
     <string name="st_menu_ubicacion">Ubicación</string>
     <string name="st_menu_contacto">Contacto</string>
@@ -18,7 +19,7 @@
 
     //Strings para el activity_main_drawer
     <string name="titulo_op_menu">Menu</string>
-    <string name="titulo_op_menu2">Login</string>
+    <string name="titulo_op_menu2">Perfil</string>
 
     //String para el textview del fragment de ubicación
     <string name="st_dir_ubicacion">Hurtado de Amezaga 1 Edificio Nervión</string>
@@ -64,6 +65,16 @@
     <string name="st_boton_asignar"> Asignar</string>
     <string name="st_boton_cancelar"> Cancelar</string>
     <string name="asunto">Asunto</string>
+    <string name="st_boton_atras"> Atras</string>
 
+
+    //String popUp de pagos
+    <string name="st_selec_metodo_pago">Seleccione por favor una opción de pago</string>
+    <string name="st_cb_pago_tarjeta">Tarjeta </string>
+    <string name="st_tv_pago_tarjeta_n_tarjeta">Introduzca el numero de tarjeta</string>
+    <string name="st_tv_pago_tarjeta_cod_seguridad">Introduzca el codigo de seguridad</string>
+    <string name="st_cb_pago_transferencia">Transferencia</string>
+    <string name="st_tv_pago_transferencia">El numero de cuenta en el que realizar la trasferencia es:</string>
+    <string name="st_tv_pago_transferencia_numero_cuenta">"1234–5678-9098-7654"</string>
 
 </resources>
