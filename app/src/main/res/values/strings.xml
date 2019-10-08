@@ -25,13 +25,16 @@
 
     //Strings para Contactos
     <string name="st_contacto_n">Contacta con nosotros</string>
-    <string name="st_contacto_Tel_0">Telefono:</string>
+    <string name="st_contacto_Tel_0">Teléfono:</string>
     <string name="st_contacto_Tel_1">944443322</string>
     <string name="st_contacto_Tel_2">606121314</string>
     <string name="st_contacto_Correo_0">E-mail:</string>
     <string name="st_contacto_Correo_1">goazenbilbao@gmail.com</string>
     <string name="st_contacto_Mensaje">Deja tu pregunta o sugerencia </string>
     <string name="st_contacto_Boton_Enviar">Enviar </string>
+    <string name="st_contacto_Asunto">Asunto </string>
+    <string name="st_contacto_Email">e-mail </string>
+    <string name="st_contacto_Mensajetxt">Escribe tu mensaje aqui </string>
 
     //Strings para Recibos
     <string name="st_recibo_descarga">Descargar</string>
@@ -60,6 +63,7 @@
     //Botones calendario
     <string name="st_boton_asignar"> Asignar</string>
     <string name="st_boton_cancelar"> Cancelar</string>
+    <string name="asunto">Asunto</string>
 
 
 </resources>
