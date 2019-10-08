@@ -9,12 +9,13 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class PopUpPagos extends Activity {
 
-    private CheckBox cb_pago_tarjeta;
-    private CheckBox cb_pago_transferencia;
+    private RadioButton rb_pago_tarjeta;
+    private RadioButton rb_pago_transferencia;
 
     private TextView tv_pago_tarjeta_n_tarjeta;
     private TextView tv_pago_tarjeta_cod_seguridad;
@@ -30,8 +31,8 @@ public class PopUpPagos extends Activity {
         super.onCreate(savedInstanceState);
 
         //Inicialización de Variables
-        cb_pago_tarjeta = findViewById(R.id.cb_Pago_Tarjeta);
-        cb_pago_transferencia = findViewById(R.id.cb_pago_transferencia);
+        rb_pago_tarjeta = findViewById(R.id.rb_pago_tarjeta);
+        rb_pago_transferencia = findViewById(R.id.rb_pago_transferencia);
 
         tv_pago_tarjeta_n_tarjeta = findViewById(R.id.tv_numero_tarjeta);
         tv_pago_tarjeta_cod_seguridad = findViewById(R.id.tv_cod_seguridad_tarjeta);
@@ -62,21 +63,42 @@ public class PopUpPagos extends Activity {
 
         getWindow().setAttributes(params);
 
-       /* if(cb_pago_tarjeta.isChecked()){
-            if(cb_pago_transferencia.isSelected()){
-                cb_pago_transferencia.setSelected(false);
-                tv_pago_transferencia.setVisibility(View.INVISIBLE);
-                tv_pago_transferencia_numero_cuenta.setVisibility(View.INVISIBLE);
+        //Trabajamos con las opciones de popUp
+        rb_pago_tarjeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Comprobamso que la otra opción no este activa y de estarlo la deseleccionamos
+                if(rb_pago_transferencia.isChecked()){
+                    rb_pago_transferencia.setSelected(false);
+                    tv_pago_transferencia.setVisibility(View.INVISIBLE);
+                    tv_pago_transferencia_numero_cuenta.setVisibility(View.INVISIBLE);
+                }
+
+                //Hacemos visibles las partes que nos interesan
+                tv_pago_tarjeta_n_tarjeta.setVisibility(View.VISIBLE);
+                tv_pago_tarjeta_cod_seguridad.setVisibility(View.VISIBLE);
+                et_numero_tarjeta.setVisibility(View.VISIBLE);
+                et_pago_tarjeta_cod_seguridad.setVisibility(View.VISIBLE);
             }
+        });
 
-            //Hacemos visibles las partes que nos interesan
-            tv_pago_tarjeta_n_tarjeta.setVisibility(View.VISIBLE);
-            tv_pago_tarjeta_cod_seguridad.setVisibility(View.VISIBLE);
-            et_numero_tarjeta.setVisibility(View.VISIBLE);
-            et_pago_tarjeta_cod_seguridad.setVisibility(View.VISIBLE);
-        }*/
+        /*cb_pago_transferencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(cb_pago_tarjeta.isSelected()){
+                    cb_pago_tarjeta.setSelected(false);
+                    tv_pago_tarjeta_n_tarjeta.setVisibility(View.INVISIBLE);
+                    tv_pago_tarjeta_cod_seguridad.setVisibility(View.INVISIBLE);
+                    et_numero_tarjeta.setVisibility(View.INVISIBLE);
+                    et_pago_tarjeta_cod_seguridad.setVisibility(View.INVISIBLE);
+                }
 
-        /*cb_pago_tarjeta.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                tv_pago_transferencia.setVisibility(View.VISIBLE);
+                tv_pago_transferencia_numero_cuenta.setVisibility(View.VISIBLE);
+            }
+        });*/
+
+         /*cb_pago_tarjeta.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(cb_pago_tarjeta.isChecked()){
@@ -108,40 +130,7 @@ public class PopUpPagos extends Activity {
             }
         });*/
 
-        //Trabajamos con las opciones de popUp
-        /*cb_pago_tarjeta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Comprobamso que la otra opción no este activa y de estarlo la deseleccionamos
-                if(cb_pago_transferencia.isSelected()){
-                    cb_pago_transferencia.setSelected(false);
-                    tv_pago_transferencia.setVisibility(View.INVISIBLE);
-                    tv_pago_transferencia_numero_cuenta.setVisibility(View.INVISIBLE);
-                }
-
-                //Hacemos visibles las partes que nos interesan
-                tv_pago_tarjeta_n_tarjeta.setVisibility(View.VISIBLE);
-                tv_pago_tarjeta_cod_seguridad.setVisibility(View.VISIBLE);
-                et_numero_tarjeta.setVisibility(View.VISIBLE);
-                et_pago_tarjeta_cod_seguridad.setVisibility(View.VISIBLE);
-            }
-        });*/
-
-        /*cb_pago_transferencia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(cb_pago_tarjeta.isSelected()){
-                    cb_pago_tarjeta.setSelected(false);
-                    tv_pago_tarjeta_n_tarjeta.setVisibility(View.INVISIBLE);
-                    tv_pago_tarjeta_cod_seguridad.setVisibility(View.INVISIBLE);
-                    et_numero_tarjeta.setVisibility(View.INVISIBLE);
-                    et_pago_tarjeta_cod_seguridad.setVisibility(View.INVISIBLE);
-                }
-
-                tv_pago_transferencia.setVisibility(View.VISIBLE);
-                tv_pago_transferencia_numero_cuenta.setVisibility(View.VISIBLE);
-            }
-        });*/
-
     }
+
+
 }
