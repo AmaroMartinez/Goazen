@@ -126,6 +126,42 @@ public class Calendario extends AppCompatActivity {
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
+                else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_limpieza_cristales))){
+                    calendario.addEvent(new Event(getColor(R.color.color_limpieza_cristales),dia, R.string.st_limpieza_cristales));
+                    tv_calendario.setVisibility(View.INVISIBLE);
+                    btn_asignar.setVisibility(View.INVISIBLE);
+                    rg_calendario.setVisibility(View.INVISIBLE);
+                }
+                else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_cocina))){
+                    calendario.addEvent(new Event(getColor(R.color.color_cocina),dia, R.string.st_cocina));
+                    tv_calendario.setVisibility(View.INVISIBLE);
+                    btn_asignar.setVisibility(View.INVISIBLE);
+                    rg_calendario.setVisibility(View.INVISIBLE);
+                }
+                else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_plancha))){
+                    calendario.addEvent(new Event(getColor(R.color.color_plancha),dia, R.string.st_plancha));
+                    tv_calendario.setVisibility(View.INVISIBLE);
+                    btn_asignar.setVisibility(View.INVISIBLE);
+                    rg_calendario.setVisibility(View.INVISIBLE);
+                }
+                else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_paseo_mascotas))){
+                    calendario.addEvent(new Event(getColor(R.color.color_paseo_mascotas),dia, R.string.st_paseo_mascotas));
+                    tv_calendario.setVisibility(View.INVISIBLE);
+                    btn_asignar.setVisibility(View.INVISIBLE);
+                    rg_calendario.setVisibility(View.INVISIBLE);
+                }
+                else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_regado_plantas))){
+                    calendario.addEvent(new Event(getColor(R.color.color_regado_plantas),dia, R.string.st_regado_plantas));
+                    tv_calendario.setVisibility(View.INVISIBLE);
+                    btn_asignar.setVisibility(View.INVISIBLE);
+                    rg_calendario.setVisibility(View.INVISIBLE);
+                }
+                else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_lavanderia))){
+                    calendario.addEvent(new Event(getColor(R.color.color_lavanderia),dia, R.string.st_lavanderia));
+                    tv_calendario.setVisibility(View.INVISIBLE);
+                    btn_asignar.setVisibility(View.INVISIBLE);
+                    rg_calendario.setVisibility(View.INVISIBLE);
+                }
             }
         });
 

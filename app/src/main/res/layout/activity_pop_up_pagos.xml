@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pop_up"
+    tools:context=".PopUpPagos">
+
+    <LinearLayout
+        android:id="@+id/ll_contendor_PopUp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tv_seleccion_contratación"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:text="@string/st_selec_metodo_pago"
+            android:textColor="@color/color_texto_selección"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/cb_Pago_Tarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:text="@string/st_cb_pago_tarjeta"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_numero_tarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/st_tv_pago_tarjeta_n_tarjeta" />
+
+        <EditText
+            android:id="@+id/et_numero_tarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="number" tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/tv_cod_seguridad_tarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/st_tv_pago_tarjeta_cod_seguridad" />
+
+        <EditText
+            android:id="@+id/ed_cod_seguridad_tarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:autofillHints="" />
+
+        <CheckBox
+            android:id="@+id/cb_pago_transferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/st_cb_pago_transferencia"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_pago_transderencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/st_tv_pago_trasferencia" />
+
+        <TextView
+            android:id="@+id/tv_pago_trasferencia_numero_cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/st_tv_pago_trasferencia_numero_cuenta"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
