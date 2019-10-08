@@ -59,7 +59,7 @@
             android:visibility="invisible" />
 
         <EditText
-            android:id="@+id/ed_cod_seguridad_tarjeta"
+            android:id="@+id/et_cod_seguridad_tarjeta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -77,14 +77,14 @@
             android:id="@+id/tv_pago_transderencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/st_tv_pago_trasferencia"
+            android:text="@string/st_tv_pago_transferencia"
             android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tv_pago_trasferencia_numero_cuenta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/st_tv_pago_trasferencia_numero_cuenta"
+            android:text="@string/st_tv_pago_transferencia_numero_cuenta"
             android:textSize="24sp"
             android:visibility="invisible" />
 
