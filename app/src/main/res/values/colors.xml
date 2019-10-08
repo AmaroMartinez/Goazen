@@ -24,5 +24,8 @@
     <color name="color_boton_asignar">#61ff00</color>
     <color name="color_boton_cancelar">#ff0000</color>
 
+    //Colores para la ventana de pagos
+    <color name="color_texto_selección">#ff0000</color>
+
 
 </resources>
