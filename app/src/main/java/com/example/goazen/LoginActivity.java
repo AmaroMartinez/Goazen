@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
 
         desplegableusuarios = (Spinner) findViewById(R.id.desplegable_usuarios);
 
-        String[] usuarios = {"","Cliente","Trabajador","Administrador"};
+        String[] usuarios = {"Selecciona un usuario","Cliente","Trabajador","Administrador"};
         desplegableusuarios.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, usuarios));
 
         desplegableusuarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
