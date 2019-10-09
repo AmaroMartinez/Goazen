@@ -77,4 +77,23 @@
     <string name="st_tv_pago_transferencia">El numero de cuenta en el que realizar la trasferencia es:</string>
     <string name="st_tv_pago_transferencia_numero_cuenta">"1234–5678-9098-7654"</string>
 
+    //String para Editar Perfil
+    <string name="st_perfil_nombre">Nombre</string>
+    <string name="st_perfil_apellido">Apellido</string>
+    <string name="st_perfil_email">Email</string>
+    <string name="st_perfil_telefono">Telefono</string>
+    <string name="st_perfil_direccion">Direccion</string>
+    <string name="st_perfil_dni">DNI</string>
+    <string name="st_perfil_fnacimiento">Fecha de Nacimiento</string>
+    <string name="st_perfil_d_email">email@email.com</string>
+    <string name="st_perfil_d_telefono">654654654</string>
+    <string name="st_perfil_d_direccion">C/ Por defecto</string>
+    <string name="st_perfil_d_dni">87654321A</string>
+    <string name="st_perfil_d_fnacimiento">01/01/2019</string>
+    <string name="st_perfil_guardar">Guardar Cambios</string>
+    <string name="st_perfil_contraseña">Cambiar Contraseña</string>
+
+
+
+
 </resources>
