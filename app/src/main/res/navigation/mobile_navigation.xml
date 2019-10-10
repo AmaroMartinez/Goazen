@@ -42,5 +42,10 @@
         android:name="com.example.goazen.ui.servicios.Calendario"
         android:label="activity_calendario"
         tools:layout="@layout/activity_calendario" />
+    <activity
+        android:id="@+id/nav_log_out"
+        android:name="com.example.goazen.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 
 </navigation>
