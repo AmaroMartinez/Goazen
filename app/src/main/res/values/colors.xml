@@ -21,7 +21,7 @@
     <color name="color_dia_multievent">#000056</color>
 
     //Colores para los botones de asignacion y cancelación
-    <color name="color_boton_asignar">#61ff00</color>
+    <color name="color_boton_asignar">#46B502</color>
     <color name="color_boton_cancelar">#ff0000</color>
 
     //Colores para la ventana de pagos

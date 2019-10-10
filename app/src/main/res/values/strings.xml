@@ -77,6 +77,7 @@
     <string name="st_cb_pago_transferencia">Transferencia</string>
     <string name="st_tv_pago_transferencia">El numero de cuenta en el que realizar la trasferencia es:</string>
     <string name="st_tv_pago_transferencia_numero_cuenta">"1234–5678-9098-7654"</string>
+    <string name="st_pagar_contrato">Pagar</string>
 
     //String para Editar Perfil
     <string name="st_perfil_nombre">Nombre</string>
