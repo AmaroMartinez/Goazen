@@ -25,7 +25,7 @@
                 android:layout_width="134dp"
                 android:layout_height="134dp"
                 android:contentDescription="@string/st_menu_perfil"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@drawable/ardilla" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -201,7 +201,7 @@
                     android:layout_height="16dp" />
 
                 <Button
-                    android:id="@+id/btn_cambiar_contraseña"
+                    android:id="@+id/btn_cambiar_contrasena"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -234,7 +234,7 @@
                 android:id="@+id/btn_editar"
                 android:layout_width="122dp"
                 android:layout_height="58dp"
-                android:text="Editar" />
+                android:text="@string/st_perfil_editar" />
 
             <Space
                 android:layout_width="wrap_content"

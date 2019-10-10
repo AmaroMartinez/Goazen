@@ -16,6 +16,7 @@
     <string name="st_menu_contacto">Contacto</string>
     <string name="st_menu_recibos">Recibos</string>
     <string name="st_menu_logout">Log out</string>
+    <string name="st_menu_ardilla">Ardillita Perez</string>
 
     //Strings para el activity_main_drawer
     <string name="titulo_op_menu">Menu</string>
@@ -79,6 +80,7 @@
     <string name="st_cb_pago_transferencia">Transferencia</string>
     <string name="st_tv_pago_transferencia">El numero de cuenta en el que realizar la trasferencia es:</string>
     <string name="st_tv_pago_transferencia_numero_cuenta">"1234–5678-9098-7654"</string>
+    <string name="st_pagar_contrato">Pagar</string>
 
     //String para Editar Perfil
     <string name="st_perfil_nombre">Nombre</string>
@@ -95,6 +97,8 @@
     <string name="st_perfil_d_fnacimiento">01/01/2019</string>
     <string name="st_perfil_guardar">Guardar Cambios</string>
     <string name="st_perfil_contraseña">Cambiar Contraseña</string>
+    <string name="st_perfil_editar">Editar</string>
+    <string name="st_perfil_cancelar">Cancelar</string>
 
 
 
