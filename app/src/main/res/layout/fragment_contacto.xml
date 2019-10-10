@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--Layout relative para autoajustarse a cualquier dispositivo -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="382dp"
-        android:layout_height="241dp"
+        android:layout_width="355dp"
+        android:layout_height="272dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="417dp"
         android:background="@drawable/layout_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,10 +83,10 @@
             android:text="@string/st_contacto_Correo_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.368"
+            app:layout_constraintHorizontal_bias="0.396"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.927" />
+            app:layout_constraintVertical_bias="0.893" />
 
         <TextView
             android:id="@+id/textViewCorreo_0"
@@ -92,8 +103,17 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="384dp"
-        android:layout_height="318dp"
+        android:id="@+id/layout1"
+        android:layout_width="355dp"
+        android:layout_height="329dp"
+        android:layout_below="@+id/constraintLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-400dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/layout_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,49 +131,52 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.056" />
+            app:layout_constraintVertical_bias="0.055" />
 
         <EditText
             android:id="@+id/editText_Asunto"
-            android:layout_width="176dp"
-            android:layout_height="37dp"
+            android:layout_width="229dp"
+            android:layout_height="46dp"
             android:ems="10"
-            android:hint="Asunto"
+            android:hint="@string/st_contacto_Asunto"
             android:inputType="textPersonName"
+            android:importantForAutofill="no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.289"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.231" />
+            app:layout_constraintVertical_bias="0.233"/>
 
         <EditText
             android:id="@+id/editText_Mensaje"
-            android:layout_width="176dp"
-            android:layout_height="40dp"
+            android:layout_width="229dp"
+            android:layout_height="46dp"
             android:ems="10"
-            android:hint="Escribe tu mensaje"
+            android:hint="@string/st_contacto_Mensajetxt"
             android:inputType="textPersonName"
+            android:importantForAutofill="no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.204"
+            app:layout_constraintHorizontal_bias="0.29"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.432" />
+            app:layout_constraintVertical_bias="0.448" />
 
         <EditText
             android:id="@+id/editTextEmail"
-            android:layout_width="177dp"
-            android:layout_height="41dp"
+            android:layout_width="229dp"
+            android:layout_height="46dp"
             android:ems="10"
-            android:hint="e-mail"
+            android:hint="@string/st_contacto_Email"
             android:inputType="textEmailAddress"
+            android:importantForAutofill="no"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.29"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.654" />
+            app:layout_constraintVertical_bias="0.672" />
 
         <Button
             android:id="@+id/button_EnviarMensaje"
@@ -166,6 +189,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.905" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

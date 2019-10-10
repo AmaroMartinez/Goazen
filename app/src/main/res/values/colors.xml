@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#000000</color>
+    <color name="colorPrimary">#1D1D1D</color>
+    <color name="colorPrimaryDark">#1D1D1D</color>
+    <color name="colorAccent">#1D1D1D</color>
 
     //Colores para anotar las contrataciones en el calendario
     <color name="color_limpieza_general">#FF5D00</color>

@@ -6,74 +6,253 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="410dp"
-        android:layout_height="513dp"
-        tools:layout_editor_absoluteX="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_cambiar_imagen"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:contentDescription="@string/st_menu_perfil"
+                android:background="@drawable/ardilla" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/editText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="Nombre" />
-
-                    <EditText
-                        android:id="@+id/editText2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="Apellido" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <Space
-                    android:layout_width="82dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/perfil_fnacimiento"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha de Nacimiento" />
+                    android:layout_height="21dp" />
 
-                <Space
+                <EditText
+                    android:id="@+id/et_perfil_nombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:ems="10"
+                    android:enabled="false"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:text="@string/st_perfil_nombre"
+                    android:textColor="#000000"
+                    tools:ignore="LabelFor" />
+
+                <EditText
+                    android:id="@+id/et_perfil_apellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:enabled="false"
+                    android:textColor="#000000"
+                    android:text="@string/st_perfil_apellido"
+                    tools:ignore="LabelFor"
+                    android:inputType="" />
 
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="13dp" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="324dp"
+            android:layout_height="437dp"
+            android:layout_gravity="center"
+            android:background="@drawable/layout_border"
+            tools:ignore="NestedScrolling">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_titulo_fnacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/st_perfil_fnacimiento" />
+
+                <EditText
+                    android:id="@+id/et_fnacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:enabled="false"
+                    android:textColor="#000000"
+                    android:text="@string/st_perfil_d_fnacimiento"
+                    tools:ignore="LabelFor"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_dni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/st_perfil_dni" />
+
+                <EditText
+                    android:id="@+id/et_dni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:enabled="false"
+                    android:textColor="#000000"
+                    android:text="@string/st_perfil_d_dni"
+                    tools:ignore="LabelFor"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/st_perfil_telefono" />
+
+                <EditText
+                    android:id="@+id/et_telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:enabled="false"
+                    android:textColor="#000000"
+                    android:text="@string/st_perfil_d_telefono"
+                    tools:ignore="LabelFor"
+                    android:inputType="phone" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/st_perfil_email" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:enabled="false"
+                    android:textColor="#000000"
+                    android:text="@string/st_perfil_d_email"
+                    tools:ignore="LabelFor"
+                    android:inputType="textEmailAddress" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/st_perfil_direccion" />
+
+                <EditText
+                    android:id="@+id/et_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:enabled="false"
+                    android:textColor="#000000"
+                    android:text="@string/st_perfil_d_direccion"
+                    tools:ignore="LabelFor"
+                    android:inputType="text" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <Button
+                    android:id="@+id/btn_cambiar_contrasena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:enabled="false"
+                    android:text="@string/st_perfil_contraseña" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="11dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_editar"
+                android:layout_width="122dp"
+                android:layout_height="58dp"
+                android:text="@string/st_perfil_editar" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_guardar"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:text="@string/st_perfil_guardar" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
