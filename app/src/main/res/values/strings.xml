@@ -64,11 +64,12 @@
 
     //String popUp de pagos
     <string name="st_selec_metodo_pago">Seleccione por favor una opción de pago</string>
-    <string name="st_rb_pago_tarjeta">Tarjeta </string>
+    <string name="st_cb_pago_tarjeta">Tarjeta </string>
     <string name="st_tv_pago_tarjeta_n_tarjeta">Introduzca el numero de tarjeta</string>
     <string name="st_tv_pago_tarjeta_cod_seguridad">Introduzca el codigo de seguridad</string>
-    <string name="st_rb_pago_transferencia">Transferencia</string>
+    <string name="st_cb_pago_transferencia">Transferencia</string>
     <string name="st_tv_pago_transferencia">El numero de cuenta en el que realizar la trasferencia es:</string>
     <string name="st_tv_pago_transferencia_numero_cuenta">"1234–5678-9098-7654"</string>
+    <string name="st_pagar_contrato">Pagar</string>
 
 </resources>
