@@ -9,7 +9,6 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
@@ -25,7 +24,8 @@ public class PerfilFragment extends Fragment {
     private EditText etdni;
     private EditText etemail;
     private EditText etdireccion;
-    private Button btncambiarcontraseña;
+    private Button btncambiarcontrasena;
+    private Button btnguardar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -41,7 +41,8 @@ public class PerfilFragment extends Fragment {
         etdni = root.findViewById(R.id.et_dni);
         etemail = root.findViewById(R.id.et_email);
         etdireccion = root.findViewById(R.id.et_direccion);
-        btncambiarcontraseña = root.findViewById(R.id.btn_cambiar_contraseña);
+        btncambiarcontrasena = root.findViewById(R.id.btn_cambiar_contrasena);
+        btnguardar = root.findViewById(R.id.btn_guardar);
 
         btneditar.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -55,28 +56,48 @@ public class PerfilFragment extends Fragment {
                 etemail.setEnabled(true);
                 etfnacimiento.setEnabled(true);
                 ettelefono.setEnabled(true);
-                btncambiarcontraseña.setEnabled(true);
+                btncambiarcontrasena.setEnabled(true);
 
-                btneditar.setText("Cancelar");
+                btneditar.setText(R.string.st_perfil_cancelar);
 
             } else if (btneditar.getText().equals("Cancelar")){
 
-                /*Fragment currentFragment = getActivity().getFragmentManager().findFragmentById(R.id.fragment_container);
-                if (currentFragment instanceof "PerfilFragment") {
-                    FragmentTransaction fragTransaction =   (getActivity()).getFragmentManager().beginTransaction();
-                    fragTransaction.detach(currentFragment);
-                    fragTransaction.attach(currentFragment);
-                    fragTransaction.commit();}
-            }*/
+                etnombre.setText(R.string.st_perfil_nombre);
+                etapellido.setText(R.string.st_perfil_apellido);
+                etdireccion.setText(R.string.st_perfil_d_direccion);
+                etdni.setText(R.string.st_perfil_d_dni);
+                etemail.setText(R.string.st_perfil_d_email);
+                etfnacimiento.setText(R.string.st_perfil_d_fnacimiento);
+                ettelefono.setText(R.string.st_perfil_d_telefono);
 
-               // Fragment currentFragment = getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
-                Fragment currentFragment = PerfilFragment.this;
-                FragmentTransaction fragTransaction = getFragmentManager().beginTransaction();
-                fragTransaction.detach(currentFragment);
-                fragTransaction.attach(currentFragment);
-                fragTransaction.commit();
+                etnombre.setEnabled(false);
+                etapellido.setEnabled(false);
+                etdireccion.setEnabled(false);
+                etdni.setEnabled(false);
+                etemail.setEnabled(false);
+                etfnacimiento.setEnabled(false);
+                ettelefono.setEnabled(false);
+                btncambiarcontrasena.setEnabled(false);
+
+                btneditar.setText(R.string.st_perfil_editar);
 
             }
+
+            btnguardar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    etnombre.setEnabled(false);
+                    etapellido.setEnabled(false);
+                    etdireccion.setEnabled(false);
+                    etdni.setEnabled(false);
+                    etemail.setEnabled(false);
+                    etfnacimiento.setEnabled(false);
+                    ettelefono.setEnabled(false);
+                    btncambiarcontrasena.setEnabled(false);
+
+                    btneditar.setText(R.string.st_perfil_editar);
+                }
+            });
          }
         });
 
