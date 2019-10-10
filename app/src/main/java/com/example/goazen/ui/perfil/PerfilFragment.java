@@ -1,5 +1,6 @@
 package com.example.goazen.ui.perfil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.goazen.PopUpCambiarContrasena;
 import com.example.goazen.R;
 
 public class PerfilFragment extends Fragment {
@@ -83,23 +85,34 @@ public class PerfilFragment extends Fragment {
 
             }
 
-            btnguardar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    etnombre.setEnabled(false);
-                    etapellido.setEnabled(false);
-                    etdireccion.setEnabled(false);
-                    etdni.setEnabled(false);
-                    etemail.setEnabled(false);
-                    etfnacimiento.setEnabled(false);
-                    ettelefono.setEnabled(false);
-                    btncambiarcontrasena.setEnabled(false);
-
-                    btneditar.setText(R.string.st_perfil_editar);
-                }
-            });
          }
         });
+
+        btnguardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etnombre.setEnabled(false);
+                etapellido.setEnabled(false);
+                etdireccion.setEnabled(false);
+                etdni.setEnabled(false);
+                etemail.setEnabled(false);
+                etfnacimiento.setEnabled(false);
+                ettelefono.setEnabled(false);
+                btncambiarcontrasena.setEnabled(false);
+
+                btneditar.setText(R.string.st_perfil_editar);
+            }
+        });
+
+        btncambiarcontrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent popUpcc = new Intent(getContext(), PopUpCambiarContrasena.class);
+                startActivity(popUpcc);
+            }
+        });
+
+
 
 
 
