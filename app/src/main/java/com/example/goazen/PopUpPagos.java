@@ -9,7 +9,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class PopUpPagos extends Activity {
@@ -32,6 +31,7 @@ public class PopUpPagos extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up_pagos);
+
 
         //Inicialización de Variables
         cb_pago_tarjeta = findViewById(R.id.cb_pago_tarjeta);

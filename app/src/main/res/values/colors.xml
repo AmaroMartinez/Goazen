@@ -27,5 +27,8 @@
     //Colores para la ventana de pagos
     <color name="color_texto_selección">#ff0000</color>
 
+    //Color fondo PopUps
+    <color name="color_fondo_popUps">#E5E4E8</color>
+
 
 </resources>

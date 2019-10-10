@@ -28,11 +28,11 @@ public class ContactoFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_contacto, container, false);
 
         contactoViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
+                @Override
+                public void onChanged(@Nullable String s) {
 
+                }
             }
-        }
         );
 
         return root;
