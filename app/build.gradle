@@ -37,5 +37,7 @@ dependencies {
     /*Necesitamos esta dependencia para el calendario*/
     implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    /* Dependencia para crear pdf*/
+    implementation 'com.itextpdf:itextg:5.5.10'
 
 }
