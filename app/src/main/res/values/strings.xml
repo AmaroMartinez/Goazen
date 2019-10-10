@@ -100,7 +100,13 @@
     <string name="st_perfil_editar">Editar</string>
     <string name="st_perfil_cancelar">Cancelar</string>
 
+    //String popUp de cambiar contraseña
+    <string name="st_tv_cambiar">Cambiar Contraseña</string>
+    <string name="st_et_nueva_contrasena">Nueva Contraseña</string>
+    <string name="st_et_antigua_contrasena">Antigua Contraseña</string>
+    <string name="st_btn_guardar_contrasena">Guardar</string>
 
+    <!--<string name="st_"></string>-->
 
 
 </resources>
