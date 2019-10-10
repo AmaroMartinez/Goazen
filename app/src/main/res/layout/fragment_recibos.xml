@@ -19,7 +19,7 @@
             android:id="@+id/textViewCod_recibo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/st_recibo_cod"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -31,7 +31,7 @@
             android:id="@+id/textViewResumen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/st_recibo_resumen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -43,13 +43,13 @@
             android:id="@+id/textViewPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/st_recibo_Precio"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.94"
+            app:layout_constraintHorizontal_bias="0.902"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.21" />
+            app:layout_constraintVertical_bias="0.202" />
 
         <Button
             android:id="@+id/buttonDescarga"
