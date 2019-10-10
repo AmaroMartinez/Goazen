@@ -40,6 +40,9 @@
 
     //Strings para Recibos
     <string name="st_recibo_descarga">Descargar</string>
+    <string name="st_recibo_cod">cod_recibo</string>
+    <string name="st_recibo_Precio">Precio</string>
+    <string name="st_recibo_resumen">Resumen</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
