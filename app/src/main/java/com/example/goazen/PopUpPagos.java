@@ -47,6 +47,9 @@ public class PopUpPagos extends Activity {
 
         btn_pagar_contrato = findViewById(R.id.btn_pagar_contrato);
 
+        // btn pagar invisible
+        btn_pagar_contrato.setVisibility(View.INVISIBLE);
+
         //Creamos el PopUp
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

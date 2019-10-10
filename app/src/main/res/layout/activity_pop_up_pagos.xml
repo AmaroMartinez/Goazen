@@ -12,7 +12,6 @@
         android:id="@+id/ll_contendor_PopUp"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,8 +22,9 @@
 
         <TextView
             android:id="@+id/tv_seleccion_contratación"
-            android:layout_width="match_parent"
+            android:layout_width="332dp"
             android:layout_height="85dp"
+            android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/st_selec_metodo_pago"
             android:textColor="@color/color_texto_selección"
@@ -94,17 +94,19 @@
             android:textSize="24sp"
             android:visibility="invisible" />
 
-        <Button
-            android:id="@+id/btn_pagar_contrato"
-            android:layout_width="351dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/color_boton_asignar"
-            android:foregroundGravity="center"
-            android:text="@string/st_pagar_contrato"
-            android:textAlignment="center"
-            android:visibility="invisible"
-            tools:visibility="invisible" />
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_pagar_contrato"
+                android:layout_width="351dp"
+                android:layout_height="wrap_content"
+                android:background="@color/color_boton_asignar"
+                android:text="@string/st_pagar_contrato" />
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

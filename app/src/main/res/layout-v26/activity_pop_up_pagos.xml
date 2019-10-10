@@ -12,6 +12,7 @@
         android:id="@+id/ll_contendor_PopUp"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +25,8 @@
             android:id="@+id/tv_seleccion_contratación"
             android:layout_width="390dp"
             android:layout_height="85dp"
-            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/st_selec_metodo_pago"
             android:textAlignment="center"
             android:textColor="@color/color_texto_selección"
@@ -36,6 +38,10 @@
             android:layout_height="wrap_content"
             android:text="@string/st_cb_pago_tarjeta"
             android:textSize="18sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
 
         <TextView
             android:id="@+id/tv_numero_tarjeta"
@@ -52,6 +58,7 @@
             android:ems="10"
             android:inputType="number"
             android:visibility="invisible"
+            tools:ignore="LabelFor"
             tools:targetApi="o" />
 
         <TextView
@@ -68,7 +75,8 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="number"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            tools:ignore="LabelFor" />
 
         <CheckBox
             android:id="@+id/cb_pago_transferencia"
@@ -76,6 +84,10 @@
             android:layout_height="wrap_content"
             android:text="@string/st_cb_pago_transferencia"
             android:textSize="18sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
 
         <TextView
             android:id="@+id/tv_pago_transderencia"
@@ -92,26 +104,20 @@
             android:textSize="24sp"
             android:visibility="invisible" />
 
-        <LinearLayout
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="15dp" />
 
-            <Button
-                android:id="@+id/btn_pagar_contrato"
-                android:layout_width="385dp"
-                android:layout_height="wrap_content"
-                android:background="@color/color_boton_asignar"
-                android:gravity="center_vertical"
-                android:text="@string/st_pagar_contrato"
-                android:textAlignment="center"
-                android:visibility="visible" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_pagar_contrato"
+            android:layout_width="385dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/color_boton_asignar"
+            android:gravity="center_vertical"
+            android:text="@string/st_pagar_contrato"
+            android:textAlignment="center"
+            android:visibility="invisible" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
