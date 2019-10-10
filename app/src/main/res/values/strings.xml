@@ -92,6 +92,8 @@
     <string name="st_perfil_d_fnacimiento">01/01/2019</string>
     <string name="st_perfil_guardar">Guardar Cambios</string>
     <string name="st_perfil_contraseña">Cambiar Contraseña</string>
+    <string name="st_perfil_editar">Editar</string>
+    <string name="st_perfil_cancelar">Cancelar</string>
 
 
 
