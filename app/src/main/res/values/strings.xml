@@ -16,6 +16,7 @@
     <string name="st_menu_contacto">Contacto</string>
     <string name="st_menu_recibos">Recibos</string>
     <string name="st_menu_logout">Log out</string>
+    <string name="st_menu_ardilla">Ardillita Perez</string>
 
     //Strings para el activity_main_drawer
     <string name="titulo_op_menu">Menu</string>
