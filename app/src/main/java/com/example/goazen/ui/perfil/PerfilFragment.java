@@ -80,18 +80,13 @@ public class PerfilFragment extends Fragment {
                 etfnacimiento.setEnabled(true);
                 ettelefono.setEnabled(true);
                 btncambiarcontrasena.setEnabled(true);
+                btnguardar.setEnabled(true);
 
                 btneditar.setText(R.string.st_perfil_cancelar);
 
             } else if (btneditar.getText().equals("Cancelar")){
 
-                etnombre.setText(R.string.st_perfil_nombre);
-                etapellido.setText(R.string.st_perfil_apellido);
-                etdireccion.setText(R.string.st_perfil_d_direccion);
-                etdni.setText(R.string.st_perfil_d_dni);
-                etemail.setText(R.string.st_perfil_d_email);
-                etfnacimiento.setText(R.string.st_perfil_d_fnacimiento);
-                ettelefono.setText(R.string.st_perfil_d_telefono);
+                readNewUsuario();
 
                 etnombre.setEnabled(false);
                 etapellido.setEnabled(false);
@@ -101,6 +96,7 @@ public class PerfilFragment extends Fragment {
                 etfnacimiento.setEnabled(false);
                 ettelefono.setEnabled(false);
                 btncambiarcontrasena.setEnabled(false);
+                btnguardar.setEnabled(false);
 
                 btneditar.setText(R.string.st_perfil_editar);
 
@@ -120,8 +116,11 @@ public class PerfilFragment extends Fragment {
                 etfnacimiento.setEnabled(false);
                 ettelefono.setEnabled(false);
                 btncambiarcontrasena.setEnabled(false);
+                btnguardar.setEnabled(false);
 
                 btneditar.setText(R.string.st_perfil_editar);
+
+                writeNewUsuario();
             }
         });
 
@@ -140,17 +139,21 @@ public class PerfilFragment extends Fragment {
         return root;
     }
 
-
     private void writeNewUsuario(){
 
         CollectionReference Usuarios = db.collection("Usuarios");
 
         Map<String, Object> datos = new HashMap<>();
-        datos.put("Nombre", "Tus");
-        datos.put("Apellido", "Muertos");
+        datos.put("Nombre", etnombre.getText().toString());
+        datos.put("Apellido", etapellido.getText().toString());
+        datos.put("DNI", etdni.getText().toString());
+        datos.put("Adress", etdireccion.getText().toString());
+        datos.put("fnacimiento", etfnacimiento.getText().toString());
+        datos.put("movil", ettelefono.getText().toString());
+        datos.put("email", etemail.getText().toString());
+
         //data1.put("regions", Arrays.asList("west_coast", "norcal"));
-        Usuarios.document("U").set(datos
-        );
+        Usuarios.document("usu1").set(datos);
     }
 
     private void readNewUsuario(){
@@ -162,22 +165,14 @@ public class PerfilFragment extends Fragment {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        System.out.println(document.getString("Nombre"));
-                        System.out.println(document.getString("Apellido"));
-                        System.out.println(document.getString("DNI"));
-                        System.out.println(document.getString("Adress"));
-                        System.out.println(document.getString("Contrasena"));
-                        System.out.println(document.getLong("c_bancaria"));
-                        System.out.println(document.getString("email"));
-                        System.out.println(document.getLong("movil"));
-                        System.out.println(document.getString("usu_tipo"));
-                        System.out.println(document.getString("fnacimiento"));
 
-
-
-
-
-
+                        etnombre.setText(document.getString("Nombre"));
+                        etapellido.setText(document.getString("Apellido"));
+                        etdireccion.setText(document.getString("Adress"));
+                        etdni.setText(document.getString("DNI"));
+                        etemail.setText(document.getString("email"));
+                        etfnacimiento.setText(document.getString("fnacimiento"));
+                        ettelefono.setText(document.getString("movil"));
 
                     } else {
                         Log.d(TAG, "No such document");
