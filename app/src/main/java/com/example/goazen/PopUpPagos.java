@@ -79,8 +79,10 @@ public class PopUpPagos extends Activity {
 
         getWindow().setAttributes(params);
 
+        /*Trabajamos con las opciones de popUp para que no se puuedan seleccionar
+        * ambas a la vez y además te muestre los datos necesarios para poder
+        * finalizar los pagos*/
 
-        //Trabajamos con las opciones de popUp
         cb_pago_transferencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

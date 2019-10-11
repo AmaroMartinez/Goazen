@@ -64,5 +64,17 @@
             android:layout_width="334dp"
             android:layout_height="wrap_content"
             android:text="@string/st_btn_guardar_contrasena" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/info_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_texto_selección" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

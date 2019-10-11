@@ -116,12 +116,7 @@ public class ServiciosFragment extends Fragment {
             }
         });
 
-        serviciosViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-            }
-        });
-
+        //Accion del Boton contratar
         btncontratar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +124,13 @@ public class ServiciosFragment extends Fragment {
                 startActivity(popUp);
             }
         });
+
+        serviciosViewModel.getText().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+            }
+        });
+
         return root;
     }
 
