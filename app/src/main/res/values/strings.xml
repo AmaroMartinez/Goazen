@@ -120,6 +120,9 @@
     <string name="st_et_nueva_contrasena">Nueva Contraseña</string>
     <string name="st_et_antigua_contrasena">Antigua Contraseña</string>
     <string name="st_btn_guardar_contrasena">Guardar</string>
+    <string name="st_tv_ok">Contraseña cambiada correctamente</string>
+    <string name="st_tv_fail">No se ha podido cambiar la contraseña</string>
+
 
     //String Usuarios Tipo
     <string name="st_usuario_tipo_admin">Admin</string>

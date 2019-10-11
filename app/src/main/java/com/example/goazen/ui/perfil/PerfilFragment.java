@@ -2,7 +2,6 @@ package com.example.goazen.ui.perfil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,19 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.goazen.DatosCliente;
 import com.example.goazen.PopUpCambiarContrasena;
 import com.example.goazen.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static android.content.ContentValues.TAG;
 
 public class PerfilFragment extends Fragment {
 
@@ -64,7 +54,7 @@ public class PerfilFragment extends Fragment {
         btnguardar = root.findViewById(R.id.btn_guardar);
 
         //Recoger los datos de la base de datos
-        readNewUsuario();
+        readUsuario();
 
 
         btneditar.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +76,7 @@ public class PerfilFragment extends Fragment {
 
             } else if (btneditar.getText().equals("Cancelar")){
 
-                readNewUsuario();
+                readUsuario();
 
                 etnombre.setEnabled(false);
                 etapellido.setEnabled(false);
@@ -120,7 +110,7 @@ public class PerfilFragment extends Fragment {
 
                 btneditar.setText(R.string.st_perfil_editar);
 
-                writeNewUsuario();
+                modificarUsuario();
             }
         });
 
@@ -139,49 +129,30 @@ public class PerfilFragment extends Fragment {
         return root;
     }
 
-    private void writeNewUsuario(){
+    private void modificarUsuario(){
 
-        CollectionReference Usuarios = db.collection("Usuarios");
+        DatosCliente.setNombre(etnombre.getText().toString());
+        DatosCliente.setApellido(etapellido.getText().toString());
+        DatosCliente.setAdress(etdireccion.getText().toString());
+        DatosCliente.setDNI(etdni.getText().toString());
+        DatosCliente.setEmail(etemail.getText().toString());
+        DatosCliente.setFnacimiento(etfnacimiento.getText().toString());
+        DatosCliente.setMovil(ettelefono.getText().toString());
 
-        Map<String, Object> datos = new HashMap<>();
-        datos.put("Nombre", etnombre.getText().toString());
-        datos.put("Apellido", etapellido.getText().toString());
-        datos.put("DNI", etdni.getText().toString());
-        datos.put("Adress", etdireccion.getText().toString());
-        datos.put("fnacimiento", etfnacimiento.getText().toString());
-        datos.put("movil", ettelefono.getText().toString());
-        datos.put("email", etemail.getText().toString());
-
-        //data1.put("regions", Arrays.asList("west_coast", "norcal"));
-        Usuarios.document("usu1").set(datos);
+        DatosCliente.writeUsuario();
     }
 
-    private void readNewUsuario(){
-        DocumentReference docRef = db.collection("Usuarios").document("usu1");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+    private void readUsuario(){
 
-                        etnombre.setText(document.getString("Nombre"));
-                        etapellido.setText(document.getString("Apellido"));
-                        etdireccion.setText(document.getString("Adress"));
-                        etdni.setText(document.getString("DNI"));
-                        etemail.setText(document.getString("email"));
-                        etfnacimiento.setText(document.getString("fnacimiento"));
-                        ettelefono.setText(document.getString("movil"));
+        etnombre.setText(DatosCliente.getNombre());
+        etapellido.setText(DatosCliente.getApellido());
+        etdireccion.setText(DatosCliente.getAdress());
+        etdni.setText(DatosCliente.getDNI());
+        etemail.setText(DatosCliente.getEmail());
+        etfnacimiento.setText(DatosCliente.getFnacimiento());
+        ettelefono.setText(DatosCliente.getMovil());
 
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
+
     }
 
 
