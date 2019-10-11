@@ -40,9 +40,24 @@
 
     //Strings para Recibos
     <string name="st_recibo_descarga">Descargar</string>
-    <string name="st_recibo_cod">cod_recibo</string>
-    <string name="st_recibo_Precio">Precio</string>
-    <string name="st_recibo_resumen">Resumen</string>
+    //datos de prueba,estos se borran al conectar la base de datos
+    //1
+    <string name="st_recibo_cod">C125879</string>
+    <string name="st_recibo_Precio">10€</string>
+    <string name="st_recibo_resumen">Plancha</string>
+    //2
+    <string name="st_recibo_cod2">C125792</string>
+    <string name="st_recibo_Precio2">6€</string>
+    <string name="st_recibo_resumen2">Paseo de mascotas</string>
+    //3
+    <string name="st_recibo_cod3">C982456</string>
+    <string name="st_recibo_Precio3">8€</string>
+    <string name="st_recibo_resumen3">Limpieza de cristales</string>
+    //4
+    <string name="st_recibo_cod4">C482367</string>
+    <string name="st_recibo_Precio4">11€</string>
+    <string name="st_recibo_resumen4">Cocinar</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

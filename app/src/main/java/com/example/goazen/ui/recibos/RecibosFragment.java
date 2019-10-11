@@ -13,12 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
@@ -45,10 +43,6 @@ public class RecibosFragment extends Fragment {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
 
-
-
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         recibosViewModel =
@@ -69,30 +63,14 @@ public class RecibosFragment extends Fragment {
 
                  if (Build.VERSION.SDK_INT> Build.VERSION_CODES.M){
 
-                     //if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
-
-                         //String [] permissions ={Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                         //requestPermissions(permissions, STORAGE_CODE);
-                     //}
-                     //else{
                          savePdf();
-
-                     //}
                  }
                  else{
                      savePdf();
-
                  }
-
-
 
              }
          });
-
-
-
-
-
 
         return root;
     }
@@ -109,23 +87,20 @@ public class RecibosFragment extends Fragment {
             String mresumen= resumen.getText().toString();
             String mprecio= precio.getText().toString();
 
-            mDoc.addAuthor("aaa");
+            mDoc.addAuthor("Goazen");
 
             mDoc.add(new Paragraph(mcod));
             mDoc.add(new Paragraph(mresumen));
             mDoc.add(new Paragraph(mprecio));
             mDoc.close();
             Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
-
         }
         catch (Exception e){
             System.out.println(e);
             Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
-
         }
 
     }
-
 
 
     private void checkReadPermission(){
@@ -146,10 +121,9 @@ public class RecibosFragment extends Fragment {
             Log.i("Mensaje", "No se tiene permiso suficiente.");
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 225);
         } else {
-            Log.i("Mensaje", "Tienes permiso .");
+            Log.i("Mensaje", "Tienes permiso.");
         }
     }
-
 
 
 
