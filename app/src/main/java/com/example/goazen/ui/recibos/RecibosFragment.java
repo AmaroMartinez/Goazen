@@ -32,8 +32,12 @@ public class RecibosFragment extends Fragment {
 
     private RecibosViewModel recibosViewModel;
     private static final int STORAGE_CODE = 1000;
-    private Button btnDescargarRecibo;
-    private TextView codRecibo, resumenRecibo, precioRecibo;
+    private Button btnDescargarPrimerRecibo, btnDescargarSegundoRecibo,btnDescargarTercerRecibo, btnDescargarCuartoRecibo;
+    private String numeroDescarga;
+    private TextView codReciboNumero1, resumenReciboNumero1, precioReciboNumero1;
+    private TextView codReciboNumero2, resumenReciboNumero2, precioReciboNumero2;
+    private TextView codReciboNumero3, resumenReciboNumero3, precioReciboNumero3;
+    private TextView codReciboNumero4, resumenReciboNumero4, precioReciboNumero4;
 
 
 
@@ -53,18 +57,35 @@ public class RecibosFragment extends Fragment {
         checkReadPermission();
         checkWritePermission();
 
-        btnDescargarRecibo= root.findViewById(R.id.buttonDescarga);
-        codRecibo=root.findViewById(R.id.textViewCod_recibo1);
-        resumenRecibo=root.findViewById(R.id.textViewResumen);
-        precioRecibo=root.findViewById(R.id.textViewPrecio);
+        btnDescargarPrimerRecibo= root.findViewById(R.id.buttonDescargaRecibo1);
+        btnDescargarSegundoRecibo= root.findViewById(R.id.buttonDescargaRecibo2);
+        btnDescargarTercerRecibo= root.findViewById(R.id.buttonDescargaRecibo3);
+        btnDescargarCuartoRecibo= root.findViewById(R.id.buttonDescargaRecibo4);
 
-        btnDescargarRecibo.setOnClickListener(new View.OnClickListener() {
+        codReciboNumero1=root.findViewById(R.id.textViewCod_recibo1);
+        resumenReciboNumero1=root.findViewById(R.id.textViewResumenRecibo1);
+        precioReciboNumero1=root.findViewById(R.id.textViewPrecioRecibo1);
+
+        codReciboNumero2=root.findViewById(R.id.textViewCod_recibo2);
+        resumenReciboNumero2=root.findViewById(R.id.textViewResumenRecibo2);
+        precioReciboNumero2=root.findViewById(R.id.textViewPrecioRecibo2);
+
+        codReciboNumero3=root.findViewById(R.id.textViewCod_recibo3);
+        resumenReciboNumero3=root.findViewById(R.id.textViewResumenRecibo3);
+        precioReciboNumero3=root.findViewById(R.id.textViewPrecioRecibo3);
+
+        codReciboNumero4=root.findViewById(R.id.textViewCod_recibo4);
+        resumenReciboNumero4=root.findViewById(R.id.textViewResumenRecibo4);
+        precioReciboNumero4=root.findViewById(R.id.textViewPrecioRecibo4);
+
+        btnDescargarPrimerRecibo.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
 
                  if (Build.VERSION.SDK_INT> Build.VERSION_CODES.M){
+                     numeroDescarga= "DescargaUno";
+                     savePdf();
 
-                         savePdf();
                  }
                  else{
                      savePdf();
@@ -72,6 +93,54 @@ public class RecibosFragment extends Fragment {
 
              }
          });
+
+        btnDescargarSegundoRecibo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (Build.VERSION.SDK_INT> Build.VERSION_CODES.M){
+                    numeroDescarga= "DescargaDos";
+                    savePdf();
+
+                }
+                else{
+                    savePdf();
+                }
+
+            }
+        });
+
+        btnDescargarTercerRecibo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (Build.VERSION.SDK_INT> Build.VERSION_CODES.M){
+                    numeroDescarga= "DescargaTres";
+                    savePdf();
+
+                }
+                else{
+                    savePdf();
+                }
+
+            }
+        });
+
+        btnDescargarCuartoRecibo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (Build.VERSION.SDK_INT> Build.VERSION_CODES.M){
+                    numeroDescarga= "DescargaCuatro";
+                    savePdf();
+
+                }
+                else{
+                    savePdf();
+                }
+
+            }
+        });
 
         return root;
     }
@@ -81,28 +150,103 @@ public class RecibosFragment extends Fragment {
         String mFileName =new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(System.currentTimeMillis());
         String mFilePath= Environment.getExternalStorageDirectory()+"/" + mFileName+ ".pdf";
 
-        try{
-            PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
-            mDoc.open();
-            String mcod= codRecibo.getText().toString();
-            String mresumen= resumenRecibo.getText().toString();
-            String mprecio= precioRecibo.getText().toString();
+        if (numeroDescarga.equals("DescargaUno")){
 
-            mDoc.addAuthor("Goazen");
+            try{
+                PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
+                mDoc.open();
+                String mcod= codReciboNumero1.getText().toString();
+                String mresumen= resumenReciboNumero1.getText().toString();
+                String mprecio= precioReciboNumero1.getText().toString();
 
-            mDoc.add(new Paragraph(mcod));
-            mDoc.add(new Paragraph(mresumen));
-            mDoc.add(new Paragraph(mprecio));
-            mDoc.close();
-            Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+                mDoc.addAuthor("Goazen");
+
+                mDoc.add(new Paragraph(mcod));
+                mDoc.add(new Paragraph(mresumen));
+                mDoc.add(new Paragraph(mprecio));
+                mDoc.close();
+                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+            }
+            catch (Exception e){
+                System.out.println(e);
+                Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
         }
-        catch (Exception e){
-            System.out.println(e);
-            Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+
+        if (numeroDescarga.equals("DescargaDos")){
+
+            try{
+                PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
+                mDoc.open();
+                String mcod= codReciboNumero2.getText().toString();
+                String mresumen= resumenReciboNumero2.getText().toString();
+                String mprecio= precioReciboNumero2.getText().toString();
+
+                mDoc.addAuthor("Goazen");
+
+                mDoc.add(new Paragraph(mcod));
+                mDoc.add(new Paragraph(mresumen));
+                mDoc.add(new Paragraph(mprecio));
+                mDoc.close();
+                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+            }
+            catch (Exception e){
+                System.out.println(e);
+                Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+        if (numeroDescarga.equals("DescargaTres")){
+
+            try{
+                PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
+                mDoc.open();
+                String mcod= codReciboNumero3.getText().toString();
+                String mresumen= resumenReciboNumero3.getText().toString();
+                String mprecio= precioReciboNumero3.getText().toString();
+
+                mDoc.addAuthor("Goazen");
+
+                mDoc.add(new Paragraph(mcod));
+                mDoc.add(new Paragraph(mresumen));
+                mDoc.add(new Paragraph(mprecio));
+                mDoc.close();
+                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+            }
+            catch (Exception e){
+                System.out.println(e);
+                Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+        if (numeroDescarga.equals("DescargaCuatro")){
+
+            try{
+                PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
+                mDoc.open();
+                String mcod= codReciboNumero4.getText().toString();
+                String mresumen= resumenReciboNumero4.getText().toString();
+                String mprecio= precioReciboNumero4.getText().toString();
+
+                mDoc.addAuthor("Goazen");
+
+                mDoc.add(new Paragraph(mcod));
+                mDoc.add(new Paragraph(mresumen));
+                mDoc.add(new Paragraph(mprecio));
+                mDoc.close();
+                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+            }
+            catch (Exception e){
+                System.out.println(e);
+                Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
         }
 
     }
-
 
     private void checkReadPermission(){
         int permissionCheck = ContextCompat.checkSelfPermission(

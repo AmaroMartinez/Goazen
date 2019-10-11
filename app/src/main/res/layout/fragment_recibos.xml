@@ -29,7 +29,7 @@
             app:layout_constraintVertical_bias="0.21" />
 
         <TextView
-            android:id="@+id/textViewResumen"
+            android:id="@+id/textViewResumenRecibo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_resumen1"
@@ -41,7 +41,7 @@
             app:layout_constraintVertical_bias="0.684" />
 
         <TextView
-            android:id="@+id/textViewPrecio"
+            android:id="@+id/textViewPrecioRecibo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_Precio1"
@@ -53,7 +53,7 @@
             app:layout_constraintVertical_bias="0.202" />
 
         <Button
-            android:id="@+id/buttonDescarga"
+            android:id="@+id/buttonDescargaRecibo1"
             android:layout_width="111dp"
             android:layout_height="40dp"
             android:text="@string/st_recibo_descarga"
@@ -88,7 +88,7 @@
             app:layout_constraintVertical_bias="0.21" />
 
         <TextView
-            android:id="@+id/textViewResumen2"
+            android:id="@+id/textViewResumenRecibo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_resumen2"
@@ -100,7 +100,7 @@
             app:layout_constraintVertical_bias="0.678" />
 
         <TextView
-            android:id="@+id/textViewPrecio2"
+            android:id="@+id/textViewPrecioRecibo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_Precio2"
@@ -112,7 +112,7 @@
             app:layout_constraintVertical_bias="0.202" />
 
         <Button
-            android:id="@+id/buttonDescarga2"
+            android:id="@+id/buttonDescargaRecibo2"
             android:layout_width="111dp"
             android:layout_height="40dp"
             android:text="@string/st_recibo_descarga"
@@ -147,7 +147,7 @@
             app:layout_constraintVertical_bias="0.21" />
 
         <TextView
-            android:id="@+id/textViewResumen3"
+            android:id="@+id/textViewResumenRecibo3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_resumen3"
@@ -159,7 +159,7 @@
             app:layout_constraintVertical_bias="0.678" />
 
         <TextView
-            android:id="@+id/textViewPrecio3"
+            android:id="@+id/textViewPrecioRecibo3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_Precio3"
@@ -171,7 +171,7 @@
             app:layout_constraintVertical_bias="0.202" />
 
         <Button
-            android:id="@+id/buttonDescarga3"
+            android:id="@+id/buttonDescargaRecibo3"
             android:layout_width="111dp"
             android:layout_height="40dp"
             android:text="@string/st_recibo_descarga"
@@ -206,7 +206,7 @@
             app:layout_constraintVertical_bias="0.21" />
 
         <TextView
-            android:id="@+id/textViewResumen4"
+            android:id="@+id/textViewResumenRecibo4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_resumen4"
@@ -218,7 +218,7 @@
             app:layout_constraintVertical_bias="0.684" />
 
         <TextView
-            android:id="@+id/textViewPrecio4"
+            android:id="@+id/textViewPrecioRecibo4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/st_recibo_Precio4"
@@ -230,7 +230,7 @@
             app:layout_constraintVertical_bias="0.202" />
 
         <Button
-            android:id="@+id/buttonDescarga4"
+            android:id="@+id/buttonDescargaRecibo4"
             android:layout_width="111dp"
             android:layout_height="40dp"
             android:text="@string/st_recibo_descarga"
