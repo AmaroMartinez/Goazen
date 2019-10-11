@@ -45,9 +45,11 @@ public class Calendario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Inflamos el Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendario);
 
+        //Inicialización de objetos
         tv_calendario = findViewById(R.id.tv_calendario);
         rg_calendario = findViewById(R.id.rg_calendario);
         rb_primera_hora = findViewById(R.id.rb_Hora_10_00);
@@ -57,6 +59,7 @@ public class Calendario extends AppCompatActivity {
         btn_asignar = findViewById(R.id.btn_asignar);
         btn_Atras = findViewById(R.id.btn_atras);
 
+        //Configuramos la cabecera
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setTitle(null);
@@ -87,6 +90,7 @@ public class Calendario extends AppCompatActivity {
             }
         });
 
+        //Configuramos la acción de los radioButton para que se hagan visibles
         rg_calendario.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -116,6 +120,8 @@ public class Calendario extends AppCompatActivity {
             }
         });
 
+        /*Configuramos el boton asignar para que cree los eventos
+        * y los añada a la lista de eventos del calendario*/
         btn_asignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,6 +171,7 @@ public class Calendario extends AppCompatActivity {
             }
         });
 
+        //Configuramos un botón de atras para volver a la pantalla de servicios.
         btn_Atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
