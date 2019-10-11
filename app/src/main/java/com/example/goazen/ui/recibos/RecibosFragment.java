@@ -32,8 +32,9 @@ public class RecibosFragment extends Fragment {
 
     private RecibosViewModel recibosViewModel;
     private static final int STORAGE_CODE = 1000;
-    private Button btnDescargar;
-    private TextView cod, resumen, precio;
+    private Button btnDescargarRecibo;
+    private TextView codRecibo, resumenRecibo, precioRecibo;
+
 
 
     // Permisos de almacenamiento
@@ -52,12 +53,12 @@ public class RecibosFragment extends Fragment {
         checkReadPermission();
         checkWritePermission();
 
-        btnDescargar= root.findViewById(R.id.buttonDescarga);
-        cod=root.findViewById(R.id.textViewCod_recibo);
-        resumen=root.findViewById(R.id.textViewResumen);
-        precio=root.findViewById(R.id.textViewPrecio);
+        btnDescargarRecibo= root.findViewById(R.id.buttonDescarga);
+        codRecibo=root.findViewById(R.id.textViewCod_recibo1);
+        resumenRecibo=root.findViewById(R.id.textViewResumen);
+        precioRecibo=root.findViewById(R.id.textViewPrecio);
 
-        btnDescargar.setOnClickListener(new View.OnClickListener() {
+        btnDescargarRecibo.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
 
@@ -83,9 +84,9 @@ public class RecibosFragment extends Fragment {
         try{
             PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
             mDoc.open();
-            String mcod= cod.getText().toString();
-            String mresumen= resumen.getText().toString();
-            String mprecio= precio.getText().toString();
+            String mcod= codRecibo.getText().toString();
+            String mresumen= resumenRecibo.getText().toString();
+            String mprecio= precioRecibo.getText().toString();
 
             mDoc.addAuthor("Goazen");
 

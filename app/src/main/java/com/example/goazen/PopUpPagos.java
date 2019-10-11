@@ -11,6 +11,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class PopUpPagos extends Activity {
 
     private CheckBox cb_pago_tarjeta;
@@ -25,6 +32,9 @@ public class PopUpPagos extends Activity {
     private EditText et_pago_tarjeta_cod_seguridad;
 
     private Button btn_pagar_contrato;
+    private FirebaseFirestore db;
+
+
 
 
     @Override
@@ -32,6 +42,7 @@ public class PopUpPagos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up_pagos);
 
+        db = FirebaseFirestore.getInstance();
 
         //Inicialización de Variables
         cb_pago_tarjeta = findViewById(R.id.cb_pago_tarjeta);
@@ -71,6 +82,7 @@ public class PopUpPagos extends Activity {
         /*Trabajamos con las opciones de popUp para que no se puuedan seleccionar
         * ambas a la vez y además te muestre los datos necesarios para poder
         * finalizar los pagos*/
+
         cb_pago_transferencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,11 +123,25 @@ public class PopUpPagos extends Activity {
         btn_pagar_contrato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                insertarEvento();
                 finish();
             }
         });
 
     }
+
+    private void insertarEvento(){
+
+        CollectionReference Evento = db.collection("Evento");
+
+        Map<String, Object> datos = new HashMap<>();
+        datos.put("Fecha", "10 enero cvfgbv");
+        datos.put("Nom_servicio", "Plancha");
+        Evento.document("E").set(datos);
+
+    }
+
+
 
 
 }
