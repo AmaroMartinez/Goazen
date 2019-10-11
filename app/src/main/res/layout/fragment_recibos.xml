@@ -17,10 +17,10 @@
 
 
         <TextView
-            android:id="@+id/textViewCod_recibo"
+            android:id="@+id/textViewCod_recibo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/st_recibo_cod"
+            android:text="@string/st_recibo_cod1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -32,7 +32,7 @@
             android:id="@+id/textViewResumen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/st_recibo_resumen"
+            android:text="@string/st_recibo_resumen1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.131"
@@ -44,7 +44,7 @@
             android:id="@+id/textViewPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/st_recibo_Precio"
+            android:text="@string/st_recibo_Precio1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.902"
