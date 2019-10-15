@@ -10,18 +10,16 @@
     <permission
         android:name="a.b.c.d.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <!-- Permimsos necesarios para el funcinamiento del mapa -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Permimsos necesarios para el funcinamiento del mapa -->
     <uses-permission android:name="com.example.permission.MAPS_RECEIVE" />
     <uses-permission android:name="a.b.c.d.permission.MAPS_RECEIVE" />
-
 
     <application
         android:name=".DatosCliente"
@@ -33,34 +31,27 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".Cliente.PopUpPagos"
-            android:theme="@style/AppTheme.PopUpPagos">
-        </activity>
+            android:name=".Administrador.MainActivityAdmin"
+            android:label="@string/title_activity_main_admin"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".LoginActivity">
+            android:name=".Cliente.PopUpPagos"
+            android:theme="@style/AppTheme.PopUpPagos"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Cliente.ui.servicios.Calendario">
-        </activity>
+        <activity android:name=".Cliente.ui.servicios.Calendario"></activity>
         <activity
             android:name=".Cliente.MainActivity"
             android:label="@string/st_app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".perfil.PopUpCambiarContrasena"
-            android:theme="@style/AppTheme.PopUpPagos">
-        </activity>
-
-        <!-- Meta-data para el funcionamiento del mapa -->
+            android:theme="@style/AppTheme.PopUpPagos"></activity> <!-- Meta-data para el funcionamiento del mapa -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBBEi4g21muf9ndZL8PN2VFc9a95WJRw_o" />
