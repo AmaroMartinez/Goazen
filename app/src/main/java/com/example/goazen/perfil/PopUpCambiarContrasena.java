@@ -53,16 +53,16 @@ public class PopUpCambiarContrasena extends Activity {
         btnguardarcontrasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (antiguacontrasena.equals(antiguacontrasenacomprobar)) {
-                    if (antiguacontrasena.getText().toString().equals(DatosCliente.getContrasena())) {
+                if (antiguacontrasena.getText().toString().equals(DatosCliente.getContrasena())) {
+                    if (antiguacontrasena.getText().toString().equals(antiguacontrasenacomprobar.getText().toString())) {
                         DatosCliente.setContrasena(nuevacontrasena.getText().toString());
                         DatosCliente.writeUsuario();
                         infocontrasena.setText(R.string.st_tv_ok);
                     } else {
-                        infocontrasena.setText(R.string.st_tv_fail_ayn);
+                        infocontrasena.setText(R.string.st_tv_fail_aya);
                     }
                 } else {
-                    infocontrasena.setText(R.string.st_tv_fail_aya);
+                    infocontrasena.setText(R.string.st_tv_fail_ayn);
                 }
             }
         });

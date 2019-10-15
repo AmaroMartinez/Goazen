@@ -1,21 +1,12 @@
 package com.example.goazen;
 
 import android.app.Application;
-import android.util.Log;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.content.ContentValues.TAG;
 
 public class DatosCliente extends Application {
     private static String Nombre;
@@ -34,7 +25,7 @@ public class DatosCliente extends Application {
     @Override
     public void onCreate(){
         super.onCreate();
-        db = FirebaseFirestore.getInstance();
+        /*db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("Usuarios").document("usu4");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -63,7 +54,7 @@ public class DatosCliente extends Application {
                     Log.d(TAG, "get failed with ", task.getException());
                 }
             }
-        });
+        });*/
     }
 
     public static void writeUsuario(){

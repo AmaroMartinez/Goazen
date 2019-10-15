@@ -61,11 +61,29 @@ public class LoginActivity extends AppCompatActivity {
 
                                 DNI = document.getString("DNI");
                                 Contrasena = document.getString("Contrasena");
+                                DatosCliente.setNombre(document.getString("Nombre"));
+                                DatosCliente.setApellido(document.getString("Apellido"));
+                                DatosCliente.setDNI(document.getString("DNI"));
+                                DatosCliente.setAdress(document.getString("Adress"));
+                                DatosCliente.setEmail(document.getString("email"));
+                                DatosCliente.setFnacimiento(document.getString("fnacimiento"));
+                                DatosCliente.setMovil(document.getString("movil"));
+                                DatosCliente.setContrasena(document.getString("Contrasena"));
+                                DatosCliente.setC_bancaria(document.getString("c_bancaria"));
+                                DatosCliente.setUsu_tipo(document.getString("usu_tipo"));
+                                DatosCliente.setID(editTextLoginUsuario.getText().toString());
 
                                 if(editTextLoginUsuario.getText().toString().equals(DNI)&&editTextLoginContraseña.getText().toString().equals(Contrasena)){
-                                    System.out.println("adios");
-                                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-                                    startActivity(myIntent);
+                                    if (DatosCliente.getUsu_tipo().equals("Cliente")) {
+                                        Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                        startActivity(myIntent);
+                                    } else if (DatosCliente.getUsu_tipo().equals("Admin")) {
+                                        Intent myIntent = new Intent(LoginActivity.this, MainActivityAdmin.class);
+                                        startActivity(myIntent);
+                                    } else {
+                                        //Intent myIntent = new Intent(LoginActivity.this, MainActivityTrabajador.class);
+                                        //startActivity(myIntent);
+                                    }
                                 }
 
                             } else {
