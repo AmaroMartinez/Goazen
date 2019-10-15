@@ -14,14 +14,16 @@ import com.example.goazen.Cliente.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Desplegable
     Spinner desplegableusuarios;
 
+    //Metodo onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        desplegableusuarios = (Spinner) findViewById(R.id.desplegable_usuarios);
+        desplegableusuarios = findViewById(R.id.desplegable_usuarios);
 
         String[] usuarios = {"Selecciona un usuario","Cliente","Trabajador","Administrador"};
         desplegableusuarios.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, usuarios));
@@ -47,4 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+    // Asignar la funcion de minimizar la aplicacion con el boton atras del telefono
+    @Override public void onBackPressed() { moveTaskToBack(true); }
 }

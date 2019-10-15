@@ -1,4 +1,4 @@
-package com.example.goazen.Administrador.ui.tools;
+package com.example.goazen.Administrador.ui.servicios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 
-public class ToolsFragment extends Fragment {
+public class AdminServiciosFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private AdminServiciosViewModel adminServiciosViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools_admin);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        adminServiciosViewModel =
+                ViewModelProviders.of(this).get(AdminServiciosViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_admin_servicios, container, false);
+        final TextView textView = root.findViewById(R.id.text_send_admin);
+        adminServiciosViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
