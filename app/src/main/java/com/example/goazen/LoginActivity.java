@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 db = FirebaseFirestore.getInstance();
                 DocumentReference docRef = db.collection("Usuarios").document(editTextLoginUsuario.getText().toString());
                 docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -63,6 +62,12 @@ public class LoginActivity extends AppCompatActivity {
                                 DNI = document.getString("DNI");
                                 Contrasena = document.getString("Contrasena");
 
+                                if(editTextLoginUsuario.getText().toString().equals(DNI)&&editTextLoginContraseña.getText().toString().equals(Contrasena)){
+                                    System.out.println("adios");
+                                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(myIntent);
+                                }
+
                             } else {
                                 Log.d(TAG, "No such document");
                             }
@@ -72,15 +77,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
-
-
-
-
-                if(editTextLoginUsuario.getText().toString().equals(DNI)&&editTextLoginContraseña.getText().toString().equals(Contrasena)){
-
-                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(myIntent);
-                }
 
             }
         });
