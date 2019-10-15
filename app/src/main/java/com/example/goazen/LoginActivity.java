@@ -9,6 +9,8 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.goazen.Cliente.MainActivity;
+
 public class LoginActivity extends AppCompatActivity {
 
     Spinner desplegableusuarios;

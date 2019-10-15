@@ -33,7 +33,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".PopUpPagos"
+            android:name=".Cliente.PopUpPagos"
             android:theme="@style/AppTheme.PopUpPagos">
         </activity>
         <activity
@@ -47,16 +47,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.servicios.Calendario">
+            android:name=".Cliente.ui.servicios.Calendario">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Cliente.MainActivity"
             android:label="@string/st_app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity
-            android:name=".PopUpCambiarContrasena"
+            android:name=".perfil.PopUpCambiarContrasena"
             android:theme="@style/AppTheme.PopUpPagos">
         </activity>
 

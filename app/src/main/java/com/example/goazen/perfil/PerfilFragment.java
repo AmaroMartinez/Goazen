@@ -1,4 +1,4 @@
-package com.example.goazen.ui.perfil;
+package com.example.goazen.perfil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.DatosCliente;
-import com.example.goazen.PopUpCambiarContrasena;
 import com.example.goazen.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
