@@ -1,4 +1,4 @@
-package com.example.goazen;
+package com.example.goazen.Cliente;
 
 public class Servicio {
 

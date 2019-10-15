@@ -1,16 +1,16 @@
-package com.example.goazen.ui.servicios;
+package com.example.goazen.Cliente.ui.ubicacion;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ServiciosViewModel extends ViewModel {
+public class UbicacionViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ServiciosViewModel() {
+    public UbicacionViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is servicios fragment");
+        mText.setValue("This is gallery fragment");
     }
 
     public LiveData<String> getText() {

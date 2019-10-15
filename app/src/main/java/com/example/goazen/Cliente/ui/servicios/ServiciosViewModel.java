@@ -1,16 +1,16 @@
-package com.example.goazen.ui.contacto;
+package com.example.goazen.Cliente.ui.servicios;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ContactoViewModel extends ViewModel {
+public class ServiciosViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ContactoViewModel() {
+    public ServiciosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("This is servicios fragment");
     }
 
     public LiveData<String> getText() {

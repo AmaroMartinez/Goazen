@@ -1,4 +1,4 @@
-package com.example.goazen.ui.recibos;
+package com.example.goazen.Cliente.ui.recibos;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

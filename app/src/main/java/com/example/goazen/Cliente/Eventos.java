@@ -1,4 +1,4 @@
-package com.example.goazen;
+package com.example.goazen.Cliente;
 
 import java.sql.Timestamp;
 

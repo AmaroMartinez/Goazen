@@ -1,4 +1,4 @@
-package com.example.goazen;
+package com.example.goazen.perfil;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.goazen.DatosCliente;
+import com.example.goazen.R;
 
 public class PopUpCambiarContrasena extends Activity {
 
