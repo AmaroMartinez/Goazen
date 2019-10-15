@@ -59,6 +59,20 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
+        <EditText
+            android:id="@+id/et_antigua_contrasena_comprobar"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/st_et_antigua_contrasena"
+            tools:ignore="LabelFor" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
         <Button
             android:id="@+id/btn_guardar_contrasena"
             android:layout_width="334dp"
