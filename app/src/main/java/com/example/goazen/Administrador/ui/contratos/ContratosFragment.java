@@ -1,4 +1,4 @@
-package com.example.goazen.Administrador.ui.gallery;
+package com.example.goazen.Administrador.ui.contratos;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 
-public class GalleryFragment extends Fragment {
+public class ContratosFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private ContratosViewModel contratosViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery_admin);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        contratosViewModel =
+                ViewModelProviders.of(this).get(ContratosViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_contratos, container, false);
+        final TextView textView = root.findViewById(R.id.text_home_admin);
+        contratosViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
