@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,8 @@ public class LoginActivity extends AppCompatActivity {
 
     // Desplegable
     Spinner desplegableusuarios;
+    private Button btnLoginEntrar;
+    private EditText editTextLoginUsuario, editTextLoginContraseña;
 
     //Metodo onCreate
     @Override
@@ -24,6 +28,27 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         desplegableusuarios = findViewById(R.id.desplegable_usuarios);
+
+        btnLoginEntrar= findViewById(R.id.buttonLoginEntrar);
+        editTextLoginUsuario= findViewById(R.id.editTextLoginUsuario);
+        editTextLoginContraseña= findViewById(R.id.editTextLoginContraseña);
+
+        btnLoginEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                if(editTextLoginUsuario.getText().toString().equals("cliente")&&editTextLoginContraseña.getText().toString().equals("cliente")){
+
+                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(myIntent);
+                }
+
+            }
+        });
+
+
 
         String[] usuarios = {"Selecciona un usuario","Cliente","Trabajador","Administrador"};
         desplegableusuarios.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, usuarios));
