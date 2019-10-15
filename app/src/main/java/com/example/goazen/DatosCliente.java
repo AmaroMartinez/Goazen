@@ -35,7 +35,7 @@ public class DatosCliente extends Application {
     public void onCreate(){
         super.onCreate();
         db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("Usuarios").document("usu1");
+        DocumentReference docRef = db.collection("Usuarios").document("usu4");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -54,7 +54,7 @@ public class DatosCliente extends Application {
                         Contrasena = document.getString("Contrasena");
                         c_bancaria = document.getString("c_bancaria");
                         usu_tipo = document.getString("usu_tipo");
-                        ID = "usu1";
+                        ID = DNI;
 
                     } else {
                         Log.d(TAG, "No such document");
@@ -83,7 +83,7 @@ public class DatosCliente extends Application {
         datos.put("c_bancaria", c_bancaria);
 
         //data1.put("regions", Arrays.asList("west_coast", "norcal"));
-        Usuarios.document("usu1").set(datos);
+        Usuarios.document(DNI).set(datos);
     }
 
     @Override

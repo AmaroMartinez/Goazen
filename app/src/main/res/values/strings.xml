@@ -120,7 +120,8 @@
     <string name="st_et_antigua_contrasena">Antigua Contraseña</string>
     <string name="st_btn_guardar_contrasena">Guardar</string>
     <string name="st_tv_ok">Contraseña cambiada correctamente</string>
-    <string name="st_tv_fail">No se ha podido cambiar la contraseña</string>
+    <string name="st_tv_fail_ayn">No se ha podido cambiar la contraseña, La contraseña antigua y la nueva no coinciden</string>
+    <string name="st_tv_fail_aya">No se ha podido cambiar la contraseña, Las contraseñas antiguas no coinciden</string>
 
 
     //String Usuarios Tipo

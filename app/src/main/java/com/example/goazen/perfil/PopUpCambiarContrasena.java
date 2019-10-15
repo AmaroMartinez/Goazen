@@ -17,6 +17,7 @@ public class PopUpCambiarContrasena extends Activity {
 
     private Button btnguardarcontrasena;
     private EditText antiguacontrasena;
+    private EditText antiguacontrasenacomprobar;
     private EditText nuevacontrasena;
     private TextView infocontrasena;
 
@@ -27,6 +28,7 @@ public class PopUpCambiarContrasena extends Activity {
 
         btnguardarcontrasena = findViewById(R.id.btn_guardar_contrasena);
         antiguacontrasena = findViewById(R.id.et_antigua_contrasena);
+        antiguacontrasenacomprobar = findViewById(R.id.et_antigua_contrasena_comprobar);
         nuevacontrasena = findViewById(R.id.et_nueva_contrasena);
         infocontrasena = findViewById(R.id.info_contrasena);
 
@@ -51,12 +53,16 @@ public class PopUpCambiarContrasena extends Activity {
         btnguardarcontrasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (antiguacontrasena.getText().toString().equals(DatosCliente.getContrasena())) {
-                    DatosCliente.setContrasena(nuevacontrasena.getText().toString());
-                    DatosCliente.writeUsuario();
-                    infocontrasena.setText(R.string.st_tv_ok);
+                if (antiguacontrasena.equals(antiguacontrasenacomprobar)) {
+                    if (antiguacontrasena.getText().toString().equals(DatosCliente.getContrasena())) {
+                        DatosCliente.setContrasena(nuevacontrasena.getText().toString());
+                        DatosCliente.writeUsuario();
+                        infocontrasena.setText(R.string.st_tv_ok);
+                    } else {
+                        infocontrasena.setText(R.string.st_tv_fail_ayn);
+                    }
                 } else {
-                    infocontrasena.setText(R.string.st_tv_fail);
+                    infocontrasena.setText(R.string.st_tv_fail_aya);
                 }
             }
         });
