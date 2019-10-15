@@ -8,38 +8,38 @@
     <fragment
 
         android:id="@+id/nav_perfil"
-        android:name="com.example.goazen.ui.perfil.PerfilFragment"
+        android:name="com.example.goazen.perfil.PerfilFragment"
         android:label="@string/st_menu_perfil"
         tools:layout="@layout/fragment_perfil" />
 
     <fragment
 
         android:id="@+id/nav_servicio"
-        android:name="com.example.goazen.ui.servicios.ServiciosFragment"
+        android:name="com.example.goazen.Cliente.ui.servicios.ServiciosFragment"
         android:label="@string/st_menu_servicio"
         tools:layout="@layout/fragment_servicios" />
 
     <fragment
         android:id="@+id/nav_ubic"
-        android:name="com.example.goazen.ui.ubicacion.UbicacionFragment"
+        android:name="com.example.goazen.Cliente.ui.ubicacion.UbicacionFragment"
         android:label="@string/st_menu_ubicacion"
         tools:layout="@layout/fragment_ubicacion" />
 
 
     <fragment
         android:id="@+id/nav_recibos"
-        android:name="com.example.goazen.ui.recibos.RecibosFragment"
+        android:name="com.example.goazen.Cliente.ui.recibos.RecibosFragment"
         android:label="@string/st_menu_recibos"
         tools:layout="@layout/fragment_recibos" />
 
     <fragment
         android:id="@+id/nav_contacto"
-        android:name="com.example.goazen.ui.contacto.ContactoFragment"
+        android:name="com.example.goazen.Cliente.ui.contacto.ContactoFragment"
         android:label="@string/st_menu_contacto"
         tools:layout="@layout/fragment_contacto" />
     <activity
         android:id="@+id/calendario"
-        android:name="com.example.goazen.ui.servicios.Calendario"
+        android:name="com.example.goazen.Cliente.ui.servicios.Calendario"
         android:label="activity_calendario"
         tools:layout="@layout/activity_calendario" />
     <activity

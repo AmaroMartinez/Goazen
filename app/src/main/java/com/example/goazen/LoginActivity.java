@@ -9,6 +9,9 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.goazen.Administrador.MainActivityAdmin;
+import com.example.goazen.Cliente.MainActivity;
+
 public class LoginActivity extends AppCompatActivity {
 
     Spinner desplegableusuarios;
@@ -28,6 +31,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (desplegableusuarios.getSelectedItem().toString().equals("Cliente")){
                     Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(myIntent);
+
+                } else if (desplegableusuarios.getSelectedItem().toString().equals("Administrador")){
+                    Intent myIntent = new Intent(LoginActivity.this, MainActivityAdmin.class);
                     startActivity(myIntent);
 
                 };
