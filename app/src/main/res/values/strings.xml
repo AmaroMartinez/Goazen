@@ -144,6 +144,13 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="todo">TODO</string>
+
+    // String Login
+    <string name="st_login_nombre_usuario">Nombre:</string>
+    <string name="st_login_contraseña_usuario">Contraseña:</string>
+    <string name="st_login_boton_entrar">Entrar</string>
+
 
     <!--<string name="st_"></string>-->
 

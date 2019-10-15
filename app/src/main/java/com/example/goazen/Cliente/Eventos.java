@@ -6,7 +6,8 @@ public class Eventos {
 
     public Timestamp Fecha_hora;
     public String Nom_servicio;
-    ;
+
+
 
 
 
