@@ -139,6 +139,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    //String menu Admin
+    <string name="st_menu_servicios_admin">Servicios</string>
+    <string name="st_menu_trabajadores">Trabajadores</string>
+    <string name="st_menu_contratos">Contratos</string>
+
     //String menu Trabajador
     <string name="st_menu_calendario_trabajador">Calendario</string>
     <string name="st_menu_nominas">Nominas</string>
