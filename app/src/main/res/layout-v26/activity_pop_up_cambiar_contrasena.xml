@@ -87,10 +87,10 @@
             android:layout_height="30dp" />
 
         <CheckBox
-            android:id="@+id/ch_ver_contrasena"
+            android:id="@+id/ch_ver_contrasenas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/st_ch_ver_contrasena" />
+            android:text="@string/st_ch_ver_contrasenas" />
 
         <Space
             android:layout_width="match_parent"

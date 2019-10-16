@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.goazen.Administrador.MainActivityAdmin;
 import com.example.goazen.Cliente.MainActivity;
@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     Spinner desplegableusuarios;
     private Button btnLoginEntrar, btnLoginCrearCuenta;
     private EditText editTextLoginUsuario, editTextLoginContraseña;
+    private CheckBox vercontrasena;
     private static FirebaseFirestore db;
     private static String DNI;
     private static String Contrasena;
@@ -48,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLoginEntrar= findViewById(R.id.buttonLoginEntrar);
         editTextLoginUsuario= findViewById(R.id.editTextLoginUsuario);
         editTextLoginContraseña= findViewById(R.id.editTextLoginContraseña);
+        vercontrasena = findViewById(R.id.ch_ver_contrasena);
+
 
         btnLoginEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,16 +139,18 @@ public class LoginActivity extends AppCompatActivity {
 
             }
 
-            vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if(isChecked) {
-                        editTextLoginContraseña.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    } else {
-                        editTextLoginContraseña.setInputType(129);
-                    }
+
+        });
+
+        vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    editTextLoginContraseña.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                } else {
+                    editTextLoginContraseña.setInputType(129);
                 }
-            });
+            }
         });
 
     }

@@ -119,7 +119,7 @@
     <string name="st_et_nueva_contrasena">Nueva Contraseña</string>
     <string name="st_et_antigua_contrasena">Antigua Contraseña</string>
     <string name="st_btn_guardar_contrasena">Guardar</string>
-    <string name="st_ch_ver_contrasena">Ver contraseñas</string>
+    <string name="st_ch_ver_contrasenas">Ver contraseñas</string>
     <string name="st_tv_ok">Contraseña cambiada correctamente</string>
     <string name="st_tv_fail_ayn">No se ha podido cambiar la contraseña, La contraseña antigua no es correcta</string>
     <string name="st_tv_fail_aya">No se ha podido cambiar la contraseña, Las contraseñas antiguas no coinciden</string>
@@ -155,6 +155,8 @@
     <string name="st_login_contraseña_usuario">Contraseña:</string>
     <string name="st_login_boton_entrar">Entrar</string>
     <string name="st_login_boton_crear_cuenta">Crear cuenta</string>
+    <string name="st_ch_ver_contrasena">Ver contraseña</string>
+
 
     //String Crear cuenta
     <string name="st_crear_cuenta_nombre">Nombre:</string>
