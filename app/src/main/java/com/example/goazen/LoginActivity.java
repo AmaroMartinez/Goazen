@@ -2,11 +2,13 @@ package com.example.goazen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -133,6 +135,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+
+            vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if(isChecked) {
+                        editTextLoginContraseña.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    } else {
+                        editTextLoginContraseña.setInputType(129);
+                    }
+                }
+            });
         });
 
     }

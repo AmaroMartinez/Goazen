@@ -2,20 +2,19 @@ package com.example.goazen.perfil;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.goazen.DatosCliente;
 import com.example.goazen.R;
-
-import static android.text.InputType.TYPE_CLASS_TEXT;
-import static android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD;
 
 public class PopUpCambiarContrasena extends Activity {
 
@@ -73,20 +72,17 @@ public class PopUpCambiarContrasena extends Activity {
             }
         });
 
-        vercontrasena.setOnClickListener(new View.OnClickListener() {
+        vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                boolean b = false;
-                if (b = false){
-                    antiguacontrasena.setInputType(TYPE_CLASS_TEXT);
-                    antiguacontrasenacomprobar.setInputType(TYPE_CLASS_TEXT);
-                    nuevacontrasena.setInputType(TYPE_CLASS_TEXT);
-                    b = true;
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    antiguacontrasena.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    antiguacontrasenacomprobar.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    nuevacontrasena.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 } else {
-                    antiguacontrasena.setInputType(TYPE_TEXT_VARIATION_PASSWORD);
-                    antiguacontrasenacomprobar.setInputType(TYPE_TEXT_VARIATION_PASSWORD);
-                    nuevacontrasena.setInputType(TYPE_TEXT_VARIATION_PASSWORD);
-                    b = false;
+                    antiguacontrasena.setInputType(129);
+                    antiguacontrasenacomprobar.setInputType(129);
+                    nuevacontrasena.setInputType(129);
                 }
             }
         });
