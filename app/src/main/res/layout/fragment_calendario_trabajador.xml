@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:weightSum="1"
+        >
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            android:id="@+id/compactcalendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="242dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_weight="0.25"
+            app:compactCalendarBackgroundColor="@color/color_fondo_caled"
+            app:compactCalendarCurrentDayBackgroundColor="@color/color_dia_actual"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="#E57373"
+            app:compactCalendarMultiEventIndicatorColor="#000056"
+            app:compactCalendarTargetHeight="250dp"
+            app:compactCalendarTextColor="@color/color_texto_calend"
+            app:compactCalendarTextSize="12sp"
+            tools:ignore="MissingConstraints" />
+
+        //Declaramos el recyclew view que queremos que se visualice.
+
+        <TextView
+            android:id="@+id/tv_dia_calendario"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_weight="0.10"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCalendarioTrabajador"
+            android:layout_width="match_parent"
+            android:layout_height="503dp"
+            android:layout_weight="0.65"
+            android:background="@color/colorPrimary"
+            android:scrollbars="vertical" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
