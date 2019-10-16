@@ -156,7 +156,10 @@
     <string name="st_login_boton_entrar">Entrar</string>
     <string name="title_activity_main__trabajador">MainActivity_Trabajador</string>
 
-
+    //String calendario trabajador
+    <string name="st_titulo_tarea">TAREA:</string>
+    <string name="st_titulo_hora">HORA</string>
+    <string name="st_titulo_dirección">DIR.:</string>
     <!--<string name="st_"></string>-->
 
 
