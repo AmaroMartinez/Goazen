@@ -151,6 +151,21 @@
     <string name="st_login_nombre_usuario">Nombre:</string>
     <string name="st_login_contraseña_usuario">Contraseña:</string>
     <string name="st_login_boton_entrar">Entrar</string>
+    <string name="st_login_boton_crear_cuenta">Crear cuenta</string>
+
+    //String Crear cuenta
+    <string name="st_crear_cuenta_nombre">Nombre:</string>
+    <string name="st_crear_cuenta_apellido">Apellido:</string>
+    <string name="st_crear_cuenta_dni">DNI:</string>
+    <string name="st_crear_cuenta_email">email:</string>
+    <string name="st_crear_cuenta_fnacimiento">Fecha de nacimiento</string>
+    <string name="st_crear_cuenta_movil">Numero de teléfono:</string>
+    <string name="st_crear_cuenta_direccion">Dirección:</string>
+    <string name="st_crear_cuenta_contraseña">Contraseña:</string>
+    <string name="st_crear_cuenta_confirmarcontra">Confirmar contraseña</string>
+
+
+
 
 
     <!--<string name="st_"></string>-->

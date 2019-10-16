@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.goazen.Administrador.MainActivityAdmin;
 import com.example.goazen.Cliente.MainActivity;
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Desplegable
     Spinner desplegableusuarios;
-    private Button btnLoginEntrar;
+    private Button btnLoginEntrar, btnLoginCrearCuenta;
     private EditText editTextLoginUsuario, editTextLoginContraseña;
     private static FirebaseFirestore db;
     private static String DNI;
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
         desplegableusuarios = findViewById(R.id.desplegable_usuarios);
 
+        btnLoginCrearCuenta= findViewById(R.id.buttonLoginCrearCuenta);
         btnLoginEntrar= findViewById(R.id.buttonLoginEntrar);
         editTextLoginUsuario= findViewById(R.id.editTextLoginUsuario);
         editTextLoginContraseña= findViewById(R.id.editTextLoginContraseña);
@@ -96,6 +98,15 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
 
+            }
+        });
+
+        btnLoginCrearCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent myIntent = new Intent(LoginActivity.this, CrearCuentaActivity.class);
+                startActivity(myIntent);
             }
         });
 
