@@ -157,6 +157,7 @@
     <string name="st_login_boton_crear_cuenta">Crear cuenta</string>
 
     //String Crear cuenta
+    <string name="st_crear_cuenta_introduce_datos">Introduce los siguientes datos</string>
     <string name="st_crear_cuenta_nombre">Nombre:</string>
     <string name="st_crear_cuenta_apellido">Apellido:</string>
     <string name="st_crear_cuenta_dni">DNI:</string>
