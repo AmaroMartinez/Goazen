@@ -9,7 +9,7 @@
     <string name="st_nav_header_desc">Navigation header</string>
     <string name="st_action_settings">Settings</string>
 
-    //Titulos de las opciones de menu
+    //Titulos de las opciones de menu Cliente
     <string name="st_menu_perfil">Editar Perfil</string>
     <string name="st_menu_servicio">Servicios</string>
     <string name="st_menu_ubicacion">Ubicación</string>
@@ -138,12 +138,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-
+    //String menu Trabajador
     <string name="st_menu_calendario_trabajador">Calendario</string>
     <string name="st_menu_nominas">Nominas</string>
     <string name="st_menu_vacaciones">Vacaciones</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
     <string name="todo">TODO</string>
 
     // String Login
