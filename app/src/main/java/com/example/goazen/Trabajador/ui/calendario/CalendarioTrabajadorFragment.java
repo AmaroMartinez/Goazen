@@ -23,7 +23,7 @@ public class CalendarioTrabajadorFragment extends Fragment {
         calendarioTrabajadorViewModelViewModel =
                 ViewModelProviders.of(this).get(CalendarioTrabajadorViewModel.class);
         View root = inflater.inflate(R.layout.fragment_calendario_trabajador, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
+        final TextView textView = root.findViewById(R.id.tv_dia_calendario);
         calendarioTrabajadorViewModelViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
