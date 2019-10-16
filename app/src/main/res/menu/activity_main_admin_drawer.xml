@@ -7,15 +7,15 @@
         <item
             android:id="@+id/nav_adminServiciosFragment"
             android:icon="@drawable/escoba"
-            android:title="@string/menu_home" />
+            android:title="@string/st_menu_servicios_admin" />
         <item
             android:id="@+id/nav_contratosFragment"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="@string/st_menu_contratos" />
         <item
             android:id="@+id/nav_trabajadoresFragment"
             android:icon="@drawable/pdf"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/st_menu_trabajadores" />
     </group>
     <item android:title="@string/titulo_op_menu2">
         <menu>

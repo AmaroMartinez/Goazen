@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_perfil_trabajador">
+
+    <fragment
+        android:id="@+id/nav_perfil_trabajador"
+        android:name="com.example.goazen.perfil.PerfilFragment"
+        android:label="@string/st_menu_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_calendario_trabajador"
+        android:name="com.example.goazen.Trabajador.ui.calendario.CalendarioTrabajadorFragment"
+        android:label="@string/st_menu_calendario_trabajador"
+        tools:layout="@layout/fragment_calendario_trabajador" />
+
+    <fragment
+        android:id="@+id/nav_nominas_trabajador"
+        android:name="com.example.goazen.Trabajador.ui.nominas.NominasFragment"
+        android:label="@string/st_menu_nominas"
+        tools:layout="@layout/fragment_nominas" />
+
+    <fragment
+        android:id="@+id/nav_vacaciones_trabajador"
+        android:name="com.example.goazen.Trabajador.ui.vacaciones.VacacionesTrabajadorFragment"
+        android:label="@string/st_menu_vacaciones"
+        tools:layout="@layout/fragment_vacaciones_trabajador" />
+
+</navigation>
