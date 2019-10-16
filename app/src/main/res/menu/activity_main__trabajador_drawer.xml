@@ -5,15 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_perfil_trabajador"
-            android:icon="@drawable/lapiz"
-            android:title="@string/st_menu_perfil" />
-        <item
             android:id="@+id/nav_calendario_trabajador"
             android:icon="@drawable/candado"
             android:title="@string/st_menu_calendario_trabajador" />
         <item
-            android:id="@+id/nav_nominas_trabajador"
+            android:id="@+id/nav_nominas"
             android:icon="@drawable/pdf"
             android:title="@string/st_menu_nominas" />
         <item
@@ -22,10 +18,14 @@
             android:title="@string/st_menu_vacaciones" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/titulo_op_menu2">
         <menu>
             <item
-                android:id="@+id/nav_log_out_trabajadores"
+                android:id="@+id/nav_perfil"
+                android:icon="@drawable/lapiz"
+                android:title="@string/st_menu_perfil" />
+            <item
+                android:id="@+id/nav_log_out"
                 android:icon="@drawable/candado"
                 android:title="@string/st_menu_logout" />
         </menu>
