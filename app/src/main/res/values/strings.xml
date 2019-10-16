@@ -138,10 +138,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
+
+    <string name="st_menu_calendario_trabajador">Calendario</string>
+    <string name="st_menu_nominas">Nominas</string>
+    <string name="st_menu_vacaciones">Vacaciones</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="todo">TODO</string>
@@ -150,6 +150,7 @@
     <string name="st_login_nombre_usuario">Nombre:</string>
     <string name="st_login_contraseña_usuario">Contraseña:</string>
     <string name="st_login_boton_entrar">Entrar</string>
+    <string name="title_activity_main__trabajador">MainActivity_Trabajador</string>
 
 
     <!--<string name="st_"></string>-->
