@@ -2,11 +2,14 @@ package com.example.goazen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -27,8 +30,9 @@ public class LoginActivity extends AppCompatActivity {
 
     // Desplegable
     Spinner desplegableusuarios;
-    private Button btnLoginEntrar;
+    private Button btnLoginEntrar, btnLoginCrearCuenta;
     private EditText editTextLoginUsuario, editTextLoginContraseña;
+    private CheckBox vercontrasena;
     private static FirebaseFirestore db;
     private static String DNI;
     private static String Contrasena;
@@ -41,9 +45,12 @@ public class LoginActivity extends AppCompatActivity {
 
         desplegableusuarios = findViewById(R.id.desplegable_usuarios);
 
+        btnLoginCrearCuenta= findViewById(R.id.buttonLoginCrearCuenta);
         btnLoginEntrar= findViewById(R.id.buttonLoginEntrar);
         editTextLoginUsuario= findViewById(R.id.editTextLoginUsuario);
         editTextLoginContraseña= findViewById(R.id.editTextLoginContraseña);
+        vercontrasena = findViewById(R.id.ch_ver_contrasena);
+
 
         btnLoginEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +106,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btnLoginCrearCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent myIntent = new Intent(LoginActivity.this, CrearCuentaActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
 
 
         String[] usuarios = {"Selecciona un usuario","Cliente","Trabajador","Administrador"};
@@ -121,6 +137,19 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+
+
+        });
+
+        vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    editTextLoginContraseña.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                } else {
+                    editTextLoginContraseña.setInputType(129);
+                }
             }
         });
 
