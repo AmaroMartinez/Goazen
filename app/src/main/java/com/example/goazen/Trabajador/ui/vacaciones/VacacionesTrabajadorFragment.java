@@ -23,7 +23,7 @@ public class VacacionesTrabajadorFragment extends Fragment {
         toolsViewModel =
                 ViewModelProviders.of(this).get(VacacionesTrabajadorViewModel.class);
         View root = inflater.inflate(R.layout.fragment_vacaciones_trabajador, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
+        final TextView textView = root.findViewById(R.id.tv_vacaciones);
         toolsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

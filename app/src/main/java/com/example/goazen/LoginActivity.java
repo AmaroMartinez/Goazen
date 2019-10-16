@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.goazen.Administrador.MainActivityAdmin;
 import com.example.goazen.Cliente.MainActivity;
+import com.example.goazen.Trabajador.MainActivity_Trabajador;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
@@ -87,9 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                                     } else if (DatosCliente.getUsu_tipo().equals("Admin")) {
                                         Intent myIntent = new Intent(LoginActivity.this, MainActivityAdmin.class);
                                         startActivity(myIntent);
-                                    } else {
-                                        //Intent myIntent = new Intent(LoginActivity.this, MainActivityTrabajador.class);
-                                        //startActivity(myIntent);
+                                    } else if (DatosCliente.getUsu_tipo().equals("Trabajador")) {
+                                        Intent myIntent = new Intent(LoginActivity.this, MainActivity_Trabajador.class);
+                                        startActivity(myIntent);
                                     }
                                 }
 
@@ -131,7 +132,10 @@ public class LoginActivity extends AppCompatActivity {
                     Intent myIntent = new Intent(LoginActivity.this, MainActivityAdmin.class);
                     startActivity(myIntent);
 
-                };
+                } else if (desplegableusuarios.getSelectedItem().toString().equals("Trabajador")) {
+                    Intent myIntent = new Intent(LoginActivity.this, MainActivity_Trabajador.class);
+                    startActivity(myIntent);
+                }
             }
 
             @Override

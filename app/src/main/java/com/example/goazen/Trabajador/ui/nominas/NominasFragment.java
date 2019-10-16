@@ -23,7 +23,7 @@ public class NominasFragment extends Fragment {
         nominasViewModel =
                 ViewModelProviders.of(this).get(NominasViewModel.class);
         View root = inflater.inflate(R.layout.fragment_nominas, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
+        final TextView textView = root.findViewById(R.id.tv_nominas);
         nominasViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
