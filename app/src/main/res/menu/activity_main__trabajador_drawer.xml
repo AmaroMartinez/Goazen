@@ -9,11 +9,11 @@
             android:icon="@drawable/candado"
             android:title="@string/st_menu_calendario_trabajador" />
         <item
-            android:id="@+id/nav_nominas"
+            android:id="@+id/nav_nominas_trabajador"
             android:icon="@drawable/pdf"
             android:title="@string/st_menu_nominas" />
         <item
-            android:id="@+id/nav_vacaciones"
+            android:id="@+id/nav_vacaciones_trabajador"
             android:icon="@drawable/candado"
             android:title="@string/st_menu_vacaciones" />
     </group>
