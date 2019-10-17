@@ -169,6 +169,7 @@
     <string name="st_crear_cuenta_direccion">Dirección</string>
     <string name="st_crear_cuenta_contraseña">Contraseña</string>
     <string name="st_crear_cuenta_confirmarcontra">Confirmar contraseña</string>
+    <string name="st_crear_cuenta_campo_vacio">Hay un campo vacio. Introduce todos los datos.</string>
 
 
 
