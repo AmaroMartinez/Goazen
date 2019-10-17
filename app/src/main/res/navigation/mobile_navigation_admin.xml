@@ -21,17 +21,17 @@
     <fragment
         android:id="@+id/nav_adminServiciosFragment"
         android:name="com.example.goazen.Administrador.ui.servicios.AdminServiciosFragment"
-        android:label="fragment_admin_servicios"
+        android:label="Servicios"
         tools:layout="@layout/fragment_admin_servicios" />
     <fragment
         android:id="@+id/nav_contratosFragment"
         android:name="com.example.goazen.Administrador.ui.contratos.ContratosFragment"
-        android:label="fragment_contratos"
+        android:label="Contratos"
         tools:layout="@layout/fragment_contratos" />
     <fragment
         android:id="@+id/nav_trabajadoresFragment"
         android:name="com.example.goazen.Administrador.ui.trabajadores.TrabajadoresFragment"
-        android:label="fragment_trabajadores"
+        android:label="Trabajadores"
         tools:layout="@layout/fragment_trabajadores" />
 
 </navigation>
