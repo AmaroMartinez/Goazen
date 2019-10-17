@@ -13,7 +13,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.goazen.DatosCliente;
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 
 public class PopUpCambiarContrasena extends Activity {
@@ -58,11 +58,11 @@ public class PopUpCambiarContrasena extends Activity {
         btnguardarcontrasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (antiguacontrasena.getText().toString().equals(DatosCliente.getContrasena())) {
+                if (antiguacontrasena.getText().toString().equals(DatosUsuario.getContrasena())) {
                     if (nuevacontrasena.getText().toString().equals(nuevacontrasenacomprobar.getText().toString())) {
                         if (!(antiguacontrasena.getText().toString().equals(nuevacontrasena.getText().toString()))) {
-                            DatosCliente.setContrasena(nuevacontrasena.getText().toString());
-                            DatosCliente.writeUsuario();
+                            DatosUsuario.setContrasena(nuevacontrasena.getText().toString());
+                            DatosUsuario.writeUsuario();
                             infocontrasena.setText(R.string.st_tv_ok);
                         } else {
                             infocontrasena.setText(R.string.st_tv_fail_nya);

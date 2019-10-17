@@ -69,26 +69,28 @@ public class LoginActivity extends AppCompatActivity {
 
                                 DNI = document.getString("DNI");
                                 Contrasena = document.getString("Contrasena");
-                                DatosCliente.setNombre(document.getString("Nombre"));
-                                DatosCliente.setApellido(document.getString("Apellido"));
-                                DatosCliente.setDNI(document.getString("DNI"));
-                                DatosCliente.setAdress(document.getString("Adress"));
-                                DatosCliente.setEmail(document.getString("email"));
-                                DatosCliente.setFnacimiento(document.getString("fnacimiento"));
-                                DatosCliente.setMovil(document.getString("movil"));
-                                DatosCliente.setContrasena(document.getString("Contrasena"));
-                                DatosCliente.setC_bancaria(document.getString("c_bancaria"));
-                                DatosCliente.setUsu_tipo(document.getString("usu_tipo"));
-                                DatosCliente.setID(editTextLoginUsuario.getText().toString());
+                                DatosUsuario.setNombre(document.getString("Nombre"));
+                                DatosUsuario.setApellido(document.getString("Apellido"));
+                                DatosUsuario.setDNI(document.getString("DNI"));
+                                DatosUsuario.setAdress(document.getString("Adress"));
+                                DatosUsuario.setEmail(document.getString("email"));
+                                DatosUsuario.setFnacimiento(document.getString("fnacimiento"));
+                                DatosUsuario.setMovil(document.getString("movil"));
+                                DatosUsuario.setContrasena(document.getString("Contrasena"));
+                                DatosUsuario.setC_bancaria(document.getString("c_bancaria"));
+                                DatosUsuario.setUsu_tipo(document.getString("usu_tipo"));
+                                DatosUsuario.setID(editTextLoginUsuario.getText().toString());
+
+                                EventosCalendario.readEventos();
 
                                 if(editTextLoginUsuario.getText().toString().equals(DNI)&&editTextLoginContraseña.getText().toString().equals(Contrasena)){
-                                    if (DatosCliente.getUsu_tipo().equals("Cliente")) {
+                                    if (DatosUsuario.getUsu_tipo().equals("Cliente")) {
                                         Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(myIntent);
-                                    } else if (DatosCliente.getUsu_tipo().equals("Admin")) {
+                                    } else if (DatosUsuario.getUsu_tipo().equals("Admin")) {
                                         Intent myIntent = new Intent(LoginActivity.this, MainActivityAdmin.class);
                                         startActivity(myIntent);
-                                    } else if (DatosCliente.getUsu_tipo().equals("Trabajador")) {
+                                    } else if (DatosUsuario.getUsu_tipo().equals("Trabajador")) {
                                         Intent myIntent = new Intent(LoginActivity.this, MainActivity_Trabajador.class);
                                         startActivity(myIntent);
                                     }

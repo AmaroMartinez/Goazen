@@ -8,7 +8,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DatosCliente extends Application {
+public class DatosUsuario extends Application {
     private static String Nombre;
     private static String Apellido;
     private static String DNI;
@@ -103,7 +103,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setDNI(String DNI) {
-        DatosCliente.DNI = DNI;
+        DatosUsuario.DNI = DNI;
     }
 
     public static String getMovil() {
@@ -111,7 +111,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setMovil(String movil) {
-        DatosCliente.movil = movil;
+        DatosUsuario.movil = movil;
     }
 
     public static String getContrasena() {
@@ -119,7 +119,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setContrasena(String contrasena) {
-        DatosCliente.Contrasena = contrasena;
+        DatosUsuario.Contrasena = contrasena;
     }
 
     public static String getEmail() {
@@ -127,7 +127,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setEmail(String email) {
-        DatosCliente.email = email;
+        DatosUsuario.email = email;
     }
 
     public static String getC_bancaria() {
@@ -135,7 +135,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setC_bancaria(String c_bancaria) {
-        DatosCliente.c_bancaria = c_bancaria;
+        DatosUsuario.c_bancaria = c_bancaria;
     }
 
     public static String getAdress() {
@@ -151,7 +151,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setUsu_tipo(String usu_tipo) {
-        DatosCliente.usu_tipo = usu_tipo;
+        DatosUsuario.usu_tipo = usu_tipo;
     }
 
     public static String getFnacimiento() {
@@ -159,7 +159,7 @@ public class DatosCliente extends Application {
     }
 
     public static void setFnacimiento(String fnacimiento) {
-        DatosCliente.fnacimiento = fnacimiento;
+        DatosUsuario.fnacimiento = fnacimiento;
     }
 
     public static String getID() {
@@ -167,6 +167,6 @@ public class DatosCliente extends Application {
     }
 
     public static void setID(String ID) {
-        DatosCliente.ID = ID;
+        DatosUsuario.ID = ID;
     }
 }
