@@ -1,12 +1,9 @@
 package com.example.goazen;
 
 import android.app.Application;
-import android.graphics.Color;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-
-import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
