@@ -28,6 +28,9 @@
                 android:id="@+id/btn_limpieza_general"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_limpieza_general" />
 
             <Space
@@ -38,6 +41,9 @@
                 android:id="@+id/btn_limpieza_cristales"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_limpieza_cristales" />
 
 
@@ -49,6 +55,9 @@
                 android:id="@+id/btn_cocina"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_cocina" />
 
             <Space
@@ -59,6 +68,9 @@
                 android:id="@+id/btn_lavanderia"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_lavanderia" />
 
             <Space
@@ -69,6 +81,9 @@
                 android:id="@+id/btn_plancha"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_plancha" />
 
             <Space
@@ -79,6 +94,9 @@
                 android:id="@+id/btn_regado_plantas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_regado_plantas" />
 
             <Space
@@ -89,6 +107,9 @@
                 android:id="@+id/btn_paseo_mascotas"
                 android:layout_width="197dp"
                 android:layout_height="87dp"
+                android:background="@color/color_boton_servicios"
+                android:textColor="@color/color_letra_boton_servicios"
+                android:textStyle="bold"
                 android:text="@string/st_paseo_mascotas" />
 
             <Space
@@ -113,6 +134,9 @@
                         android:id="@+id/btn_cancelar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/color_boton_cancelar_contrato"
+                        android:textColor="@color/color_letra_boton_servicios"
+                        android:textStyle="bold"
                         android:text="@string/st_cancelar" />
 
                     <Space
@@ -124,6 +148,9 @@
                         android:id="@+id/btn_contratar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/color_boton_contratar"
+                        android:textColor="@color/color_letra_boton_servicios"
+                        android:textStyle="bold"
                         android:text="@string/st_contratar" />
 
                     <Space
