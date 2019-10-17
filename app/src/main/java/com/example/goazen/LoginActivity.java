@@ -44,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        desplegableusuarios = findViewById(R.id.desplegable_usuarios);
 
         btnLoginCrearCuenta= findViewById(R.id.buttonLoginCrearCuenta);
         btnLoginEntrar= findViewById(R.id.buttonLoginEntrar);
@@ -114,36 +113,6 @@ public class LoginActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(LoginActivity.this, CrearCuentaActivity.class);
                 startActivity(myIntent);
             }
-        });
-
-
-
-        String[] usuarios = {"Selecciona un usuario","Cliente","Trabajador","Administrador"};
-        desplegableusuarios.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, usuarios));
-
-        desplegableusuarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (desplegableusuarios.getSelectedItem().toString().equals("Cliente")){
-                    Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(myIntent);
-
-                } else if (desplegableusuarios.getSelectedItem().toString().equals("Administrador")){
-                    Intent myIntent = new Intent(LoginActivity.this, MainActivityAdmin.class);
-                    startActivity(myIntent);
-
-                } else if (desplegableusuarios.getSelectedItem().toString().equals("Trabajador")) {
-                    Intent myIntent = new Intent(LoginActivity.this, MainActivity_Trabajador.class);
-                    startActivity(myIntent);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-
         });
 
         vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

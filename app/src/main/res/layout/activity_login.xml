@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087">
+        app:layout_constraintVertical_bias="0.069">
 
         <ImageView
             android:id="@+id/logo"
@@ -26,14 +26,7 @@
             android:contentDescription="@string/todo"
             android:src="@drawable/logo" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="72dp" />
 
-        <Spinner
-            android:id="@+id/desplegable_usuarios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,6 +37,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.984">
+
+
+        <TextView
+            android:id="@+id/textViewLoginNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/st_login_nombre_usuario"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.223"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.069" />
 
         <EditText
             android:id="@+id/editTextLoginUsuario"
@@ -59,18 +65,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.189" />
-
-        <TextView
-            android:id="@+id/textViewLoginNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/st_login_nombre_usuario"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.223"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.069" />
 
         <TextView
             android:id="@+id/textViewLoginContraseña"

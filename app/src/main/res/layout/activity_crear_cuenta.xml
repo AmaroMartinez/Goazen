@@ -101,13 +101,14 @@
                             android:layout_marginRight="108dp"
                             android:text="@string/st_crear_cuenta_email" />
 
+
                         <EditText
                             android:id="@+id/editTextCCEmail"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="" />
+                            android:inputType="textEmailAddress" />
+
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
@@ -119,17 +120,18 @@
                             android:layout_marginRight="61dp"
                             android:text="@string/st_crear_cuenta_movil" />
 
+
+
                         <EditText
                             android:id="@+id/editTextCCTelefono"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="" />
+                            android:inputType="number" />
 
                         <Space
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp" />
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp" />
 
                         <TextView
                             android:id="@+id/textViewCCNacimiento"
@@ -203,9 +205,22 @@
 
                         <Space
                             android:layout_width="match_parent"
-                            android:layout_height="30dp" />
+                            android:layout_height="20dp" />
 
-                        <Button
+                    <TextView
+                        android:id="@+id/textViewCampoVacio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/st_crear_cuenta_campo_vacio"
+                        android:textColor="#F00"
+                        android:visibility="invisible"
+                        tools:visibility="invisible" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <Button
                             android:id="@+id/buttonCC"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
