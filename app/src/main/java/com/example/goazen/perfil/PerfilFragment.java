@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.goazen.DatosCliente;
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -130,26 +130,26 @@ public class PerfilFragment extends Fragment {
 
     private void modificarUsuario(){
 
-        DatosCliente.setNombre(etnombre.getText().toString());
-        DatosCliente.setApellido(etapellido.getText().toString());
-        DatosCliente.setAdress(etdireccion.getText().toString());
-        DatosCliente.setDNI(etdni.getText().toString());
-        DatosCliente.setEmail(etemail.getText().toString());
-        DatosCliente.setFnacimiento(etfnacimiento.getText().toString());
-        DatosCliente.setMovil(ettelefono.getText().toString());
+        DatosUsuario.setNombre(etnombre.getText().toString());
+        DatosUsuario.setApellido(etapellido.getText().toString());
+        DatosUsuario.setAdress(etdireccion.getText().toString());
+        DatosUsuario.setDNI(etdni.getText().toString());
+        DatosUsuario.setEmail(etemail.getText().toString());
+        DatosUsuario.setFnacimiento(etfnacimiento.getText().toString());
+        DatosUsuario.setMovil(ettelefono.getText().toString());
 
-        DatosCliente.writeUsuario();
+        DatosUsuario.writeUsuario();
     }
 
     private void readUsuario(){
 
-        etnombre.setText(DatosCliente.getNombre());
-        etapellido.setText(DatosCliente.getApellido());
-        etdireccion.setText(DatosCliente.getAdress());
-        etdni.setText(DatosCliente.getDNI());
-        etemail.setText(DatosCliente.getEmail());
-        etfnacimiento.setText(DatosCliente.getFnacimiento());
-        ettelefono.setText(DatosCliente.getMovil());
+        etnombre.setText(DatosUsuario.getNombre());
+        etapellido.setText(DatosUsuario.getApellido());
+        etdireccion.setText(DatosUsuario.getAdress());
+        etdni.setText(DatosUsuario.getDNI());
+        etemail.setText(DatosUsuario.getEmail());
+        etfnacimiento.setText(DatosUsuario.getFnacimiento());
+        ettelefono.setText(DatosUsuario.getMovil());
 
 
     }
