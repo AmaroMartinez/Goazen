@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- PASO 2 - RECYCLER VIEW-->
+<!-- Declaramos los elementos que
+queremos que tenga el recyclew view del
+calendario del trabajador en cada una de
+sus posiciones.-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
