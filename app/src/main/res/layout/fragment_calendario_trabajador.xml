@@ -39,6 +39,10 @@
             android:textAlignment="center"
             android:textSize="30sp" />
 
+        /*PASO 1 --> RECYCLER VIEW
+        Declaramos el recyclew view de tareas del trabajador
+        para que pueda visualizarlas al hacer click en un día
+        del calendario que le marque que tiene tareas asignadas.*/
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCalendarioTrabajador"
             android:layout_width="match_parent"
