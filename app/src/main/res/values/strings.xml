@@ -121,9 +121,9 @@
     <string name="st_btn_guardar_contrasena">Guardar</string>
     <string name="st_ch_ver_contrasenas">Ver contraseñas</string>
     <string name="st_tv_ok">Contraseña cambiada correctamente</string>
-    <string name="st_tv_fail_ayn">No se ha podido cambiar la contraseña, La contraseña antigua no es correcta</string>
-    <string name="st_tv_fail_aya">No se ha podido cambiar la contraseña, Las contraseñas antiguas no coinciden</string>
-
+    <string name="st_tv_fail_nyn">No se ha podido cambiar la contraseña, Las contraseñas nuevas no son iguales</string>
+    <string name="st_tv_fail_a">No se ha podido cambiar la contraseña, La contraseña antigua es incorrecta</string>
+    <string name="st_tv_fail_nya">No se ha podido cambiar la contraseña, La contraseña nueva es igual que la antigua</string>
 
     //String Usuarios Tipo
     <string name="st_usuario_tipo_admin">Admin</string>

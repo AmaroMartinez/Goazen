@@ -20,10 +20,10 @@ public class PopUpCambiarContrasena extends Activity {
 
     private Button btnguardarcontrasena;
     private EditText antiguacontrasena;
-    private EditText antiguacontrasenacomprobar;
+    private EditText nuevacontrasenacomprobar;
     private EditText nuevacontrasena;
     private TextView infocontrasena;
-    private CheckBox vercontrasena;
+    private CheckBox vercontrasenas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,10 @@ public class PopUpCambiarContrasena extends Activity {
 
         btnguardarcontrasena = findViewById(R.id.btn_guardar_contrasena);
         antiguacontrasena = findViewById(R.id.et_antigua_contrasena);
-        antiguacontrasenacomprobar = findViewById(R.id.et_antigua_contrasena_comprobar);
+        nuevacontrasenacomprobar = findViewById(R.id.et_nueva_contrasena_comprobar);
         nuevacontrasena = findViewById(R.id.et_nueva_contrasena);
         infocontrasena = findViewById(R.id.info_contrasena);
-        vercontrasena = findViewById(R.id.ch_ver_contrasena);
+        vercontrasenas = findViewById(R.id.ch_ver_contrasenas);
 
         //Creamos el PopUp
         DisplayMetrics dm = new DisplayMetrics();
@@ -45,7 +45,7 @@ public class PopUpCambiarContrasena extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width), (int)(height/1.5));
+        getWindow().setLayout(width, (int)(height/1.3));
 
         //Se las asignamos
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -59,29 +59,33 @@ public class PopUpCambiarContrasena extends Activity {
             @Override
             public void onClick(View v) {
                 if (antiguacontrasena.getText().toString().equals(DatosCliente.getContrasena())) {
-                    if (antiguacontrasena.getText().toString().equals(antiguacontrasenacomprobar.getText().toString())) {
-                        DatosCliente.setContrasena(nuevacontrasena.getText().toString());
-                        DatosCliente.writeUsuario();
-                        infocontrasena.setText(R.string.st_tv_ok);
+                    if (nuevacontrasena.getText().toString().equals(nuevacontrasenacomprobar.getText().toString())) {
+                        if (!(antiguacontrasena.getText().toString().equals(nuevacontrasena.getText().toString()))) {
+                            DatosCliente.setContrasena(nuevacontrasena.getText().toString());
+                            DatosCliente.writeUsuario();
+                            infocontrasena.setText(R.string.st_tv_ok);
+                        } else {
+                            infocontrasena.setText(R.string.st_tv_fail_nya);
+                        }
                     } else {
-                        infocontrasena.setText(R.string.st_tv_fail_aya);
+                        infocontrasena.setText(R.string.st_tv_fail_nyn);
                     }
                 } else {
-                    infocontrasena.setText(R.string.st_tv_fail_ayn);
+                    infocontrasena.setText(R.string.st_tv_fail_a);
                 }
             }
         });
 
-        vercontrasena.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        vercontrasenas.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
                     antiguacontrasena.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    antiguacontrasenacomprobar.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    nuevacontrasenacomprobar.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     nuevacontrasena.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 } else {
                     antiguacontrasena.setInputType(129);
-                    antiguacontrasenacomprobar.setInputType(129);
+                    nuevacontrasenacomprobar.setInputType(129);
                     nuevacontrasena.setInputType(129);
                 }
             }

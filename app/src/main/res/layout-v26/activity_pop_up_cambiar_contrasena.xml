@@ -32,24 +32,6 @@
             android:layout_height="30dp" />
 
         <TextView
-            android:id="@+id/tv_nueva_contrasena"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="@string/st_et_nueva_contrasena" />
-        <EditText
-            android:id="@+id/et_nueva_contrasena"
-            android:layout_width="345dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:importantForAutofill="no"
-            android:inputType="textPassword"
-            tools:ignore="LabelFor" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <TextView
             android:id="@+id/tv_antigua_contrasena"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -68,13 +50,31 @@
             android:layout_height="15dp" />
 
         <TextView
-            android:id="@+id/tv_antigua_contrasena_comprobar"
+            android:id="@+id/tv_nueva_contrasena"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="@string/st_et_antigua_contrasena" />
+            android:text="@string/st_et_nueva_contrasena" />
+        <EditText
+            android:id="@+id/et_nueva_contrasena"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            tools:ignore="LabelFor" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:id="@+id/tv_nueva_contrasena_comprobar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/st_et_nueva_contrasena" />
 
         <EditText
-            android:id="@+id/et_antigua_contrasena_comprobar"
+            android:id="@+id/et_nueva_contrasena_comprobar"
             android:layout_width="345dp"
             android:layout_height="wrap_content"
             android:ems="10"

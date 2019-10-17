@@ -16,7 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity_Trabajador extends AppCompatActivity {
 
-    private AppBarConfiguration mAppBarConfiguration;
+    private AppBarConfiguration mAppBarConfigurationt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +29,12 @@ public class MainActivity_Trabajador extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view_trabajador);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_perfil, R.id.nav_calendario_trabajador, R.id.nav_nominas_trabajador)
+        mAppBarConfigurationt = new AppBarConfiguration.Builder(
+                R.id.nav_perfil, R.id.nav_calendario_trabajador, R.id.nav_nominas_trabajador, R.id.nav_vacaciones_trabajador)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_trabajador);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfigurationt);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
@@ -48,7 +48,7 @@ public class MainActivity_Trabajador extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_trabajador);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+        return NavigationUI.navigateUp(navController, mAppBarConfigurationt)
                 || super.onSupportNavigateUp();
     }
 }
