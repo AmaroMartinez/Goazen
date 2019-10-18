@@ -1,6 +1,5 @@
 package com.example.goazen.Trabajador.ui.calendario;
 
-import android.widget.TextView;
 
 public class RecyclerViewCalTrabajador {
 
@@ -13,7 +12,9 @@ public class RecyclerViewCalTrabajador {
     private String st_hora_trabajo;
     private String st_dir_trabajo;
 
-    public RecyclerViewCalTrabajador(){
+    public RecyclerViewCalTrabajador( String tt, String ht, String dt){
+
+        
 
     }
 }
