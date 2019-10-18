@@ -18,13 +18,13 @@ public class Trabajador {
 
     private static String Nombre;
     private static String Apellido;
-    private static ArrayList<Trabajador> Trabajadores;
+    private static ArrayList<Trabajador> trabajadores = new ArrayList();
 
     private static FirebaseFirestore db;
 
     public static void leertrabajadores() {
 
-        Trabajadores = new ArrayList<Trabajador>();
+        //trabajadores = new ArrayList();
         db = FirebaseFirestore.getInstance();
 
         db.collection("Usuarios")
@@ -34,10 +34,11 @@ public class Trabajador {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            trabajadores.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
-                                Trabajadores.add(new Trabajador(document.get("Nombre").toString(), document.get("Apellido").toString()));
-                                Log.d(TAG, String.valueOf(Trabajadores));
+                                trabajadores.add(new Trabajador((String) document.get("Nombre"), (String) document.get("Apellido")));
+                                Log.d(TAG, String.valueOf(trabajadores));
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -51,4 +52,29 @@ public class Trabajador {
         this.Apellido=apellido;
     }
 
+    public static String getNombre() {
+        return Nombre;
+    }
+
+    public static void setNombre(String nombre) {
+        Nombre = nombre;
+    }
+
+    public static String getApellido() {
+        return Apellido;
+    }
+
+    public static void setApellido(String apellido) {
+        Apellido = apellido;
+    }
+
+    public static ArrayList<Trabajador> getTrabajadores() {
+        leertrabajadores();
+        Log.d("tag", "tamaño arraylist trabajadores: " + trabajadores.size());
+        return trabajadores;
+    }
+
+    public static void setTrabajadores(ArrayList<Trabajador> trabajadores) {
+        Trabajador.trabajadores = trabajadores;
+    }
 }
