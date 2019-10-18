@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -55,8 +56,11 @@ public class EventosCalendario extends Application {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Object o = document.get("Fecha");
-                                Long fecha = Long.parseLong(o.toString());
+                                /*Cogemos el dato fecha de la bbdd y hacemos el casting
+                                * a millisegundos para darselo a el evento.*/
+
+                                Timestamp f = (Timestamp) document.get("Fecha");
+                                long fecha = f.toDate().getTime();
                                 Log.d(TAG, document.get("Fecha") + " => " + document.get("Titulo") + " => " + document.get("Trabajador"));
                                 listaEventos.add(new Event(R.color.colorPrimary, fecha,document.get("Titulo")));
                             }
