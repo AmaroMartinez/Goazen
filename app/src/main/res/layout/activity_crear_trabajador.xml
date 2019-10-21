@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Layout relative para autoajustarse a cualquier dispositivo -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+        <ScrollView
+            android:id="@+id/scrollViewcreartrabajador"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="40dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTIDatos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="@string/st_crear_cuenta_introduce_datos" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTNombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="99dp"
+                            android:text="@string/st_crear_cuenta_nombre" />
+
+                        <EditText
+                            android:id="@+id/editTextCTNombre"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTApellido"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="99dp"
+                            android:text="@string/st_crear_cuenta_apellido" />
+
+                        <EditText
+                            android:id="@+id/editTextCTApellido"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTDNI"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="114dp"
+                            android:text="@string/st_crear_cuenta_dni" />
+
+                        <EditText
+                            android:id="@+id/editTextCTDNI"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:maxLength="9"
+                            android:inputType="textPersonName"
+                            android:text="" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="108dp"
+                            android:text="@string/st_crear_cuenta_email" />
+
+
+                        <EditText
+                            android:id="@+id/editTextCTEmail"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textEmailAddress" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTTelefono"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="61dp"
+                            android:text="@string/st_crear_cuenta_movil" />
+
+
+
+                        <EditText
+                            android:id="@+id/editTextCTTelefono"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:maxLength="9"
+                            android:inputType="number" />
+
+                        <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTNacimiento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="59dp"
+                            android:text="@string/st_crear_cuenta_fnacimiento" />
+
+
+                        <EditText
+                            android:id="@+id/editTextCTFNacimiento"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:maxLength="10"
+                            android:inputType="date" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTDireccion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="95dp"
+                            android:text="@string/st_crear_cuenta_direccion" />
+
+                        <EditText
+                            android:id="@+id/editTextCTDireccion"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:text="" />
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTContraseña"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="88dp"
+                            android:text="@string/st_crear_cuenta_contraseña" />
+
+
+                        <EditText
+                            android:id="@+id/editTextCTContraseña"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPassword" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTConfirmarContraseña"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="55dp"
+                            android:text="@string/st_crear_cuenta_confirmarcontra" />
+
+                        <EditText
+                            android:id="@+id/editTextCTConfirmarContra"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textPassword" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCTSueldo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="55dp"
+                            android:text="Sueldo" />
+
+                        <EditText
+                            android:id="@+id/editTextCTSueldo"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="text" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                    <TextView
+                        android:id="@+id/textViewCampoVacioTrabajador"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/st_crear_cuenta_campo_vacio"
+                        android:textColor="#F00"
+                        android:visibility="invisible"
+                        tools:visibility="invisible" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <Button
+                            android:id="@+id/buttonCT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/st_login_boton_crear_cuenta" />
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+                </LinearLayout>
+
+        </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
