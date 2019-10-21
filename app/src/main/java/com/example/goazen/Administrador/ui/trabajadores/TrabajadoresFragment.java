@@ -23,6 +23,7 @@ public class TrabajadoresFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutmanager;
     private adaptador_recycler_trabajador adaptador;
+    
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
