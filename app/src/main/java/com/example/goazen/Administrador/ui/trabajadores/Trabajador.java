@@ -16,8 +16,8 @@ import static android.content.ContentValues.TAG;
 
 public class Trabajador {
 
-    private static String Nombre;
-    private static String Apellido;
+    private  String Nombre;
+    private  String Apellido;
     private static ArrayList<Trabajador> trabajadores = new ArrayList();
 
     private static FirebaseFirestore db;
@@ -53,19 +53,19 @@ public class Trabajador {
         this.Apellido=apellido;
     }
 
-    public static String getNombre() {
+    public  String getNombre() {
         return Nombre;
     }
 
-    public static void setNombre(String nombre) {
+    public  void setNombre(String nombre) {
         Nombre = nombre;
     }
 
-    public static String getApellido() {
+    public  String getApellido() {
         return Apellido;
     }
 
-    public static void setApellido(String apellido) {
+    public  void setApellido(String apellido) {
         Apellido = apellido;
     }
 
@@ -75,7 +75,4 @@ public class Trabajador {
         return trabajadores;
     }
 
-    public static void setTrabajadores(ArrayList<Trabajador> trabajadores) {
-        Trabajador.trabajadores = trabajadores;
-    }
 }
