@@ -37,7 +37,8 @@ public class Trabajador {
                             trabajadores.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
-                                trabajadores.add(new Trabajador((String) document.get("Nombre"), (String) document.get("Apellido")));
+                                Trabajador trabajador = new Trabajador((String) document.get("Nombre"), (String) document.get("Apellido"));
+                                trabajadores.add(trabajador);
                                 Log.d(TAG, String.valueOf(trabajadores));
                             }
                         } else {
@@ -68,8 +69,8 @@ public class Trabajador {
         Apellido = apellido;
     }
 
+
     public static ArrayList<Trabajador> getTrabajadores() {
-        leertrabajadores();
         Log.d("tag", "tamaño arraylist trabajadores: " + trabajadores.size());
         return trabajadores;
     }
