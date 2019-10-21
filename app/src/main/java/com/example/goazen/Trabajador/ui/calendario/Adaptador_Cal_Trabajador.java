@@ -18,7 +18,7 @@ import java.util.ArrayList;
 *
 * Es importante que extienda de la clase adapter parr que funcione*/
 
-public class Adaptador_Cal_Trabajador extends RecyclerView.Adapter {
+public class Adaptador_Cal_Trabajador extends RecyclerView.Adapter<Adaptador_Cal_Trabajador.ViewHolder> {
 
     /*Declaramos los objetos necesarios para poder inflar
     * el layout*/
@@ -56,18 +56,19 @@ public class Adaptador_Cal_Trabajador extends RecyclerView.Adapter {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = inflador.inflate(R.layout.eventos_cal_trabajador,null);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         RecyclerViewCalTrabajador rvct = lista.get(position);
         holder.tarea.setText(rvct.getSt_tarea_trabajador());
         holder.hora.setText(rvct.getSt_hora_trabajo());
         holder.direccion.setText(rvct.getSt_dir_trabajo());
     }
+
 
     @Override
     public int getItemCount() {
