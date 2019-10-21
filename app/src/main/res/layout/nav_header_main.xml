@@ -21,10 +21,11 @@
         app:srcCompat="@drawable/ardilla" />
 
     <TextView
+        android:id="@+id/nombre_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/st_menu_ardilla"
+        android:text="@string/st_cliente"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 </LinearLayout>
