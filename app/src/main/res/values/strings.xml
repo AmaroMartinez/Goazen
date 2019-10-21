@@ -181,6 +181,11 @@
     <string name="st_titulo_hora">HORA</string>
     <string name="st_titulo_dirección">DIR.:</string>
 
+    //String nombre cliente
+    <string name="st_cliente">Cliente</string>
+    <string name="st_trabajador">Trabajador</string>
+    <string name="st_admin">Administrador</string>
+
     <!--<string name="st_"></string>-->
 
 
