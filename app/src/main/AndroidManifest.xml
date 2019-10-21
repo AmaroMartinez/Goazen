@@ -30,11 +30,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".CrearCuentaActivity"></activity>
+        <activity
+            android:name=".CrearCuentaActivity">
+
+        </activity>
         <activity
             android:name=".Trabajador.MainActivity_Trabajador"
             android:label="@string/title_activity_main__trabajador"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".Administrador.MainActivityAdmin"
             android:label="@string/title_activity_main_admin"
@@ -42,14 +47,16 @@
         <activity
             android:name=".Cliente.PopUpPagos"
             android:theme="@style/AppTheme.PopUpPagos" />
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cliente.ui.servicios.Calendario" />
+        <activity
+            android:name=".Cliente.ui.servicios.Calendario" />
         <activity
             android:name=".Cliente.MainActivity"
             android:label="@string/st_app_name"
