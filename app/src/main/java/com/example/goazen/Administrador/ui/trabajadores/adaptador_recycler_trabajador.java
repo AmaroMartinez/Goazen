@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,10 +31,12 @@ public class adaptador_recycler_trabajador extends RecyclerView.Adapter<adaptado
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nombre;
         public TextView apellido;
+        public ImageView imagen;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            imagen = itemView.findViewById(R.id.imagenPerfilTrabajadores);
             apellido = itemView.findViewById(R.id.apellido_trabajador);
             nombre = itemView.findViewById(R.id.nombre_trabajador);
 
