@@ -1,35 +1,44 @@
 package com.example.goazen.Administrador.ui.trabajadores;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.goazen.R;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class TrabajadoresFragment extends Fragment {
 
     private TrabajadoresViewModel trabajadoresViewModel;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutmanager;
+    private adaptador_recycler_trabajador adaptador;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         trabajadoresViewModel =
                 ViewModelProviders.of(this).get(TrabajadoresViewModel.class);
         View root = inflater.inflate(R.layout.fragment_trabajadores, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery_admin);
-        trabajadoresViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        Trabajador.leertrabajadores();
+        recyclerView = root.findViewById(R.id.recyclerTrabajadores);
+        ArrayList <Trabajador> trabajadors = Trabajador.getTrabajadores();
+        Log.d("tag", "trabajadores? " + trabajadors.size());
+        adaptador = new adaptador_recycler_trabajador(Objects.requireNonNull(getContext()), trabajadors);
+        recyclerView.setAdapter(adaptador);
+
+        layoutmanager = new GridLayoutManager(getContext(), 4);
+        recyclerView.setLayoutManager(layoutmanager);
+
         return root;
     }
 }

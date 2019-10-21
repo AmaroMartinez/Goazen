@@ -30,6 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".CrearCuentaActivity">
 
@@ -40,6 +41,7 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+
         <activity
             android:name=".Administrador.MainActivityAdmin"
             android:label="@string/title_activity_main_admin"
