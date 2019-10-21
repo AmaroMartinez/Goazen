@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.goazen.Administrador.ui.trabajadores.Trabajador;
 import com.example.goazen.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -28,6 +29,7 @@ public class MainActivityAdmin extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view_admin);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        Trabajador.leertrabajadores();
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_adminServiciosFragment, R.id.nav_contratosFragment, R.id.nav_trabajadoresFragment)
                 .setDrawerLayout(drawer)
@@ -50,4 +52,6 @@ public class MainActivityAdmin extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }

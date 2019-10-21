@@ -1,6 +1,7 @@
 package com.example.goazen.Administrador.ui.trabajadores;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.goazen.R;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class TrabajadoresFragment extends Fragment {
@@ -27,9 +29,11 @@ public class TrabajadoresFragment extends Fragment {
         trabajadoresViewModel =
                 ViewModelProviders.of(this).get(TrabajadoresViewModel.class);
         View root = inflater.inflate(R.layout.fragment_trabajadores, container, false);
-
+        Trabajador.leertrabajadores();
         recyclerView = root.findViewById(R.id.recyclerTrabajadores);
-        adaptador = new adaptador_recycler_trabajador(Objects.requireNonNull(getContext()), Trabajador.getTrabajadores());
+        ArrayList <Trabajador> trabajadors = Trabajador.getTrabajadores();
+        Log.d("tag", "trabajadores? " + trabajadors.size());
+        adaptador = new adaptador_recycler_trabajador(Objects.requireNonNull(getContext()), trabajadors);
         recyclerView.setAdapter(adaptador);
 
         layoutmanager = new GridLayoutManager(getContext(), 4);
