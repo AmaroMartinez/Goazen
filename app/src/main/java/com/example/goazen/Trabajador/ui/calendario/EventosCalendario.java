@@ -1,11 +1,10 @@
-package com.example.goazen;
+package com.example.goazen.Trabajador.ui.calendario;
 
-import android.app.Application;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.example.goazen.DatosUsuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
@@ -19,7 +18,7 @@ import java.util.Date;
 
 import static android.content.ContentValues.TAG;
 
-public class EventosCalendario extends Application {
+public class EventosCalendario{
 
     //Declaramos los objetos necesarios para poder leer los eventos.
 
@@ -27,17 +26,13 @@ public class EventosCalendario extends Application {
     private static String tarea;
     private static String dni_trabajador;
 
-    private static ArrayList<Event> listaEventos;
+    private static ArrayList<RecyclerViewCalTrabajador> listaEventos;
+    private static ArrayList<RecyclerViewCalTrabajador> listaEventosDias;
 
     private static FirebaseFirestore db;
 
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
     /*Leemos de la base de datos los eventos que
-    * pertenecen al */
+    * pertenecen al trabajador logado*/
     public static void readEventos(){
 
         //Cojemos el dni del trabajador logado
@@ -45,7 +40,7 @@ public class EventosCalendario extends Application {
 
         //Inicializamos
         db = FirebaseFirestore.getInstance();
-        listaEventos = new ArrayList<Event>();
+        listaEventos = new ArrayList<RecyclerViewCalTrabajador>();
 
         //Leemos todos y los metemos en un array
         db.collection("Evento")
@@ -61,8 +56,8 @@ public class EventosCalendario extends Application {
 
                                 Timestamp f = (Timestamp) document.get("Fecha");
                                 long fecha = f.toDate().getTime();
-                                Log.d(TAG, document.get("Fecha") + " => " + document.get("Titulo") + " => " + document.get("Trabajador"));
-                                listaEventos.add(new Event(R.color.colorPrimary, fecha,document.get("Titulo")));
+                                listaEventos.add(new RecyclerViewCalTrabajador(fecha,document.get("Titulo"),
+                                        document.get("Trabajador"),document.get("Adress")));
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -71,5 +66,31 @@ public class EventosCalendario extends Application {
                 });
 
     }
+
+    public static ArrayList<RecyclerViewCalTrabajador> getListaEventos() {
+        return listaEventos;
+    }
+
+    public static void setListaEventos(ArrayList<RecyclerViewCalTrabajador> listaEventos) {
+        EventosCalendario.listaEventos = listaEventos;
+    }
+
+    public static ArrayList<RecyclerViewCalTrabajador> getListaEventosDias() {
+        return listaEventosDias;
+    }
+
+    public static void setListaEventosDias(ArrayList<RecyclerViewCalTrabajador> listaEventos, Date fecha) {
+
+        String f = fecha.getDay() + "/" + fecha.getMonth() + "/" + fecha.getYear();
+
+        if (listaEventos.size() > 0){
+            for(int pos = 0; pos < listaEventos.size(); pos ++){
+                if (listaEventos.get(pos).getSt_fecha_trabajo().equals(f)){
+                    listaEventosDias.add(listaEventos.get(pos));
+                }
+            }
+        }
+
+}
 
 }

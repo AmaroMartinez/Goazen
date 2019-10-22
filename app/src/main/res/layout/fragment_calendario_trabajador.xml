@@ -14,7 +14,7 @@
         android:weightSum="1"
         tools:ignore="MissingConstraints">
         <com.github.sundeepk.compactcalendarview.CompactCalendarView
-            android:id="@+id/compactcalendar_view"
+            android:id="@+id/calendario_trabajador"
             android:layout_width="match_parent"
             android:layout_height="242dp"
             android:paddingLeft="10dp"
@@ -48,7 +48,6 @@
             android:layout_width="match_parent"
             android:layout_height="503dp"
             android:layout_weight="0.65"
-            android:background="@color/colorPrimary"
             android:scrollbars="vertical" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
