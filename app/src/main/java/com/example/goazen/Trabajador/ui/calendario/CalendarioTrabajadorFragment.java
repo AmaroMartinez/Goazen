@@ -26,6 +26,7 @@ public class CalendarioTrabajadorFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private Adaptador_Cal_Trabajador adaptador;
     private CompactCalendarView calendario;
+    private TextView tv_Dia;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,16 +44,19 @@ public class CalendarioTrabajadorFragment extends Fragment {
 
         Rv_Cal_trabajador = root.findViewById(R.id.recyclerCalendarioTrabajador);
 
+        tv_Dia = root.findViewById(R.id.tv_dia_calendario);
         calendario = root.findViewById(R.id.calendario_trabajador);
         calendario.setUseThreeLetterAbbreviation(true);
         calendario.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
-                EventosCalendario.setListaEventosDias(EventosCalendario.getListaEventos(),dateClicked);
-                adaptador = new Adaptador_Cal_Trabajador(getContext(),EventosCalendario.getListaEventosDias());
+
+                EventosCalendario.setListaEventosDias(EventosCalendario.getListaEventos(), dateClicked);
+                tv_Dia.setText(String.format("DIA :" + dateClicked.getDate()));
+                /*adaptador = new Adaptador_Cal_Trabajador(getContext(),EventosCalendario.getListaEventosDias());
                 Rv_Cal_trabajador.setAdapter(adaptador);
                 layoutManager = new LinearLayoutManager(getContext());
-                Rv_Cal_trabajador.setLayoutManager(layoutManager);
+                Rv_Cal_trabajador.setLayoutManager(layoutManager);*/
 
             }
 

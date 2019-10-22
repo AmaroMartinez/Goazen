@@ -1,6 +1,5 @@
 package com.example.goazen.Trabajador.ui.calendario;
 
-import android.app.Application;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -84,11 +83,14 @@ public class EventosCalendario{
 
         String f = fecha.getDay() + "/" + fecha.getMonth() + "/" + fecha.getYear();
 
-        for(int pos =0; pos < listaEventos.size(); pos ++){
-            if (listaEventos.get(pos).getSt_fecha_trabajo().equals(f)){
-                listaEventosDias.add(listaEventos.get(pos));
+        if (listaEventos.size() > 0){
+            for(int pos = 0; pos < listaEventos.size(); pos ++){
+                if (listaEventos.get(pos).getSt_fecha_trabajo().equals(f)){
+                    listaEventosDias.add(listaEventos.get(pos));
+                }
             }
         }
-    }
+
+}
 
 }

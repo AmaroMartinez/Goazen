@@ -66,6 +66,7 @@ public class adaptador_recycler_trabajador extends RecyclerView.Adapter<adaptado
         this.onClickListener = onClickListener;
     }
 
+
 }
 
 
