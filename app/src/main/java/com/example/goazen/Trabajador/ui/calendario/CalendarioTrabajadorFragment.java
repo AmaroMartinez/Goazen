@@ -53,10 +53,10 @@ public class CalendarioTrabajadorFragment extends Fragment {
 
                 EventosCalendario.setListaEventosDias(EventosCalendario.getListaEventos(), dateClicked);
                 tv_Dia.setText(String.format("DIA :" + dateClicked.getDate()));
-                /*adaptador = new Adaptador_Cal_Trabajador(getContext(),EventosCalendario.getListaEventosDias());
+                adaptador = new Adaptador_Cal_Trabajador(getContext(),EventosCalendario.getListaEventosDias());
                 Rv_Cal_trabajador.setAdapter(adaptador);
                 layoutManager = new LinearLayoutManager(getContext());
-                Rv_Cal_trabajador.setLayoutManager(layoutManager);*/
+                Rv_Cal_trabajador.setLayoutManager(layoutManager);
 
             }
 

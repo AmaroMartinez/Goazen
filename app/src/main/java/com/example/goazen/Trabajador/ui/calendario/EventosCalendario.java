@@ -41,6 +41,7 @@ public class EventosCalendario{
         //Inicializamos
         db = FirebaseFirestore.getInstance();
         listaEventos = new ArrayList<RecyclerViewCalTrabajador>();
+        listaEventosDias = new ArrayList<RecyclerViewCalTrabajador>();
 
         //Leemos todos y los metemos en un array
         db.collection("Evento")
