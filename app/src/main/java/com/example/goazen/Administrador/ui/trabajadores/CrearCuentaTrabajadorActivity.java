@@ -30,7 +30,7 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crear_cuenta);
+        setContentView(R.layout.activity_crear_trabajador);
 
 
         btnCrearCuentaTrabajador = findViewById(R.id.buttonCT);

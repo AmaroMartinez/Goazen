@@ -170,6 +170,10 @@
     <string name="st_crear_cuenta_contraseña">Contraseña</string>
     <string name="st_crear_cuenta_confirmarcontra">Confirmar contraseña</string>
     <string name="st_crear_cuenta_campo_vacio">Hay un campo vacio. Introduce todos los datos.</string>
+    <string name="st_crear_cuenta_servicios">Servicios</string>
+    <string name="st_crear_cuenta_sueldo">Sueldo</string>
+
+
 
 
 

@@ -29,19 +29,25 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".CrearCuentaActivity" />
         <activity
             android:name=".Trabajador.MainActivity_Trabajador"
             android:label="@string/title_activity_main__trabajador"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Administrador.MainActivityAdmin"
             android:label="@string/title_activity_main_admin"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Administrador.ui.trabajadores.CrearCuentaTrabajadorActivity"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Cliente.PopUpPagos"
-            android:theme="@style/AppTheme.PopUpPagos" />
+            android:theme="@style/AppTheme.PopUpPagos"
+            tools:ignore="InnerclassSeparator" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,11 +55,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cliente.ui.servicios.Calendario" />
+        <activity android:name=".Cliente.ui.servicios.Calendario"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Cliente.MainActivity"
             android:label="@string/st_app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".perfil.PopUpCambiarContrasena"
             android:theme="@style/AppTheme.PopUpPagos" /> <!-- Meta-data para el funcionamiento del mapa -->

@@ -209,13 +209,12 @@
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
-
                         <TextView
                             android:id="@+id/textViewCTSueldo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="55dp"
-                            android:text="Sueldo" />
+                            android:layout_marginRight="103dp"
+                            android:text="@string/st_crear_cuenta_sueldo" />
 
                         <EditText
                             android:id="@+id/editTextCTSueldo"
@@ -228,7 +227,99 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
 
-                    <TextView
+                        <TextView
+                            android:id="@+id/textViewCTServicios"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="96dp"
+                            android:text="@string/st_crear_cuenta_servicios" />
+
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_limpieza_general" />
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_cocina" />
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_plancha" />
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox4"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_lavanderia" />
+
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_regado_plantas" />
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox6"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_limpieza_cristales" />
+
+                                        <CheckBox
+                                            android:id="@+id/checkBox7"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/st_paseo_mascotas" />
+
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+
+                        </LinearLayout>
+
+
+                        <TextView
                         android:id="@+id/textViewCampoVacioTrabajador"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
