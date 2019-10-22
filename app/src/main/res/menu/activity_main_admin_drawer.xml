@@ -10,11 +10,11 @@
             android:title="@string/st_menu_servicios_admin" />
         <item
             android:id="@+id/nav_contratosFragment"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/pdf"
             android:title="@string/st_menu_contratos" />
         <item
             android:id="@+id/nav_trabajadoresFragment"
-            android:icon="@drawable/pdf"
+            android:icon="@drawable/trabajador"
             android:title="@string/st_menu_trabajadores" />
     </group>
     <item android:title="@string/titulo_op_menu2">
