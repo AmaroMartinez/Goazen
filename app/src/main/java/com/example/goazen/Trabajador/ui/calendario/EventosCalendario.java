@@ -58,9 +58,10 @@ public class EventosCalendario{
 
                                 Timestamp f = (Timestamp) document.get("Fecha");
                                 Log.d(Values.tag_log, "Fecha: " + document.get("Fecha"));
-                                long fecha = f.toDate().getTime();
-                                listaEventos.add(new RecyclerViewCalTrabajador(fecha,document.get("Titulo"),
-                                        document.get("Trabajador"),document.get("Adress")));
+                                Date f1 = f.toDate();
+                                Log.d(Values.tag_log, "Fecha: " + f1);
+                                listaEventos.add(new RecyclerViewCalTrabajador(f1,document.get("Titulo").toString(),
+                                        document.get("Trabajador").toString(),document.get("Adress").toString()));
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
@@ -84,7 +85,7 @@ public class EventosCalendario{
 
     public static void setListaEventosDias(ArrayList<RecyclerViewCalTrabajador> listaEventos, Date fecha) {
 
-        String f = fecha.getDay() + "/" + fecha.getMonth() + "/" + fecha.getYear();
+        String f = fecha.getDate() + "/" + fecha.getMonth() + "/" + fecha.getYear();
 
         if (listaEventos.size() > 0){
             getListaEventosDias().clear();

@@ -1,6 +1,7 @@
 package com.example.goazen.Administrador.ui.servicios;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,10 +17,21 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
+import com.example.goazen.Servicios;
+import com.example.goazen.Trabajador.ui.calendario.RecyclerViewCalTrabajador;
+import com.example.goazen.Values;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
+
+import static android.content.ContentValues.TAG;
 
 public class AdminServiciosFragment extends Fragment {
 
@@ -38,10 +50,7 @@ public class AdminServiciosFragment extends Fragment {
     private static FirebaseFirestore db;
 
     //Campos a descargar de la base de datos;
-    private int number;
-    private int precio;
-    private boolean Enable;
-    private ArrayList<String> Horas;
+    private ArrayList<Servicios> ListaServicios;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -59,8 +68,18 @@ public class AdminServiciosFragment extends Fragment {
         Sw_servicio_admin_cocina = root.findViewById(R.id.sw_servicio_admin_cocina);
 
         /*Inicializamos los botones*/
+        ConfigurarPantalla();
+        for(int pos = 0; pos<ListaServicios.size(); pos++){
+            switch(ListaServicios.get(pos).getNombre_servicio()){
+                case getString(R.string.st_limpieza_general):
+                    Sw_servicio_admin_limpieza_general.setChecked(ListaServicios.get(pos).isEnable());
+                    break;
+                default:
+
+            }
 
 
+        }
         /*Programamos la funcionalidad de cada uno de ellos teniendo en cuenta que cada vez que el
         * estado cambie se actualizara en la base de datos.*/
 
@@ -83,6 +102,23 @@ public class AdminServiciosFragment extends Fragment {
     }
 
     public void ConfigurarPantalla (){
-        
+        ListaServicios = new ArrayList<Servicios>();
+        db = FirebaseFirestore.getInstance();
+        db.collection("Servicios")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                /*Cogemos los datos de cada uno de los servicios y los introducimo
+                                en el array*/
+                                ListaServicios.add(new Servicios(document.getId().toString(),document.getBoolean("Enable"), document.getDouble("precio")));
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
     }
 }
