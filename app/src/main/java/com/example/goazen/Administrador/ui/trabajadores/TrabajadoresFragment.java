@@ -39,6 +39,13 @@ public class TrabajadoresFragment extends Fragment {
         ArrayList <Trabajador> trabajadors = Trabajador.getTrabajadores();
         Log.d("tag", "trabajadores? " + trabajadors.size());
         adaptador = new adaptador_recycler_trabajador(Objects.requireNonNull(getContext()), trabajadors);
+        adaptador.setOnItemClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), ModificarTrabajadorActivity.class);
+                startActivity(myIntent);
+            }
+        });
         recyclerView.setAdapter(adaptador);
 
         layoutmanager = new GridLayoutManager(getContext(), 4);
