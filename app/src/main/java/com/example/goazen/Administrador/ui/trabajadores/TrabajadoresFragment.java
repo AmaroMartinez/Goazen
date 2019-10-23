@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -42,8 +43,8 @@ public class TrabajadoresFragment extends Fragment {
         adaptador.setOnItemClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View x) {
-                String dni = x.findViewById(R.id.dni_trabajador).toString();
-                System.out.println(x.findViewById(R.id.dni_trabajador).toString());
+                TextView tv = x.findViewById(R.id.dni_trabajador);
+                String dni = tv.getText().toString();
                 Intent myIntent = new Intent(getActivity(), ModificarTrabajadorActivity.class);
                 myIntent.putExtra("dni", dni);
                 startActivity(myIntent);
