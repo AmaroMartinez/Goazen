@@ -83,7 +83,7 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Elimina el trabajador
-                //EliminarTrabajador();
+                EliminarTrabajador();
             }
         });
 
@@ -248,7 +248,7 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
         Usuarios.document(editTextCTDNI.getText().toString()).set(datos);
 
 
-        //Vuelve a la ventana de login
+        //Vuelve a la ventana principal del admin
         Intent myIntent = new Intent(ModificarTrabajadorActivity.this, MainActivityAdmin.class);
         startActivity(myIntent);
 
@@ -271,10 +271,21 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
         InsertarCuentaT();
     }
 
+    private void EliminarTrabajador() {
+
+        //Elimina al usuario seleccionado
+        String dni = getIntent().getStringExtra("dni");
+        db = FirebaseFirestore.getInstance();
+        db.collection("Usuarios").document(dni).delete();
+
+        //Vuelve a la ventana principal del admin
+        Intent myIntent = new Intent(ModificarTrabajadorActivity.this, MainActivityAdmin.class);
+        startActivity(myIntent);
+    }
+
     private void leerTrabajador() {
 
         String dni = getIntent().getStringExtra("dni");
-        System.out.println(dni);
         db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("Usuarios").document(dni);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
