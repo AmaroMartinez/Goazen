@@ -64,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-
                                 DNI = document.getString("DNI");
                                 Contrasena = document.getString("Contrasena");
                                 DatosUsuario.setNombre(document.getString("Nombre"));

@@ -25,13 +25,12 @@ public class RecyclerViewCalTrabajador {
 
 
 
-    public RecyclerViewCalTrabajador(long fecha, Object titulo, Object trabajador, Object adress) {
-        this.st_tarea_trabajador = titulo.toString();
-        this.st_dir_trabajo = adress.toString();
+    public RecyclerViewCalTrabajador(Date fecha, String titulo, String trabajador, String adress) {
+        this.st_tarea_trabajador = titulo;
+        this.st_dir_trabajo = adress;
 
-        Date d = new Date(fecha);
-        this.st_hora_trabajo = d.getHours() + ":" + d.getMinutes();
-        this.st_fecha_trabajo = d.getDay() + "/" + d.getMonth() + "/" + d.getYear();
+        this.st_hora_trabajo = fecha.getHours() + ":" + fecha.getMinutes();
+        this.st_fecha_trabajo = fecha.getDate() + "/" + fecha.getMonth() + "/" + fecha.getYear();
     }
 
     public static List<RecyclerViewCalTrabajador> lista_Trabajos(Date f) {
