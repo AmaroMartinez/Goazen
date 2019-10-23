@@ -77,6 +77,16 @@ public class LoginActivity extends AppCompatActivity {
                                 DatosUsuario.setContrasena(document.getString("Contrasena"));
                                 DatosUsuario.setC_bancaria(document.getString("c_bancaria"));
                                 DatosUsuario.setUsu_tipo(document.getString("usu_tipo"));
+                                if (DatosUsuario.getUsu_tipo().equals("Trabajador")){
+                                    DatosUsuario.setSueldo(document.getString("Sueldo"));
+                                    DatosUsuario.setLimpieza_General(document.getBoolean("Limpieza_General"));
+                                    DatosUsuario.setLimpieza_Cristales(document.getBoolean("Limpieza_Cristales"));
+                                    DatosUsuario.setPlancha(document.getBoolean("Plancha"));
+                                    DatosUsuario.setCocina(document.getBoolean("Cocina"));
+                                    DatosUsuario.setRegado_Plantas(document.getBoolean("Regado_Plantas"));
+                                    DatosUsuario.setPaseo_Mascotas(document.getBoolean("Paseo_Mascotas"));
+                                    DatosUsuario.setLavanderia(document.getBoolean("Lavanderia"));
+                                }
                                 DatosUsuario.setID(editTextLoginUsuario.getText().toString());
 
                                 EventosCalendario.readEventos();

@@ -21,6 +21,8 @@ public class adaptador_recycler_trabajador extends RecyclerView.Adapter<adaptado
     private Context contexto;
 
     private View.OnClickListener onClickListener;
+    private View.OnLongClickListener onLongClickListener;
+
 
     public adaptador_recycler_trabajador (Context contexto, List<Trabajador> trabajadoresList) {
         inflador = (LayoutInflater) contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
@@ -30,14 +32,14 @@ public class adaptador_recycler_trabajador extends RecyclerView.Adapter<adaptado
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nombre;
-        public TextView apellido;
+        public TextView dni;
         public ImageView imagen;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imagen = itemView.findViewById(R.id.imagenPerfilTrabajadores);
-            apellido = itemView.findViewById(R.id.apellido_trabajador);
+            dni = itemView.findViewById(R.id.dni_trabajador);
             nombre = itemView.findViewById(R.id.nombre_trabajador);
 
 
@@ -56,13 +58,13 @@ public class adaptador_recycler_trabajador extends RecyclerView.Adapter<adaptado
     public void onBindViewHolder (@NonNull ViewHolder holder, int posicion) {
         Trabajador trabajador = trabajadoresList.get(posicion);
         holder.nombre.setText(trabajador.getNombre());
-        holder.apellido.setText(trabajador.getApellido());
+        holder.dni.setText(trabajador.getDni());
     }
 
     @Override
     public int getItemCount () { return trabajadoresList.size(); }
 
-    public void setOnItemClickListener (View.OnClickListener onItemClickListener) {
+    public void setOnItemClickListener (View.OnClickListener onClickListener) {
         this.onClickListener = onClickListener;
     }
 

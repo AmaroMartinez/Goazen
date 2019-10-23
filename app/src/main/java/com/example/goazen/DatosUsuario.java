@@ -20,6 +20,8 @@ public class DatosUsuario extends Application {
     private static String usu_tipo;
     private static String fnacimiento;
     private static String ID;
+    private static String Sueldo;
+    private static Boolean Limpieza_General, Limpieza_Cristales, Paseo_Mascotas, Plancha, Regado_Plantas, Lavanderia, Cocina;
     private static FirebaseFirestore db;
 
     @Override
@@ -72,6 +74,16 @@ public class DatosUsuario extends Application {
         datos.put("Contrasena", Contrasena);
         datos.put("usu_tipo", usu_tipo);
         datos.put("c_bancaria", c_bancaria);
+        if (usu_tipo.equals("Trabajador")){
+            datos.put("Sueldo", Sueldo);
+            datos.put("Limpieza_General", Limpieza_General);
+            datos.put("Limpieza_Cristales", Limpieza_Cristales);
+            datos.put("Plancha", Plancha);
+            datos.put("Cocina", Cocina);
+            datos.put("Regado_Plantas", Regado_Plantas);
+            datos.put("Paseo_Mascotas", Paseo_Mascotas);
+            datos.put("Lavanderia", Lavanderia);
+        }
 
         //data1.put("regions", Arrays.asList("west_coast", "norcal"));
         Usuarios.document(DNI).set(datos);
@@ -168,5 +180,69 @@ public class DatosUsuario extends Application {
 
     public static void setID(String ID) {
         DatosUsuario.ID = ID;
+    }
+
+    public static String getSueldo() {
+        return Sueldo;
+    }
+
+    public static void setSueldo(String sueldo) {
+        Sueldo = sueldo;
+    }
+
+    public static Boolean getLimpieza_General() {
+        return Limpieza_General;
+    }
+
+    public static void setLimpieza_General(Boolean limpieza_General) {
+        Limpieza_General = limpieza_General;
+    }
+
+    public static Boolean getLimpieza_Cristales() {
+        return Limpieza_Cristales;
+    }
+
+    public static void setLimpieza_Cristales(Boolean limpieza_Cristales) {
+        Limpieza_Cristales = limpieza_Cristales;
+    }
+
+    public static Boolean getPaseo_Mascotas() {
+        return Paseo_Mascotas;
+    }
+
+    public static void setPaseo_Mascotas(Boolean paseo_Mascotas) {
+        Paseo_Mascotas = paseo_Mascotas;
+    }
+
+    public static Boolean getPlancha() {
+        return Plancha;
+    }
+
+    public static void setPlancha(Boolean plancha) {
+        Plancha = plancha;
+    }
+
+    public static Boolean getRegado_Plantas() {
+        return Regado_Plantas;
+    }
+
+    public static void setRegado_Plantas(Boolean regado_Plantas) {
+        Regado_Plantas = regado_Plantas;
+    }
+
+    public static Boolean getLavanderia() {
+        return Lavanderia;
+    }
+
+    public static void setLavanderia(Boolean lavanderia) {
+        Lavanderia = lavanderia;
+    }
+
+    public static Boolean getCocina() {
+        return Cocina;
+    }
+
+    public static void setCocina(Boolean cocina) {
+        Cocina = cocina;
     }
 }

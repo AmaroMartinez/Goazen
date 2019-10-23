@@ -158,7 +158,7 @@
     <string name="st_ch_ver_contrasena">Ver contraseña</string>
 
 
-    //String Crear cuenta
+    //String Crear/Modificar cuenta
     <string name="st_crear_cuenta_introduce_datos">Introduce los siguientes datos</string>
     <string name="st_crear_cuenta_nombre">Nombre</string>
     <string name="st_crear_cuenta_apellido">Apellido</string>
@@ -172,6 +172,9 @@
     <string name="st_crear_cuenta_campo_vacio">Hay un campo vacio. Introduce todos los datos.</string>
     <string name="st_crear_cuenta_servicios">Servicios</string>
     <string name="st_crear_cuenta_sueldo">Sueldo</string>
+    <string name="st_modificar_trabajador">Modificar</string>
+    <string name="st_eliminar_trabajador">Eliminar</string>
+
 
 
 

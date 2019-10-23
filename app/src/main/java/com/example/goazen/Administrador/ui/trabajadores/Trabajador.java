@@ -17,7 +17,7 @@ import static android.content.ContentValues.TAG;
 public class Trabajador {
 
     private  String Nombre;
-    private  String Apellido;
+    private  String Dni;
     private static ArrayList<Trabajador> trabajadores = new ArrayList();
 
     private static FirebaseFirestore db;
@@ -37,7 +37,7 @@ public class Trabajador {
                             trabajadores.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
-                                Trabajador trabajador = new Trabajador((String) document.get("Nombre"), (String) document.get("Apellido"));
+                                Trabajador trabajador = new Trabajador((String) document.get("Nombre"), (String) document.get("DNI"));
                                 trabajadores.add(trabajador);
                                 Log.d(TAG, String.valueOf(trabajadores));
                             }
@@ -48,9 +48,9 @@ public class Trabajador {
                 });
     }
 
-    public Trabajador(String nombre, String apellido){
+    public Trabajador(String nombre, String Dni){
         this.Nombre=nombre;
-        this.Apellido=apellido;
+        this.Dni=Dni;
     }
 
     public  String getNombre() {
@@ -61,12 +61,12 @@ public class Trabajador {
         Nombre = nombre;
     }
 
-    public  String getApellido() {
-        return Apellido;
+    public  String getDni() {
+        return Dni;
     }
 
-    public  void setApellido(String apellido) {
-        Apellido = apellido;
+    public  void setDni(String dni) {
+        Dni = dni;
     }
 
 

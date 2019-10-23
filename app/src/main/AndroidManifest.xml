@@ -45,6 +45,9 @@
             android:name=".Administrador.ui.trabajadores.CrearCuentaTrabajadorActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
+            android:name=".Administrador.ui.trabajadores.ModificarTrabajadorActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
             android:name=".Cliente.PopUpPagos"
             android:theme="@style/AppTheme.PopUpPagos"
             tools:ignore="InnerclassSeparator" />
