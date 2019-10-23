@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.goazen.DatosUsuario;
+import com.example.goazen.Values;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
@@ -56,6 +57,7 @@ public class EventosCalendario{
                                 * a millisegundos para darselo a el evento.*/
 
                                 Timestamp f = (Timestamp) document.get("Fecha");
+                                Log.d(Values.tag_log, "Fecha: " + document.get("Fecha"));
                                 long fecha = f.toDate().getTime();
                                 listaEventos.add(new RecyclerViewCalTrabajador(fecha,document.get("Titulo"),
                                         document.get("Trabajador"),document.get("Adress")));

@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DatosUsuario extends Application {
+
     private static String Nombre;
     private static String Apellido;
     private static String DNI;
