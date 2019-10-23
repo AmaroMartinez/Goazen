@@ -2,8 +2,10 @@ package com.example.goazen.Administrador.ui.servicios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -14,6 +16,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 
 public class AdminServiciosFragment extends Fragment {
 
@@ -27,6 +33,15 @@ public class AdminServiciosFragment extends Fragment {
     private Switch Sw_servicio_admin_regado_plantas;
     private Switch Sw_servicio_admin_plancha;
     private Switch Sw_servicio_admin_cocina;
+
+    //Declaramos la conexión a la base de datos
+    private static FirebaseFirestore db;
+
+    //Campos a descargar de la base de datos;
+    private int number;
+    private int precio;
+    private boolean Enable;
+    private ArrayList<String> Horas;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,12 +58,31 @@ public class AdminServiciosFragment extends Fragment {
         Sw_servicio_admin_plancha = root.findViewById(R.id.sw_servicio_admin_plancha);
         Sw_servicio_admin_cocina = root.findViewById(R.id.sw_servicio_admin_cocina);
 
-        /*Programamos la funcionalidad de cada uno de ellos teniendo en cuenta que cada vez que el
-        * estado cambie se actualizara en la base de datos.
-        * */
+        /*Inicializamos los botones*/
 
-       
+
+        /*Programamos la funcionalidad de cada uno de ellos teniendo en cuenta que cada vez que el
+        * estado cambie se actualizara en la base de datos.*/
+
+        Sw_servicio_admin_limpieza_general.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                actualizarEstado(Sw_servicio_admin_limpieza_general.getText().toString(),isChecked);
+            }
+        });
 
         return root;
+    }
+
+    public void actualizarEstado(String servicio, boolean estado){
+        //Conectamos
+        db = FirebaseFirestore.getInstance();
+        //Indicamos la colección a la que vamos a acceder
+        CollectionReference Servicios = db.collection("Servicios");
+
+    }
+
+    public void ConfigurarPantalla (){
+        
     }
 }
