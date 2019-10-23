@@ -41,8 +41,11 @@ public class TrabajadoresFragment extends Fragment {
         adaptador = new adaptador_recycler_trabajador(Objects.requireNonNull(getContext()), trabajadors);
         adaptador.setOnItemClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View x) {
+                String dni = x.findViewById(R.id.dni_trabajador).toString();
+                System.out.println(x.findViewById(R.id.dni_trabajador).toString());
                 Intent myIntent = new Intent(getActivity(), ModificarTrabajadorActivity.class);
+                myIntent.putExtra("dni", dni);
                 startActivity(myIntent);
             }
         });

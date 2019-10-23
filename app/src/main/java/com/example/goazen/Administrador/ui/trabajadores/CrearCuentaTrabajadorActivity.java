@@ -193,7 +193,7 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
         datos.put("DNI", editTextCTDNI.getText().toString());
         datos.put("Adress", editTextCTDireccion.getText().toString());
         datos.put("fnacimiento", editTextCTFNacimiento.getText().toString());
-        datos.put("movil", editTextCTDireccion.getText().toString());
+        datos.put("movil", editTextCTTelefono.getText().toString());
         datos.put("email", editTextCTEmail.getText().toString());
         datos.put("Contrasena", editTextCTContraseña.getText().toString());
         datos.put("Sueldo" , editTextCTSueldo.getText().toString());

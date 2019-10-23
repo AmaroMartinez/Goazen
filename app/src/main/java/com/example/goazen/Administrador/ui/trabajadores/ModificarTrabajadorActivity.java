@@ -200,7 +200,7 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
         datos.put("DNI", editTextCTDNI.getText().toString());
         datos.put("Adress", editTextCTDireccion.getText().toString());
         datos.put("fnacimiento", editTextCTFNacimiento.getText().toString());
-        datos.put("movil", editTextCTDireccion.getText().toString());
+        datos.put("movil", editTextCTTelefono.getText().toString());
         datos.put("email", editTextCTEmail.getText().toString());
         datos.put("Contrasena", editTextCTContraseña.getText().toString());
         datos.put("Sueldo", editTextCTSueldo.getText().toString());
@@ -273,8 +273,10 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
 
     private void leerTrabajador() {
 
+        String dni = getIntent().getStringExtra("dni");
+        System.out.println(dni);
         db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("Usuarios").document("11111111A");
+        DocumentReference docRef = db.collection("Usuarios").document(dni);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
