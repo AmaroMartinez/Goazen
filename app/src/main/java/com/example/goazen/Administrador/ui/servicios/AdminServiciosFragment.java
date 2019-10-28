@@ -25,6 +25,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class AdminServiciosFragment extends Fragment {
@@ -86,7 +88,7 @@ public class AdminServiciosFragment extends Fragment {
         db = FirebaseFirestore.getInstance();
         //Indicamos la colección a la que vamos a acceder
         CollectionReference Servicios = db.collection("Servicios");
-       /* Map<String, Object> datos = new HashMap<>();
+       Map<String, Object> datos = new HashMap<>();
         double precio = 0;
         for (int pos =0;pos<ListaServicios.size();pos++){
             if(ListaServicios.get(pos).getNombre_servicio().equals(servicio)){
@@ -95,8 +97,7 @@ public class AdminServiciosFragment extends Fragment {
         }
         datos.put("Precio",precio);
         datos.put("Enable", estado);
-        Servicios.document(servicio);*/
-
+        Servicios.document(servicio).set(datos);
 
     }
 

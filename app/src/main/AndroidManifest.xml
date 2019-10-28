@@ -68,7 +68,8 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".perfil.PopUpCambiarContrasena"
-            android:theme="@style/AppTheme.PopUpPagos" /> <!-- Meta-data para el funcionamiento del mapa -->
+            android:theme="@style/AppTheme.PopUpPagos" />
+        <!-- Meta-data para el funcionamiento del mapa -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBBEi4g21muf9ndZL8PN2VFc9a95WJRw_o" />
