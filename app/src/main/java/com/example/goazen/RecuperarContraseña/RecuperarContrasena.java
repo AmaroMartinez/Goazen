@@ -99,7 +99,7 @@ public class RecuperarContrasena extends AppCompatActivity {
                                                     "bagoazgoazen@gmail.com", etRCEmail.getText().toString() );
                                             dialog.dismiss();
                                         } catch (Exception e) {
-                                            Log.e("mylog", "Error: " + e.getMessage());
+                                            Log.d("mylog", "Error: " + e.getMessage());
                                         }
                                     }
                                 });
