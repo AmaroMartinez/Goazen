@@ -11,23 +11,34 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 
 public class Calendario extends AppCompatActivity {
 
     /*Declaramos las variables necesarias para el calendario*/
     CompactCalendarView calendario;
-    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("dd - mm - yyyy", Locale.getDefault());
+    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("dd - mm - yyyy");
 
     //Declaramos las variables necesarias para el guardado de datos.
     private long dia;
+    private DateFormat simple = new SimpleDateFormat("dd MMM yyyy");
+    private  String hora;
+
 
     //Declaramos los objetos necesarios
     private TextView tv_calendario;
@@ -38,6 +49,11 @@ public class Calendario extends AppCompatActivity {
     private LinearLayout ll_contenedor_botones;
     private Button btn_asignar;
     private Button btn_Atras;
+    private static FirebaseFirestore db;
+    private ArrayList EventosCliente;
+
+    private String servicio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +82,22 @@ public class Calendario extends AppCompatActivity {
         calendario.setUseThreeLetterAbbreviation(true);
 
 
+        
+
+
         //Añadimos un listener para las acciones.
         calendario.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
 
+
+
                 //Guaradamos el día
                 dia = dateClicked.getTime();
+                System.out.println(simple.format(dia));
+
+
+
 
                 //Hacemos visibles las horas disponibles
                 tv_calendario.setVisibility(View.VISIBLE);
@@ -99,6 +124,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn_asignar.setVisibility(View.VISIBLE);
+                hora="10:00";
             }
         });
 
@@ -106,6 +132,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn_asignar.setVisibility(View.VISIBLE);
+                hora="11:00";
             }
         });
 
@@ -113,6 +140,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn_asignar.setVisibility(View.VISIBLE);
+                hora="12:00";
             }
         });
 
@@ -124,42 +152,67 @@ public class Calendario extends AppCompatActivity {
                 System.out.println(getIntent().getStringExtra("servicio"));
                 if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_limpieza_general))){
                     calendario.addEvent(new Event(getColor(R.color.color_limpieza_general),dia, R.string.st_limpieza_general));
+                    servicio="Limpieza general";
+                    //EventosCliente.add();
+
+                    crearEventobd();
+
+
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
                 else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_limpieza_cristales))){
                     calendario.addEvent(new Event(getColor(R.color.color_limpieza_cristales),dia, R.string.st_limpieza_cristales));
+                    servicio="Limpieza de cristales";
+
+                    crearEventobd();
+
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
                 else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_cocina))){
                     calendario.addEvent(new Event(getColor(R.color.color_cocina),dia, R.string.st_cocina));
+                    servicio="Cocina";
+
+                    crearEventobd();
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
                 else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_plancha))){
                     calendario.addEvent(new Event(getColor(R.color.color_plancha),dia, R.string.st_plancha));
+                    servicio="Plancha";
+
+                    crearEventobd();
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
                 else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_paseo_mascotas))){
                     calendario.addEvent(new Event(getColor(R.color.color_paseo_mascotas),dia, R.string.st_paseo_mascotas));
+                    servicio="Paseo de mascotas";
+
+                    crearEventobd();
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
                 else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_regado_plantas))){
                     calendario.addEvent(new Event(getColor(R.color.color_regado_plantas),dia, R.string.st_regado_plantas));
+                    servicio="Regado de plantas";
+
+                    crearEventobd();
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
                 }
                 else if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_lavanderia))){
                     calendario.addEvent(new Event(getColor(R.color.color_lavanderia),dia, R.string.st_lavanderia));
+                    servicio="Lavanderia";
+
+                    crearEventobd();
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
                     rg_calendario.setVisibility(View.INVISIBLE);
@@ -174,6 +227,24 @@ public class Calendario extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+    }
+
+    private void crearEventobd(){
+        db = FirebaseFirestore.getInstance();
+        CollectionReference Eventos = db.collection("Evento");
+
+
+
+
+        Map<String, Object> datos = new HashMap<>();
+        datos.put("Adress", DatosUsuario.getAdress());
+        datos.put("Fecha",simple.format(dia)+" "+hora);
+        datos.put("Titulo",servicio);
+        datos.put("Trabajador","22222222A");
+        datos.put("Cliente",DatosUsuario.getDNI());
+        Eventos.document(servicio+ " "+simple.format(dia) ).set(datos);
+
 
     }
 }
