@@ -197,7 +197,7 @@
     <string name="st_admin">Administrador</string>
 
     //String del apartado nominas
-    <string name="st_empresa"> Empresa:</string>
+    <string name="st_empresa"> Empresa: Goazen</string>
     <string name="st_direccion">Dirección:</string>
     <string name="st_DNI">DNI:</string>
     <string name="st_telefono">Telefono:</string>
