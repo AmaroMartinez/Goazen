@@ -1,9 +1,12 @@
 package com.example.goazen.Cliente.ui.servicios;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -11,12 +14,22 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.goazen.Administrador.MainActivityAdmin;
+import com.example.goazen.Cliente.MainActivity;
 import com.example.goazen.DatosUsuario;
+import com.example.goazen.LoginActivity;
 import com.example.goazen.R;
+import com.example.goazen.Trabajador.MainActivity_Trabajador;
+import com.example.goazen.Trabajador.ui.calendario.EventosCalendario;
+import com.example.goazen.Values;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
@@ -82,7 +95,8 @@ public class Calendario extends AppCompatActivity {
         calendario.setUseThreeLetterAbbreviation(true);
 
 
-        
+
+
 
 
         //Añadimos un listener para las acciones.
@@ -247,4 +261,6 @@ public class Calendario extends AppCompatActivity {
 
 
     }
+
+    
 }
