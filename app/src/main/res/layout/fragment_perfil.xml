@@ -24,8 +24,7 @@
                 android:id="@+id/ib_cambiar_imagen"
                 android:layout_width="134dp"
                 android:layout_height="134dp"
-                android:contentDescription="@string/st_menu_perfil"
-                android:background="@drawable/ardilla" />
+                android:contentDescription="@string/st_menu_perfil" />
 
             <LinearLayout
                 android:layout_width="match_parent"
