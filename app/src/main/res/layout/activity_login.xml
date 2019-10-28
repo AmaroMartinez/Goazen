@@ -6,37 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="304dp"
-        android:layout_height="316dp"
-        android:gravity="center"
-        android:orientation="vertical"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="270dp"
+        android:layout_height="229dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="270dp"
-            android:layout_height="229dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/logo" />
-
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.081" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="421dp"
-        android:layout_height="336dp"
+        android:layout_width="410dp"
+        android:layout_height="337dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.984">
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintVertical_bias="1.0">
 
 
         <TextView
@@ -46,14 +37,14 @@
             android:text="@string/st_login_nombre_usuario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.223"
+            app:layout_constraintHorizontal_bias="0.221"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.069" />
+            app:layout_constraintVertical_bias="0.012" />
 
         <EditText
             android:id="@+id/editTextLoginUsuario"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:importantForAutofill="no"
@@ -61,10 +52,10 @@
             android:text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.394"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.189" />
+            app:layout_constraintVertical_bias="0.113" />
 
         <TextView
             android:id="@+id/textViewLoginContraseña"
@@ -73,24 +64,24 @@
             android:text="@string/st_login_contraseña_usuario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.238"
+            app:layout_constraintHorizontal_bias="0.234"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.359" />
+            app:layout_constraintVertical_bias="0.289" />
 
         <EditText
             android:id="@+id/editTextLoginContraseña"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
             android:text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.394"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.515" />
+            app:layout_constraintVertical_bias="0.38" />
 
         <CheckBox
             android:id="@+id/ch_ver_contrasena"
@@ -99,10 +90,10 @@
             android:text="@string/st_ch_ver_contrasena"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.287"
+            app:layout_constraintHorizontal_bias="0.274"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.694" />
+            app:layout_constraintVertical_bias="0.544" />
 
         <Button
             android:id="@+id/buttonLoginEntrar"
@@ -111,10 +102,10 @@
             android:text="@string/st_login_boton_entrar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.729"
+            app:layout_constraintHorizontal_bias="0.753"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.888" />
+            app:layout_constraintVertical_bias="0.951" />
 
         <Button
             android:id="@+id/buttonLoginCrearCuenta"
@@ -123,10 +114,37 @@
             android:text="@string/st_login_boton_crear_cuenta"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.277"
+            app:layout_constraintHorizontal_bias="0.283"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.888" />
+            app:layout_constraintVertical_bias="0.951" />
+
+        <TextView
+            android:id="@+id/textViewContraseñaOlvidada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/st_login_contrseña_olvidada"
+            android:textColor="#2471A3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.282"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
+
+        <TextView
+            android:id="@+id/textViewDatosErroneos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/st_login_datos_erroneos"
+            android:textColor="#F00"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.767" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
