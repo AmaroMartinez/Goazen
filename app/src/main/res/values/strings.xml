@@ -184,7 +184,6 @@
     <string name="st_modificar_trabajador">Modificar</string>
     <string name="st_eliminar_trabajador">Eliminar</string>
 
-
     <string name="title_activity_main__trabajador">MainActivity_Trabajador</string>
 
     //String calendario trabajador
@@ -196,6 +195,27 @@
     <string name="st_cliente">Cliente</string>
     <string name="st_trabajador">Trabajador</string>
     <string name="st_admin">Administrador</string>
+
+    //String del apartado nominas
+    <string name="st_empresa"> Empresa:</string>
+    <string name="st_direccion">Dirección:</string>
+    <string name="st_DNI">DNI:</string>
+    <string name="st_telefono">Telefono:</string>
+    <string name="st_nombre_apellido">Nombre y apellido</string>
+    <string name="st_fecha_ingreso">Fecha ingreso:</string>
+
+    <string name="deducciones">Deducciones</string>
+    <string name="concepto">Concepto</string>
+    <string name="cuantia">Cuantía</string>
+
+    <string name="st_horas_nomina">30</string>
+    <string name="st_concepto_salario_base">Salario Base</string>
+    <string name="st_concepto_km">Desplazamientos</string>
+    <string name="st_concepto_antiguedad">Antigüedad</string>
+
+    <string name="st_total_nomina">Total</string>
+    <string name="st_Descargar_nomina">Descargar</string>
+
 
     <!--<string name="st_"></string>-->
 
