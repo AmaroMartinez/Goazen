@@ -6,6 +6,7 @@
 
     //Colores para botones servicios
     <color name="color_boton_servicios">#31519D</color>
+    <color name="color_botones_servicio_no_contratables">#406BD0</color>
     <color name="color_letra_boton_servicios">#f1f1f1</color>
     <color name="color_boton_contratar">#1E760A</color>
     <color name="color_boton_cancelar_contrato">#760A0A</color>
