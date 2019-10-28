@@ -24,7 +24,7 @@ public class Servicios {
         Nombre_servicio = nombre_servicio;
     }
 
-    public boolean isEnable() {
+    public boolean getEnable() {
         return Enable;
     }
 
