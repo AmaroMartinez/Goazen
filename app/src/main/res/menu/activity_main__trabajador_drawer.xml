@@ -6,16 +6,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_calendario_trabajador"
-            android:icon="@drawable/candado"
+            android:icon="@drawable/calendario"
             android:title="@string/st_menu_calendario_trabajador" />
         <item
             android:id="@+id/nav_nominas_trabajador"
             android:icon="@drawable/pdf"
             android:title="@string/st_menu_nominas" />
-        <item
-            android:id="@+id/nav_vacaciones_trabajador"
-            android:icon="@drawable/candado"
-            android:title="@string/st_menu_vacaciones" />
     </group>
 
     <item android:title="@string/titulo_op_menu2">
