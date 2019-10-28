@@ -104,7 +104,7 @@ public class NominasFragment extends Fragment {
         btnDescargar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
