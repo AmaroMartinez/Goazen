@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -29,6 +30,7 @@ public class PerfilFragment extends Fragment {
     private EditText etdireccion;
     private Button btncambiarcontrasena;
     private Button btnguardar;
+    private ImageButton imagenperfil;
     private FirebaseFirestore db;
 
 
@@ -51,10 +53,22 @@ public class PerfilFragment extends Fragment {
         etdireccion = root.findViewById(R.id.et_direccion);
         btncambiarcontrasena = root.findViewById(R.id.btn_cambiar_contrasena);
         btnguardar = root.findViewById(R.id.btn_guardar);
+        imagenperfil = root.findViewById(R.id.ib_cambiar_imagen);
 
         //Recoger los datos de la base de datos
         readUsuario();
 
+        switch (DatosUsuario.getUsu_tipo()) {
+            case "Trabajador":
+                imagenperfil.setBackgroundResource(R.drawable.trabajador);
+                break;
+            case "Admin":
+                imagenperfil.setBackgroundResource(R.drawable.libro);
+                break;
+            default:
+                imagenperfil.setBackgroundResource(R.drawable.usuario);
+                break;
+        }
 
         btneditar.setOnClickListener(new View.OnClickListener() {
         @Override
