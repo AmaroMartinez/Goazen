@@ -226,6 +226,41 @@
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/textViewCTKmM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="103dp"
+                            android:text="@string/st_concepto_km" />
+
+                        <EditText
+                            android:id="@+id/editTextCTKmM"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                        <TextView
+                            android:id="@+id/textViewCTAntiguedadM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="103dp"
+                            android:text="@string/st_concepto_km" />
+
+                        <EditText
+                            android:id="@+id/editTextCTAntiguedadM"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:maxLength="10"
+                            android:inputType="date" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
 
                         <TextView
                             android:id="@+id/textViewCTServiciosM"

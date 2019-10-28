@@ -2,6 +2,7 @@ package com.example.goazen.Administrador.ui.trabajadores;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,11 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.goazen.Administrador.MainActivityAdmin;
 import com.example.goazen.DateTextWatcher;
 import com.example.goazen.R;
+import com.example.goazen.Values;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
@@ -25,7 +30,7 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
     private Button btnCrearCuentaTrabajador;
     private TextView textViewCampoVacio;
     private EditText editTextCTNombre, editTextCTApellido, editTextCTDNI, editTextCTEmail,
-            editTextCTTelefono, editTextCTFNacimiento, editTextCTDireccion, editTextCTContraseña, editTextCTConfirmarContra, editTextCTSueldo;
+            editTextCTTelefono, editTextCTFNacimiento, editTextCTDireccion, editTextCTContraseña, editTextCTConfirmarContra, editTextCTSueldo, editTextCTKm;
     private static FirebaseFirestore db;
     private ArrayList<String> Servicios = new ArrayList<>();
     private CheckBox limpiezageneral, lavanderia, plancha, cocina, paseomascotas, limpiezacristales, regadoplantas;
@@ -49,6 +54,7 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
         editTextCTContraseña = findViewById(R.id.editTextCTContraseña);
         editTextCTConfirmarContra = findViewById(R.id.editTextCTConfirmarContra);
         editTextCTSueldo = findViewById(R.id.editTextCTSueldo);
+        editTextCTKm = findViewById(R.id.editTextCTKm);
         limpiezageneral = findViewById(R.id.cb_limpieza_general);
         lavanderia = findViewById(R.id.cb_lavanderia);
         plancha = findViewById(R.id.cb_plancha);
@@ -82,7 +88,7 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
                 || editTextCTDNI.getText().toString().equals("") || editTextCTEmail.getText().toString().equals("")
                 || editTextCTTelefono.getText().toString().equals("") || editTextCTFNacimiento.getText().toString().equals("") ||
                 editTextCTDireccion.getText().toString().equals("") || editTextCTConfirmarContra.getText().toString().equals("") ||
-                editTextCTConfirmarContra.getText().toString().equals("") || editTextCTSueldo.getText().toString().equals("")) {
+                editTextCTConfirmarContra.getText().toString().equals("") || editTextCTSueldo.getText().toString().equals("") || editTextCTKm.getText().toString().equals("")) {
 
             textViewCampoVacio.setVisibility(View.VISIBLE);
         }
@@ -183,6 +189,13 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
 
     private void InsertarCuentaT(){
 
+        SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        Date date = new Date();
+
+        String fecha = formatofecha.format(date);
+
+        Log.e(Values.tag_log, fecha);
+
         //Inserta los datos en la base de datos
         db = FirebaseFirestore.getInstance();
         CollectionReference Usuarios = db.collection("Usuarios");
@@ -197,6 +210,8 @@ public class CrearCuentaTrabajadorActivity extends AppCompatActivity {
         datos.put("email", editTextCTEmail.getText().toString());
         datos.put("Contrasena", editTextCTContraseña.getText().toString());
         datos.put("Sueldo" , editTextCTSueldo.getText().toString());
+        datos.put("Km" , editTextCTKm.getText().toString());
+        datos.put("Antiguedad", fecha);
         datos.put("usu_tipo", "Trabajador");
         if(limpiezageneral.isChecked()){
             datos.put("Limpieza_General", true);

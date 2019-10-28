@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,8 +24,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import static android.content.ContentValues.TAG;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
 
         btnLoginCrearCuenta= findViewById(R.id.buttonLoginCrearCuenta);
         btnLoginEntrar= findViewById(R.id.buttonLoginEntrar);
@@ -106,6 +102,8 @@ public class LoginActivity extends AppCompatActivity {
                                     DatosUsuario.setRegado_Plantas(document.getBoolean("Regado_Plantas"));
                                     DatosUsuario.setPaseo_Mascotas(document.getBoolean("Paseo_Mascotas"));
                                     DatosUsuario.setLavanderia(document.getBoolean("Lavanderia"));
+                                    DatosUsuario.setKm(document.getString("Km"));
+                                    DatosUsuario.setAntiguedad(document.getString("Antiguedad"));
                                 }
                                 DatosUsuario.setID(editTextLoginUsuario.getText().toString());
 
