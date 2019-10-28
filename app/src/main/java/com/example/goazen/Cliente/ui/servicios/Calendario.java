@@ -31,8 +31,11 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -67,6 +70,16 @@ public class Calendario extends AppCompatActivity {
 
     private String servicio;
 
+    private String Adress;
+    private String Fecha;
+    private String Titulo;
+    private String Trabajador;
+    private String Cliente;
+
+    private long milliseconds;
+    private int ColorCalendario;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +109,7 @@ public class Calendario extends AppCompatActivity {
 
 
 
+        cargarEventos();
 
 
 
@@ -262,5 +276,118 @@ public class Calendario extends AppCompatActivity {
 
     }
 
-    
+
+
+    /*
+
+    Log.d(Values.tag_log, "DocumentSnapshot data: " + document.getData());
+                        Adress = document.getString("Adress");
+                        Fecha = document.getString("Fecha");
+                        Titulo= document.getString("Titulo");
+                        Trabajador=document.getString("Trabajador");
+                        Cliente=document.getString("Cliente");
+     */
+    private void cargarEventos(){
+
+        // Carga los datos
+        db = FirebaseFirestore.getInstance();
+        db.collection("Evento")
+                .whereEqualTo("Cliente", DatosUsuario.getDNI())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(Values.tag_log, document.getId() + " => " + document.getData());
+
+
+                                Adress = document.getString("Adress");
+                                Fecha = document.getString("Fecha");
+                                Titulo= document.getString("Titulo");
+                                Trabajador=document.getString("Trabajador");
+                                Cliente=document.getString("Cliente");
+                                System.out.println(Titulo);
+
+                                if (Titulo.equals("Limpieza General")){
+                                    ColorCalendario=R.color.color_regado_plantas;
+                                }
+                                else if (Titulo.equals("Cocina")){
+                                    ColorCalendario=R.color.color_cocina;
+                                }
+                                else if (Titulo.equals("Limpieza de Cristales")){
+                                    ColorCalendario=R.color.color_limpieza_cristales;
+                                }
+                                else if (Titulo.equals("Plancha")){
+                                    ColorCalendario=R.color.color_plancha;
+                                }
+                                else if (Titulo.equals("Paseo de Mascotas")){
+                                    ColorCalendario=R.color.color_paseo_mascotas;
+                                }
+                                else if (Titulo.equals("Regado de Plantas")){
+                                    ColorCalendario=R.color.color_regado_plantas;
+                                }
+                                else if (Titulo.equals("Lavanderia")){
+                                    ColorCalendario=R.color.color_lavanderia;
+                                }
+
+                                try {
+                                    Date d = simple.parse(Fecha);
+                                    milliseconds = d.getTime();
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                                calendario.addEvent(new Event(getColor(ColorCalendario),milliseconds, Titulo));
+
+                            }
+                        } else {
+                            Log.d(Values.tag_log, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+        /*
+        db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("Evento").document("Cocina 26 Nov 2019");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(Values.tag_log, "DocumentSnapshot data: " + document.getData());
+                        Adress = document.getString("Adress");
+                        Fecha = document.getString("Fecha");
+                        Titulo= document.getString("Titulo");
+                        Trabajador=document.getString("Trabajador");
+                        Cliente=document.getString("Cliente");
+
+
+                        try {
+                            Date d = simple.parse(Fecha);
+                            milliseconds = d.getTime();
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+
+                        calendario.addEvent(new Event(getColor(R.color.color_limpieza_general),milliseconds, Titulo));
+
+                    } else {
+                        Log.d(Values.tag_log, "No such document");
+
+
+                    }
+                } else {
+                    Log.d(Values.tag_log, "get failed with ", task.getException());
+                }
+            }
+        });
+        */
+
+
+
+
+
+
+    }
 }
