@@ -22,7 +22,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
     private EditText editTextCCNombre, editTextCCApellido, editTextCCDNI, editTextCCEmail,
             editTextCCTelefono, editTextCCFNacimiento, editTextCCDireccion, editTextCCContraseña, editTextCCConfirmarContra;
     private static FirebaseFirestore db;
-    
+
 
 
     @Override
