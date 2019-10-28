@@ -22,6 +22,8 @@ public class DatosUsuario extends Application {
     private static String fnacimiento;
     private static String ID;
     private static String Sueldo;
+    private static String Km;
+    private static String Antiguedad;
     private static Boolean Limpieza_General, Limpieza_Cristales, Paseo_Mascotas, Plancha, Regado_Plantas, Lavanderia, Cocina;
     private static FirebaseFirestore db;
 
@@ -84,6 +86,8 @@ public class DatosUsuario extends Application {
             datos.put("Regado_Plantas", Regado_Plantas);
             datos.put("Paseo_Mascotas", Paseo_Mascotas);
             datos.put("Lavanderia", Lavanderia);
+            datos.put("Km", Km);
+            datos.put("Antiguedad", Antiguedad);
         }
 
         //data1.put("regions", Arrays.asList("west_coast", "norcal"));
@@ -245,5 +249,21 @@ public class DatosUsuario extends Application {
 
     public static void setCocina(Boolean cocina) {
         Cocina = cocina;
+    }
+
+    public static String getKm() {
+        return Km;
+    }
+
+    public static void setKm(String km) {
+        Km = km;
+    }
+
+    public static String getAntiguedad() {
+        return Antiguedad;
+    }
+
+    public static void setAntiguedad(String antiguedad) {
+        Antiguedad = antiguedad;
     }
 }

@@ -228,6 +228,24 @@
                             android:layout_height="20dp" />
 
                         <TextView
+                            android:id="@+id/textViewCTKm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="70dp"
+                            android:text="@string/st_concepto_km" />
+
+                        <EditText
+                            android:id="@+id/editTextCTKm"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="number" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+
+                        <TextView
                             android:id="@+id/textViewCTServicios"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

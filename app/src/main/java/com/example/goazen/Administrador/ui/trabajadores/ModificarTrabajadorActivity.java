@@ -32,7 +32,7 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
     private Button btnModificarTrabajador, btnEliminarTrabajador;
     private TextView textViewCampoVacio;
     private EditText editTextCTNombre, editTextCTApellido, editTextCTDNI, editTextCTEmail,
-            editTextCTTelefono, editTextCTFNacimiento, editTextCTDireccion, editTextCTContraseña, editTextCTConfirmarContra, editTextCTSueldo;
+            editTextCTTelefono, editTextCTFNacimiento, editTextCTDireccion, editTextCTContraseña, editTextCTConfirmarContra, editTextCTSueldo, editTextCTKm, editTextCTAntiguedad;
     private static FirebaseFirestore db;
     private CheckBox limpiezageneral, lavanderia, plancha, cocina, paseomascotas, limpiezacristales, regadoplantas;
 
@@ -55,6 +55,8 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
         editTextCTContraseña = findViewById(R.id.editTextCTContraseñaM);
         editTextCTConfirmarContra = findViewById(R.id.editTextCTConfirmarContraM);
         editTextCTSueldo = findViewById(R.id.editTextCTSueldoM);
+        editTextCTKm = findViewById(R.id.editTextCTKmM);
+        editTextCTAntiguedad = findViewById(R.id.editTextCTAntiguedadM);
         limpiezageneral = findViewById(R.id.cb_limpieza_generalM);
         lavanderia = findViewById(R.id.cb_lavanderiaM);
         plancha = findViewById(R.id.cb_planchaM);
@@ -95,7 +97,7 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
                 || editTextCTDNI.getText().toString().equals("") || editTextCTEmail.getText().toString().equals("")
                 || editTextCTTelefono.getText().toString().equals("") || editTextCTFNacimiento.getText().toString().equals("") ||
                 editTextCTDireccion.getText().toString().equals("") || editTextCTConfirmarContra.getText().toString().equals("") ||
-                editTextCTConfirmarContra.getText().toString().equals("") || editTextCTSueldo.getText().toString().equals("")) {
+                editTextCTConfirmarContra.getText().toString().equals("") || editTextCTSueldo.getText().toString().equals("") || editTextCTKm.getText().toString().equals("") || editTextCTAntiguedad.getText().toString().equals("")) {
 
             textViewCampoVacio.setVisibility(View.VISIBLE);
         } else {
@@ -190,6 +192,8 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
 
     private void InsertarCuentaT() {
 
+        EliminarTrabajador();
+
         //Inserta los datos en la base de datos
         db = FirebaseFirestore.getInstance();
         CollectionReference Usuarios = db.collection("Usuarios");
@@ -204,6 +208,8 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
         datos.put("email", editTextCTEmail.getText().toString());
         datos.put("Contrasena", editTextCTContraseña.getText().toString());
         datos.put("Sueldo", editTextCTSueldo.getText().toString());
+        datos.put("Km", editTextCTKm.getText().toString());
+        datos.put("Antiguedad", editTextCTAntiguedad.getText().toString());
         datos.put("usu_tipo", "Trabajador");
         if (limpiezageneral.isChecked()) {
             datos.put("Limpieza_General", true);
@@ -306,6 +312,9 @@ public class ModificarTrabajadorActivity extends AppCompatActivity {
                         editTextCTSueldo.setText(document.getString("Sueldo"));
                         editTextCTContraseña.setText(document.getString("Contrasena"));
                         editTextCTConfirmarContra.setText(document.getString("Contrasena"));
+                        editTextCTKm.setText(document.getString("Km"));
+                        editTextCTAntiguedad.setText(document.getString("Antiguedad"));
+
                         if (document.getBoolean("Limpieza_General") == Boolean.TRUE) {
                             limpiezageneral.setChecked(true);
                         }
