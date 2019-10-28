@@ -156,6 +156,15 @@
     <string name="st_login_boton_entrar">Entrar</string>
     <string name="st_login_boton_crear_cuenta">Crear cuenta</string>
     <string name="st_ch_ver_contrasena">Ver contraseña</string>
+    <string name="st_login_contrseña_olvidada">Contraseña olvidada?</string>
+    <string name="st_login_datos_erroneos">Datos incorrectos</string>
+
+
+    //String Contraseña olvidada
+    <string name="st_contrasena_olvidada_recupera">Recuperar cuenta</string>
+    <string name="st_contrasena_olvidada_email">Introduce el e-mail de tu cuenta </string>
+    <string name="st_contrasena_olvidada_email_edittext">E-mail</string>
+    <string name="st_contrasena_olvidada_email_no_existe">No hay ninguna cuenta registrada con ese e-mail.</string>
 
 
     //String Crear/Modificar cuenta
@@ -174,11 +183,6 @@
     <string name="st_crear_cuenta_sueldo">Sueldo</string>
     <string name="st_modificar_trabajador">Modificar</string>
     <string name="st_eliminar_trabajador">Eliminar</string>
-
-
-
-
-
 
 
     <string name="title_activity_main__trabajador">MainActivity_Trabajador</string>
