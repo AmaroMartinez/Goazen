@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation_trabajador"
-    app:startDestination="@id/nav_nominas_trabajador">
+    app:startDestination="@id/nav_calendario_trabajador">
 
     <activity
         android:id="@+id/nav_log_out"
@@ -27,11 +27,5 @@
         android:name="com.example.goazen.Trabajador.ui.nominas.NominasFragment"
         android:label="@string/st_menu_nominas"
         tools:layout="@layout/fragment_nominas" />
-
-    <fragment
-        android:id="@+id/nav_vacaciones_trabajador"
-        android:name="com.example.goazen.Trabajador.ui.vacaciones.VacacionesTrabajadorFragment"
-        android:label="@string/st_menu_vacaciones"
-        tools:layout="@layout/fragment_vacaciones_trabajador" />
 
 </navigation>

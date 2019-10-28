@@ -30,8 +30,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity
-            android:name=".CrearCuentaActivity" />
+        <activity android:name=".RecuperarContraseña.RecuperarContrasena"></activity>
+        <activity android:name=".CrearCuentaActivity" />
         <activity
             android:name=".Trabajador.MainActivity_Trabajador"
             android:label="@string/title_activity_main__trabajador"
@@ -59,7 +59,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cliente.ui.servicios.Calendario"
+        <activity
+            android:name=".Cliente.ui.servicios.Calendario"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Cliente.MainActivity"
