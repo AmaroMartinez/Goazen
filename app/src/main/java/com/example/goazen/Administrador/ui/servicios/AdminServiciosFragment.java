@@ -68,7 +68,7 @@ public class AdminServiciosFragment extends Fragment {
          * configuramos su estado dependiendo de lo que diga la descarga.*/
         ConfigurarPantalla();
 
-        Log.e(Values.tag_log, "longitud lista: " + ListaServicios.size() + ". Tras configurar");
+        Log.d(Values.tag_log, "longitud lista: " + ListaServicios.size() + ". Tras configurar");
         /*Programamos la funcionalidad de cada uno de ellos teniendo en cuenta que cada vez que el
          * estado cambie se actualizara en la base de datos.*/
 
@@ -77,6 +77,54 @@ public class AdminServiciosFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 actualizarEstado(Sw_servicio_admin_limpieza_general.getText().toString(),isChecked);
+            }
+        });
+
+        Sw_servicio_admin_limpieza_cristales.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                actualizarEstado(Sw_servicio_admin_limpieza_cristales.getText().toString(),isChecked);
+            }
+        });
+
+        Sw_servicio_admin_cocina.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                actualizarEstado(Sw_servicio_admin_cocina.getText().toString(),isChecked);
+            }
+        });
+
+        Sw_servicio_admin_lavanderia.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                actualizarEstado(Sw_servicio_admin_lavanderia.getText().toString(),isChecked);
+            }
+        });
+
+        Sw_servicio_admin_paseo_mascotas.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                actualizarEstado(Sw_servicio_admin_paseo_mascotas.getText().toString(),isChecked);
+            }
+        });
+
+        Sw_servicio_admin_plancha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                actualizarEstado(Sw_servicio_admin_plancha.getText().toString(),isChecked);
+            }
+        });
+
+        Sw_servicio_admin_regado_plantas.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                actualizarEstado(Sw_servicio_admin_regado_plantas.getText().toString(),isChecked);
             }
         });
 
@@ -103,7 +151,7 @@ public class AdminServiciosFragment extends Fragment {
 
 
     public void ConfigurarPantalla (){
-        Log.e(Values.tag_log, "entramos en configurarPantalla");
+        Log.d(Values.tag_log, "entramos en configurarPantalla");
         ListaServicios = new ArrayList<Servicios>();
         db = FirebaseFirestore.getInstance();
         db.collection("Servicios")
@@ -117,12 +165,12 @@ public class AdminServiciosFragment extends Fragment {
                                 en el array*/
                                 Log.d(Values.tag_log,document.getId() +" --> "+ document.getBoolean("Enable")+" --> "+document.getDouble("Precio"));
                                 ListaServicios.add(new Servicios(document.getId(),document.getBoolean("Enable"), document.getDouble("Precio")));
-                                Log.e(Values.tag_log, String.valueOf(ListaServicios.size()));
+                                Log.d(Values.tag_log, String.valueOf(ListaServicios.size()));
                             }
                         }
                         if(task.isComplete()){
                             for(int pos = 0; pos<ListaServicios.size(); pos++){
-                                Log.e(Values.tag_log,"Entramos en el bucle");
+                                Log.d(Values.tag_log,"Entramos en el bucle");
                                 switch(ListaServicios.get(pos).getNombre_servicio()) {
                                     case Values.SERV_GENERAL:
                                         Log.d(Values.tag_log, "Hemos entrado en el case limpieza general");
