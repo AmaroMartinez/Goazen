@@ -3,33 +3,25 @@ package com.example.goazen.Administrador.ui.servicios;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 import com.example.goazen.Servicios;
-import com.example.goazen.Trabajador.ui.calendario.RecyclerViewCalTrabajador;
-import com.example.goazen.Values;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import static android.content.ContentValues.TAG;
 
@@ -69,7 +61,7 @@ public class AdminServiciosFragment extends Fragment {
 
         /*Inicializamos los botones*/
         ConfigurarPantalla();
-        for(int pos = 0; pos<ListaServicios.size(); pos++){
+        /*for(int pos = 0; pos<ListaServicios.size(); pos++){
             switch(ListaServicios.get(pos).getNombre_servicio()){
                 case getString(R.string.st_limpieza_general):
                     Sw_servicio_admin_limpieza_general.setChecked(ListaServicios.get(pos).isEnable());
@@ -79,7 +71,7 @@ public class AdminServiciosFragment extends Fragment {
             }
 
 
-        }
+        }*/
         /*Programamos la funcionalidad de cada uno de ellos teniendo en cuenta que cada vez que el
         * estado cambie se actualizara en la base de datos.*/
 
