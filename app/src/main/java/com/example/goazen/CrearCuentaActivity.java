@@ -1,25 +1,19 @@
 package com.example.goazen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CrearCuentaActivity extends AppCompatActivity {
 
@@ -28,6 +22,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
     private EditText editTextCCNombre, editTextCCApellido, editTextCCDNI, editTextCCEmail,
             editTextCCTelefono, editTextCCFNacimiento, editTextCCDireccion, editTextCCContraseña, editTextCCConfirmarContra;
     private static FirebaseFirestore db;
+    
 
 
     @Override
