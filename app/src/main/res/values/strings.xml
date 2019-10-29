@@ -151,7 +151,7 @@
     <string name="todo">TODO</string>
 
     // String Login
-    <string name="st_login_nombre_usuario">Nombre:</string>
+    <string name="st_login_dni_usuario">DNI:</string>
     <string name="st_login_contraseña_usuario">Contraseña:</string>
     <string name="st_login_boton_entrar">Entrar</string>
     <string name="st_login_boton_crear_cuenta">Crear cuenta</string>
@@ -209,7 +209,7 @@
     <string name="concepto">Concepto</string>
     <string name="cuantia">Cuantía</string>
 
-    <string name="st_horas_nomina">30</string>
+    <string name="st_horas_nomina">50</string>
     <string name="st_concepto_salario_base">Salario Base</string>
     <string name="st_concepto_km">Desplazamientos</string>
     <string name="st_concepto_antiguedad">Antigüedad</string>

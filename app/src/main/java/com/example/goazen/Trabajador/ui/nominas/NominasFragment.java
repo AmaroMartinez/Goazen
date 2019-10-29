@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -25,17 +26,18 @@ public class NominasFragment extends Fragment {
     private EditText domicilio;
     private EditText trabajador;
     private EditText dni;
-    private EditText ss;
+    private EditText telefono;
     private EditText fecha_de_ingreso;
     private TextView deduccionSB;
     private TextView deduccionKM;
     private TextView deduccionANT;
     private EditText totalNomina;
-    private String TAG = "hola";
+    private TextView cuantiakm;
     private long calcularSB = 0;
     private long calcularKM = 0;
     private long calcularANT = 0;
     private long calcularTotal = 0;
+    private double porcentajekm = 0.08;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -50,53 +52,47 @@ public class NominasFragment extends Fragment {
         });
 
         // Access a Cloud Firestore instance from your Activity
-        /*db = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         //Enlazamod los textos con nuestras variables
         domicilio = root.findViewById(R.id.et_direccion);
         trabajador = root.findViewById(R.id.et_nombre_apellido);
-        dni = root.findViewById(R.id.dni_et);
-        ss = root.findViewById(R.id.et_nombre_apellido);
+        dni = root.findViewById(R.id.et_dni);
+        telefono = root.findViewById(R.id.et_telefono);
         fecha_de_ingreso = root.findViewById(R.id.et_fecha_ingreso);
         deduccionSB = root.findViewById(R.id.deduccionSB);
         deduccionKM = root.findViewById(R.id.deduccionKM);
         deduccionANT = root.findViewById(R.id.deduccionANT);
         totalNomina = root.findViewById(R.id.et_total);
+        cuantiakm = root.findViewById(R.id.cuantiakm);
 
         //Cargamos lo datos de la base de datos, para anexarlos a los textos.
-        final DocumentReference docRef = db.collection("nomina").document("Aritz");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(Values.tag_log, "DocumentSnapshot data: " + document.getData());
-                        domicilio.setText(document.getString("domicilio"));
-                        trabajador.setText(document.getString("trabajador"));
-                        dni.setText(document.getString("dni"));
-                        ss.setText(document.getString("ss"));
-                        fecha_de_ingreso.setText(document.getString("fecha_de_ingreso"));
-                        deduccionSB.setText(String.valueOf(document.getLong("salario_base")));
-                        deduccionKM.setText(String.valueOf(document.getLong("kilometraje")));
-                        deduccionANT.setText(String.valueOf(document.getLong("antiguedad")));
-                        calcularSB = document.getLong("salario_base");
-                        calcularKM = document.getLong("kilometraje");
-                        calcularANT = document.getLong("antiguedad");
 
-                    } else {
-                        Log.d(Values.tag_log, "No such document");
-                    }
-                }
-                if (task.isComplete()){
-                    calcularTotal = calcularSB + calcularKM + calcularANT;
-                    totalNomina.setText(String.valueOf(calcularTotal));
-                }
-                else {
-                    Log.d(Values.tag_log, "get failed with ", task.getException());
-                }
-            }
-        });*/
+        domicilio.setText(DatosUsuario.getAdress());
+        String nombreyapellido = DatosUsuario.getNombre() + " " + DatosUsuario.getApellido();
+        trabajador.setText(nombreyapellido);
+        dni.setText(DatosUsuario.getDNI());
+        telefono.setText(DatosUsuario.getMovil());
+        fecha_de_ingreso.setText(DatosUsuario.getAntiguedad());
+        deduccionSB.setText(DatosUsuario.getSueldo());
+        deduccionANT.setText(DatosUsuario.getAntiguedad());
+        //cuantiakm.setText(DatosUsuario.getKm());
+
+        Double km = Double.parseDouble(DatosUsuario.getKm());
+        km = km * porcentajekm;
+        String calculokm = km.toString();
+        deduccionKM.setText(km.toString());
+
+
+
+        String no = DatosUsuario.getSueldo();
+        //calcularSB = ;
+        //calcularKM = document.getLong("kilometraje");
+        //calcularANT = document.getLong("antiguedad");
+
+                    //calcularTotal = calcularSB + calcularKM + calcularANT;
+                    //totalNomina.setText(String.valueOf(calcularTotal));
+
 
         /*Gestionamos la descarga de datos en formato pdf*/
 

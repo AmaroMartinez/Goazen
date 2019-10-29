@@ -34,7 +34,7 @@
             android:id="@+id/textViewLoginNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/st_login_nombre_usuario"
+            android:text="@string/st_login_dni_usuario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.221"
