@@ -14,13 +14,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+
+/*------------------------------------------------------------------------------------------------
+ * EN ESTA CLASE SE VA A CONFIGURAR LA PANTALLA DE VISUALIZACIÓN DE LA ÚLTIMA NOMINA DEL TRABAJADOR
+ * -------------------------------------- QUE SE HA LOGUEADO --------------------------------------
+ * ------------------------------------------------------------------------------------------------*/
 
 public class NominasFragment extends Fragment {
 
@@ -97,8 +103,6 @@ public class NominasFragment extends Fragment {
 
         Double total = km + ant + Double.parseDouble(DatosUsuario.getSueldo());
         totalNomina.setText(Double.toString(total));
-
-
 
         /*Gestionamos la descarga de datos en formato pdf*/
         btnDescargar = root.findViewById(R.id.btnDescargar);
