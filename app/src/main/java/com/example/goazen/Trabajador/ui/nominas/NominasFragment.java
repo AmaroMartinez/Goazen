@@ -18,6 +18,10 @@ import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class NominasFragment extends Fragment {
 
     private NominasViewModel nominaViewModel;
@@ -32,11 +36,8 @@ public class NominasFragment extends Fragment {
     private TextView deduccionKM;
     private TextView deduccionANT;
     private EditText totalNomina;
-    private TextView cuantiakm;
-    private long calcularSB = 0;
-    private long calcularKM = 0;
-    private long calcularANT = 0;
-    private long calcularTotal = 0;
+    private TextView cuantiaKM;
+    private TextView cuantiaAnt;
     private double porcentajekm = 0.08;
 
 
@@ -64,38 +65,42 @@ public class NominasFragment extends Fragment {
         deduccionKM = root.findViewById(R.id.deduccionKM);
         deduccionANT = root.findViewById(R.id.deduccionANT);
         totalNomina = root.findViewById(R.id.et_total);
-        cuantiakm = root.findViewById(R.id.cuantiakm);
+        cuantiaAnt = root.findViewById(R.id.cuantiaAnt);
+        cuantiaKM = root.findViewById(R.id.cuantiaKM);
 
         //Cargamos lo datos de la base de datos, para anexarlos a los textos.
 
         domicilio.setText(DatosUsuario.getAdress());
+
         String nombreyapellido = DatosUsuario.getNombre() + " " + DatosUsuario.getApellido();
         trabajador.setText(nombreyapellido);
+
         dni.setText(DatosUsuario.getDNI());
         telefono.setText(DatosUsuario.getMovil());
         fecha_de_ingreso.setText(DatosUsuario.getAntiguedad());
         deduccionSB.setText(DatosUsuario.getSueldo());
-        deduccionANT.setText(DatosUsuario.getAntiguedad());
-        //cuantiakm.setText(DatosUsuario.getKm());
+        cuantiaKM.setText(DatosUsuario.getKm());
 
         Double km = Double.parseDouble(DatosUsuario.getKm());
         km = km * porcentajekm;
         String calculokm = km.toString();
         deduccionKM.setText(km.toString());
 
+        String antiguedad = DatosUsuario.getAntiguedad();
+        String año = String.valueOf(antiguedad.charAt(6))+ String.valueOf(antiguedad.charAt(7)) + String.valueOf(antiguedad.charAt(8)) + String.valueOf(antiguedad.charAt(9));
+        SimpleDateFormat formatofecha = new SimpleDateFormat("yyyy", Locale.getDefault());
+        Date date = new Date();
+        String añoactual = formatofecha.format(date);
+        int ant = (Integer.parseInt(añoactual) - Integer.parseInt(año));
+        cuantiaAnt.setText(Integer.toString(ant));
+        deduccionANT.setText(Integer.toString(ant*20));
 
+        Double total = km + ant + Double.parseDouble(DatosUsuario.getSueldo());
+        totalNomina.setText(Double.toString(total));
 
-        String no = DatosUsuario.getSueldo();
-        //calcularSB = ;
-        //calcularKM = document.getLong("kilometraje");
-        //calcularANT = document.getLong("antiguedad");
-
-                    //calcularTotal = calcularSB + calcularKM + calcularANT;
-                    //totalNomina.setText(String.valueOf(calcularTotal));
 
 
         /*Gestionamos la descarga de datos en formato pdf*/
-
         btnDescargar = root.findViewById(R.id.btnDescargar);
         btnDescargar.setOnClickListener(new View.OnClickListener() {
             @Override

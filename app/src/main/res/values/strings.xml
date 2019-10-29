@@ -209,10 +209,9 @@
     <string name="concepto">Concepto</string>
     <string name="cuantia">Cuantía</string>
 
-    <string name="st_horas_nomina">50</string>
     <string name="st_concepto_salario_base">Salario Base</string>
-    <string name="st_concepto_km">Desplazamientos</string>
-    <string name="st_concepto_antiguedad">Antigüedad</string>
+    <string name="st_concepto_km">Kilometros</string>
+    <string name="st_concepto_antiguedad">Antiguedad</string>
 
     <string name="st_total_nomina">Total</string>
     <string name="st_Descargar_nomina">Descargar</string>
