@@ -139,7 +139,7 @@
                             android:id="@+id/textViewCTNacimientoM"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="59dp"
+                            android:layout_marginRight="58dp"
                             android:text="@string/st_crear_cuenta_fnacimiento" />
 
 
@@ -226,11 +226,12 @@
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <TextView
                             android:id="@+id/textViewCTKmM"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="103dp"
+                            android:layout_marginRight="90dp"
                             android:text="@string/st_concepto_km" />
 
                         <EditText
@@ -243,12 +244,13 @@
                         <Space
                             android:layout_width="match_parent"
                             android:layout_height="20dp" />
+
                         <TextView
                             android:id="@+id/textViewCTAntiguedadM"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="103dp"
-                            android:text="@string/st_concepto_km" />
+                            android:layout_marginRight="88dp"
+                            android:text="@string/st_concepto_antiguedad" />
 
                         <EditText
                             android:id="@+id/editTextCTAntiguedadM"
