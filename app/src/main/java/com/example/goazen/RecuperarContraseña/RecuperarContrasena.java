@@ -93,7 +93,7 @@ public class RecuperarContrasena extends AppCompatActivity {
                                         try {
                                             // Se introduce el email y la contraseña. Este email enviara los correos.
                                             GMailSender sender = new GMailSender("bagoazgoazen@gmail.com", "1234goazen");
-                                            // Asuto, mensaje, quien lo envia, edittext de quien lo envia
+                                            // Asuto, mensaje, quien lo envia, a quien lo envia
                                             sender.sendMail("Goazen",
                                                     "Hola.\n\n\nGracias por ponerte en contacto con nosotros. Tu contraseña es " +fbcontrasena,
                                                     "bagoazgoazen@gmail.com", etRCEmail.getText().toString() );
@@ -105,7 +105,7 @@ public class RecuperarContrasena extends AppCompatActivity {
                                 });
                                 sender.start();
 
-                                // Una vex enviado el correo, vuelve a la pantalla de login
+                                // Una vez enviado el correo, vuelve a la pantalla de login
                                 Intent myIntent = new Intent(RecuperarContrasena.this, LoginActivity.class);
                                 startActivity(myIntent);
 
@@ -123,11 +123,9 @@ public class RecuperarContrasena extends AppCompatActivity {
                             System.out.println("correo invalido");
                             tvEmailNoExiste.setVisibility(View.VISIBLE);
 
-
                         }
                     }
                 });
-
 
     }
 }

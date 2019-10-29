@@ -54,6 +54,7 @@ public class Calendario extends AppCompatActivity {
     private long dia;
     private DateFormat simple = new SimpleDateFormat("dd MMM yyyy");
     private  String hora;
+    private long milliseconds;
 
 
     //Declaramos los objetos necesarios
@@ -76,7 +77,6 @@ public class Calendario extends AppCompatActivity {
     private String Trabajador;
     private String Cliente;
 
-    private long milliseconds;
     private int ColorCalendario;
 
 
@@ -108,24 +108,17 @@ public class Calendario extends AppCompatActivity {
         calendario.setUseThreeLetterAbbreviation(true);
 
 
-
+        //Llamamos al metodo para cargar los eventos
         cargarEventos();
-
-
 
         //Añadimos un listener para las acciones.
         calendario.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
 
-
-
                 //Guaradamos el día
                 dia = dateClicked.getTime();
-                System.out.println(simple.format(dia));
-
-
-
+                //System.out.println(simple.format(dia));
 
                 //Hacemos visibles las horas disponibles
                 tv_calendario.setVisibility(View.VISIBLE);
@@ -179,12 +172,14 @@ public class Calendario extends AppCompatActivity {
             public void onClick(View v) {
                 System.out.println(getIntent().getStringExtra("servicio"));
                 if(getIntent().getStringExtra("servicio").equals(getString(R.string.st_limpieza_general))){
+                   //Añade el evento al calendario
                     calendario.addEvent(new Event(getColor(R.color.color_limpieza_general),dia, R.string.st_limpieza_general));
+
+                    //String para identificar mas adelante el tipo de servicio
                     servicio="Limpieza general";
-                    //EventosCliente.add();
 
+                    //El evento se crea el la base de datos
                     crearEventobd();
-
 
                     tv_calendario.setVisibility(View.INVISIBLE);
                     btn_asignar.setVisibility(View.INVISIBLE);
@@ -259,11 +254,9 @@ public class Calendario extends AppCompatActivity {
     }
 
     private void crearEventobd(){
+
         db = FirebaseFirestore.getInstance();
         CollectionReference Eventos = db.collection("Evento");
-
-
-
 
         Map<String, Object> datos = new HashMap<>();
         datos.put("Adress", DatosUsuario.getAdress());
@@ -271,22 +264,12 @@ public class Calendario extends AppCompatActivity {
         datos.put("Titulo",servicio);
         datos.put("Trabajador","22222222A");
         datos.put("Cliente",DatosUsuario.getDNI());
+        //El nombre del evento(el documento) es el servicio + la fecha
+        //con simple.format(dia) se pasa la fecha de milisegundos a formato simple (dd-mm-yyyy)
         Eventos.document(servicio+ " "+simple.format(dia) ).set(datos);
-
 
     }
 
-
-
-    /*
-
-    Log.d(Values.tag_log, "DocumentSnapshot data: " + document.getData());
-                        Adress = document.getString("Adress");
-                        Fecha = document.getString("Fecha");
-                        Titulo= document.getString("Titulo");
-                        Trabajador=document.getString("Trabajador");
-                        Cliente=document.getString("Cliente");
-     */
     private void cargarEventos(){
 
         // Carga los datos
@@ -301,42 +284,45 @@ public class Calendario extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(Values.tag_log, document.getId() + " => " + document.getData());
 
-
                                 Adress = document.getString("Adress");
                                 Fecha = document.getString("Fecha");
                                 Titulo= document.getString("Titulo");
                                 Trabajador=document.getString("Trabajador");
                                 Cliente=document.getString("Cliente");
-                                System.out.println(Titulo);
+                                //System.out.println(Titulo);
 
-                                if (Titulo.equals("Limpieza General")){
-                                    ColorCalendario=R.color.color_regado_plantas;
+                                //Identifica el String y en base al servicio se le asigna un color especifico
+                                if (Titulo.equals("Limpieza general")){
+                                    ColorCalendario=R.color.color_limpieza_general;
                                 }
                                 else if (Titulo.equals("Cocina")){
                                     ColorCalendario=R.color.color_cocina;
                                 }
-                                else if (Titulo.equals("Limpieza de Cristales")){
+                                else if (Titulo.equals("Limpieza de cristales")){
                                     ColorCalendario=R.color.color_limpieza_cristales;
                                 }
                                 else if (Titulo.equals("Plancha")){
                                     ColorCalendario=R.color.color_plancha;
                                 }
-                                else if (Titulo.equals("Paseo de Mascotas")){
+                                else if (Titulo.equals("Paseo de mascotas")){
                                     ColorCalendario=R.color.color_paseo_mascotas;
                                 }
-                                else if (Titulo.equals("Regado de Plantas")){
+                                else if (Titulo.equals("Regado de plantas")){
                                     ColorCalendario=R.color.color_regado_plantas;
                                 }
                                 else if (Titulo.equals("Lavanderia")){
                                     ColorCalendario=R.color.color_lavanderia;
                                 }
 
+                                // Pasa la fecha de formato (dd-mm-yyyy) a milisegundos
                                 try {
                                     Date d = simple.parse(Fecha);
                                     milliseconds = d.getTime();
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
+
+                                //Añade el evento
                                 calendario.addEvent(new Event(getColor(ColorCalendario),milliseconds, Titulo));
 
                             }
@@ -345,49 +331,5 @@ public class Calendario extends AppCompatActivity {
                         }
                     }
                 });
-
-        /*
-        db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("Evento").document("Cocina 26 Nov 2019");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(Values.tag_log, "DocumentSnapshot data: " + document.getData());
-                        Adress = document.getString("Adress");
-                        Fecha = document.getString("Fecha");
-                        Titulo= document.getString("Titulo");
-                        Trabajador=document.getString("Trabajador");
-                        Cliente=document.getString("Cliente");
-
-
-                        try {
-                            Date d = simple.parse(Fecha);
-                            milliseconds = d.getTime();
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-
-                        calendario.addEvent(new Event(getColor(R.color.color_limpieza_general),milliseconds, Titulo));
-
-                    } else {
-                        Log.d(Values.tag_log, "No such document");
-
-
-                    }
-                } else {
-                    Log.d(Values.tag_log, "get failed with ", task.getException());
-                }
-            }
-        });
-        */
-
-
-
-
-
-
     }
 }

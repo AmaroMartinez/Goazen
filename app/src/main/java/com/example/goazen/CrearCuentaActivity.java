@@ -64,6 +64,8 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private void VerificarDatos(){
 
+        //Si algnu campo de texto esta vacio se activa un textview a modo de error
+
         if (editTextCCNombre.getText().toString().equals("") || editTextCCApellido.getText().toString().equals("")
                 || editTextCCDNI.getText().toString().equals("") || editTextCCEmail.getText().toString().equals("")
                 || editTextCCTelefono.getText().toString().equals("") || editTextCCFNacimiento.getText().toString().equals("") ||
@@ -83,6 +85,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private void VerificarEmail() {
         String emailAVerificar = editTextCCEmail.getText().toString();
+        //formato del email
         String requisitos =
                 "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
 
@@ -113,6 +116,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private void Verificarfecha() {
         String fechaAVerificar = editTextCCFNacimiento.getText().toString();
+        //formato de la fecha dd-mm-yyyy
         String requisitos =
                 "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d{2}$";
 
@@ -134,6 +138,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private void VerificarDNI() {
         String DNIAVerificar = editTextCCDNI.getText().toString();
+        //formato del DNI 8 numeros + 1 letra
         String requisitos =
                 "(\\d{1,8})([TRWAGMYFPDXBNJZSQVHLCKEtrwagmyfpdxbnjzsqvhlcke])";
 
@@ -155,6 +160,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private void VerificarNumeroTelefono(){
 
+        //el numero tiene que tener 9 digitos
         if(editTextCCTelefono.length()<9){
 
             textViewCampoVacio.setText("Numero de teléfono invalido");
@@ -196,6 +202,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private void VerificarContraseña(){
 
+        //Si las contraseñas no son iguales salta un textview
         if (!editTextCCContraseña.getText().toString().equals(editTextCCConfirmarContra.getText().toString())) {
             textViewCampoVacio.setText("Las contraseñas no coinciden");
             textViewCampoVacio.setVisibility(View.VISIBLE);
