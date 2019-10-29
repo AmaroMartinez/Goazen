@@ -60,12 +60,8 @@ public class LoginActivity extends AppCompatActivity {
                 //Te lleva al activity para recuperar la contraseña
                 Intent myIntent = new Intent(LoginActivity.this, RecuperarContrasena.class);
                 startActivity(myIntent);
-
-
-
             }
         });
-
 
         btnLoginEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,9 +103,10 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                                 DatosUsuario.setID(editTextLoginUsuario.getText().toString());
 
+                                //Lee los eventos de los trabajadores
                                 EventosCalendario.readEventos();
 
-                                //Se comprueba que tipo de usuario ha hecho login
+                                //Se comprueba que tipo de usuario ha hecho login y se se abre su correspondiente pantalla
                                 if(editTextLoginUsuario.getText().toString().equals(DNI)&&editTextLoginContraseña.getText().toString().equals(Contrasena)){
                                     if (DatosUsuario.getUsu_tipo().equals("Cliente")) {
                                         Intent myIntent = new Intent(LoginActivity.this, MainActivity.class);
@@ -123,10 +120,12 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 }
 
+
                             } else {
+                                //Si los datos introducidos son erroneos el textview se hace visible
                                 Log.d(Values.tag_log, "No such document");
-                                System.out.println("Datos erroneos");
                                 tvDatosErroneos.setVisibility(View.VISIBLE);
+                                //System.out.println("Datos erroneos");
 
                             }
                         } else {
