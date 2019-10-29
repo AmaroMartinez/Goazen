@@ -29,17 +29,18 @@ public class NominasFragment extends Fragment {
     private EditText domicilio;
     private EditText trabajador;
     private EditText dni;
-    private EditText ss;
+    private EditText telefono;
     private EditText fecha_de_ingreso;
     private TextView deduccionSB;
     private TextView deduccionKM;
     private TextView deduccionANT;
     private EditText totalNomina;
-    private String TAG = "hola";
+    private TextView cuantiakm;
     private long calcularSB = 0;
     private long calcularKM = 0;
     private long calcularANT = 0;
     private long calcularTotal = 0;
+    private double porcentajekm = 0.08;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
