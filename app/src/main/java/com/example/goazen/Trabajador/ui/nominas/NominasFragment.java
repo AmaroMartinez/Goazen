@@ -14,10 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+/*------------------------------------------------------------------------------------------------
+ * EN ESTA CLASE SE VA A CONFIGURAR LA PANTALLA DE VISUALIZACIÓN DE LA ÚLTIMA NOMINA DEL TRABAJADOR
+ * -------------------------------------- QUE SE HA LOGUEADO --------------------------------------
+ * ------------------------------------------------------------------------------------------------*/
 public class NominasFragment extends Fragment {
 
     private NominasViewModel nominaViewModel;
@@ -50,49 +53,6 @@ public class NominasFragment extends Fragment {
             public void onChanged(@Nullable String s) {
             }
         });
-
-        // Access a Cloud Firestore instance from your Activity
-        db = FirebaseFirestore.getInstance();
-
-        //Enlazamod los textos con nuestras variables
-        domicilio = root.findViewById(R.id.et_direccion);
-        trabajador = root.findViewById(R.id.et_nombre_apellido);
-        dni = root.findViewById(R.id.et_dni);
-        telefono = root.findViewById(R.id.et_telefono);
-        fecha_de_ingreso = root.findViewById(R.id.et_fecha_ingreso);
-        deduccionSB = root.findViewById(R.id.deduccionSB);
-        deduccionKM = root.findViewById(R.id.deduccionKM);
-        deduccionANT = root.findViewById(R.id.deduccionANT);
-        totalNomina = root.findViewById(R.id.et_total);
-        cuantiakm = root.findViewById(R.id.cuantiakm);
-
-        //Cargamos lo datos de la base de datos, para anexarlos a los textos.
-
-        domicilio.setText(DatosUsuario.getAdress());
-        String nombreyapellido = DatosUsuario.getNombre() + " " + DatosUsuario.getApellido();
-        trabajador.setText(nombreyapellido);
-        dni.setText(DatosUsuario.getDNI());
-        telefono.setText(DatosUsuario.getMovil());
-        fecha_de_ingreso.setText(DatosUsuario.getAntiguedad());
-        deduccionSB.setText(DatosUsuario.getSueldo());
-        deduccionANT.setText(DatosUsuario.getAntiguedad());
-        //cuantiakm.setText(DatosUsuario.getKm());
-
-        Double km = Double.parseDouble(DatosUsuario.getKm());
-        km = km * porcentajekm;
-        String calculokm = km.toString();
-        deduccionKM.setText(km.toString());
-
-
-
-        String no = DatosUsuario.getSueldo();
-        //calcularSB = ;
-        //calcularKM = document.getLong("kilometraje");
-        //calcularANT = document.getLong("antiguedad");
-
-                    //calcularTotal = calcularSB + calcularKM + calcularANT;
-                    //totalNomina.setText(String.valueOf(calcularTotal));
-
 
         /*Gestionamos la descarga de datos en formato pdf*/
 

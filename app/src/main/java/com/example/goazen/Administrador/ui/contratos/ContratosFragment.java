@@ -14,6 +14,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.goazen.R;
 
+/*------------------------------------------------------------------------------------------------
+* ---EN ESTA CLASE CONFIURAREMOS LA APLICACIÓN PARA QUE SE MUESTREN TODOS LOS CONTRATOS QUE LOS---
+* ----CLIENTES HAN GESTIONADO CON LA EMPRESA,ES DECIR, TODOS LOS RECIBOS DE TODOS LOS CLIENTES----
+* ------------------------------------------------------------------------------------------------*/
 public class ContratosFragment extends Fragment {
 
     private ContratosViewModel contratosViewModel;
