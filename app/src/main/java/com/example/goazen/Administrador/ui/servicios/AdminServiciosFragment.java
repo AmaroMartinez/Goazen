@@ -28,7 +28,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/*------------------------------------------------------------------------------------------------
+ * EN ESTA CLASE CONFIURAREMOS LA APLICACIÓN PARA QUE SE MUESTREN TODOS LOS SERVICIOS QUE TIENE LA
+ * -----EMPRESA PARA QUE EL ADMINISTRADOR LOGADO PUEDA HABILITARLOS O DESHABILITARLOS Y QUE EN-----
+ * ------------- CASO DE QUE SE MODIFIQUE SU ESTADO SE GUARDE EN LA BASE DE DATOS.-----------------
+ * -------------------- ADEMÁS EN ESTA CLASE SE CONFIGURA TAMBIEN EL ESTADO -----------------------
+ * ------------------------ DE LA PANTALLA CUANDO SE CARGA INICIALMENTE ---------------------------
+ * ------------------------------ SEGUN LO GUARDADO EN LA BBDDD -----------------------------------
+ * ------------------------------------------------------------------------------------------------*/
 public class AdminServiciosFragment extends Fragment {
 
     private AdminServiciosViewModel adminServiciosViewModel;
