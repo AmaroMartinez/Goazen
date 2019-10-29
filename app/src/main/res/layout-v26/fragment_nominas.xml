@@ -23,6 +23,7 @@
         android:id="@+id/et_direccion"
         android:layout_width="198dp"
         android:layout_height="41dp"
+        android:autofillHints=""
         android:ems="10"
         android:enabled="false"
         android:inputType="textPersonName"
@@ -34,8 +35,7 @@
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.095"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.095" />
 
     <TextView
         android:id="@+id/domicilio"
@@ -174,8 +174,8 @@
     <TableLayout
 
         android:id="@+id/tableLayout"
-        android:layout_width="377dp"
-        android:layout_height="193dp"
+        android:layout_width="350dp"
+        android:layout_height="195dp"
         android:gravity="center"
         android:stretchColumns="0,1,2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -235,13 +235,13 @@
             android:background="#000000">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="@string/st_horas_nomina"
+                android:text="30"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
 
@@ -278,13 +278,13 @@
             android:background="#000000">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/cuantiaKM"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="@string/st_horas_nomina"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
 
@@ -307,7 +307,6 @@
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
         </TableRow>
@@ -320,13 +319,14 @@
             android:background="#000000">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/cuantiaAnt"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
-                android:text="@string/st_horas_nomina"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
 

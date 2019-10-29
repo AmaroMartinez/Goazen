@@ -174,8 +174,8 @@
     <TableLayout
 
         android:id="@+id/tableLayout"
-        android:layout_width="377dp"
-        android:layout_height="193dp"
+        android:layout_width="350dp"
+        android:layout_height="195dp"
         android:gravity="center"
         android:stretchColumns="0,1,2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -235,12 +235,13 @@
             android:background="#000000">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
+                android:text="30"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
 
@@ -277,8 +278,8 @@
             android:background="#000000">
 
             <TextView
-                android:id="@+id/cuantiakm"
-                android:layout_width="match_parent"
+                android:id="@+id/cuantiaKM"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
@@ -318,12 +319,14 @@
             android:background="#000000">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/cuantiaAnt"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_margin="1dp"
                 android:background="#FFFFFF"
                 android:gravity="center"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
 
