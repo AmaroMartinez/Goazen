@@ -62,6 +62,20 @@ public class EventosCalendario{
                                 Log.d(Values.tag_log, "Fecha: " + f1);
                                 listaEventos.add(new RecyclerViewCalTrabajador(f1,document.get("Titulo").toString(),
                                         document.get("Trabajador").toString(),document.get("Adress").toString()));
+                                //Date f1 = f.toDate();
+                                Log.d(Values.tag_log, "Fecha: " + d);
+
+                                try {
+                                    d = simple.parse(Fecha);
+                                    milliseconds = d.getTime();
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+
+
+                               /* listaEventos.add(new RecyclerViewCalTrabajador(d,document.get("Titulo").toString(),
+                                        document.get("Trabajador").toString(),document.get("Adress").toString()));*/
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
