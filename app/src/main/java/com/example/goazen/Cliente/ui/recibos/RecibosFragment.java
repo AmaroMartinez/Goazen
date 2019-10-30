@@ -78,6 +78,11 @@ public class RecibosFragment extends Fragment {
         resumenReciboNumero4=root.findViewById(R.id.textViewResumenRecibo4);
         precioReciboNumero4=root.findViewById(R.id.textViewPrecioRecibo4);
 
+
+
+
+
+
         btnDescargarPrimerRecibo.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {

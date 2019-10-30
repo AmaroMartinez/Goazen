@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -135,7 +136,7 @@ public class NominasFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 bitmap = loadBitmapFromView(llPdf, llPdf.getWidth(), llPdf.getHeight());
-                createPdf();
+                //createPdf();
             }
         });
 
@@ -151,7 +152,7 @@ public class NominasFragment extends Fragment {
         return b;
     }
 
-    private void createPdf(){
+   /* private void createPdf(){
         WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         //  Display display = wm.getDefaultDisplay();
         DisplayMetrics displaymetrics = new DisplayMetrics();
@@ -197,6 +198,9 @@ public class NominasFragment extends Fragment {
         openGeneratedPDF();
 
     }
+
+    */
+
 
     private void openGeneratedPDF(){
         File file = new File("/sdcard/pdffromlayout.pdf");

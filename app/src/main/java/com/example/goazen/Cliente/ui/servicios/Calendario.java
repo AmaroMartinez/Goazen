@@ -39,11 +39,11 @@ public class Calendario extends AppCompatActivity {
 
     /*Declaramos las variables necesarias para el calendario*/
     CompactCalendarView calendario;
-    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("dd - mm - yyyy");
+    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
 
     //Declaramos las variables necesarias para el guardado de datos.
     private long dia;
-    private DateFormat simple = new SimpleDateFormat("dd MMM yyyy");
+    private DateFormat simple = new SimpleDateFormat("dd-MM-yyyy");
     private  String hora;
     private long milliseconds;
 
@@ -138,7 +138,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn_asignar.setVisibility(View.VISIBLE);
-                hora="10:00";
+                hora="10:00:00.000";
             }
         });
 
@@ -146,7 +146,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn_asignar.setVisibility(View.VISIBLE);
-                hora="11:00";
+                hora="11:00:00.000";
             }
         });
 
@@ -154,7 +154,7 @@ public class Calendario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn_asignar.setVisibility(View.VISIBLE);
-                hora="12:00";
+                hora="12:00:00.000";
             }
         });
 
@@ -260,7 +260,7 @@ public class Calendario extends AppCompatActivity {
         datos.put("Cliente",DatosUsuario.getDNI());
         //El nombre del evento(el documento) es el servicio + la fecha
         //con simple.format(dia) se pasa la fecha de milisegundos a formato simple (dd-mm-yyyy)
-        Eventos.document(servicio+ " "+simple.format(dia) ).set(datos);
+        Eventos.document(servicio+ " "+simple.format(dia)+" "+hora ).set(datos);
 
         ArrlEvento.add(new Eventos( simple.format(dia),servicio,"22222222A",DatosUsuario.getDNI(),DatosUsuario.getAdress(),servicio+ " "+simple.format(dia) ));
 
