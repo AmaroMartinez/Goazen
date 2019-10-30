@@ -19,11 +19,20 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
+import com.example.goazen.Values;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FieldPath;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -39,7 +48,13 @@ public class RecibosFragment extends Fragment {
     private TextView codReciboNumero3, resumenReciboNumero3, precioReciboNumero3;
     private TextView codReciboNumero4, resumenReciboNumero4, precioReciboNumero4;
 
+    private static FirebaseFirestore db;
 
+    private String Preciore;
+    private int nDescarga=0;
+    private String ndesc;
+    private String nprecio;
+    private String ncod;
 
     // Permisos de almacenamiento
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -80,6 +95,57 @@ public class RecibosFragment extends Fragment {
 
 
 
+
+        // Carga los recibos
+        db = FirebaseFirestore.getInstance();
+        db.collection("Recibos")
+                .whereEqualTo("Cliente", DatosUsuario.getDNI())
+                .orderBy(FieldPath.documentId(), Query.Direction.DESCENDING)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(Values.tag_log, document.getId() + " => " + document.getData());
+                                nDescarga++;
+
+                                if (nDescarga==1){
+                                    codReciboNumero1.setText(document.getId());
+                                    resumenReciboNumero1.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero1.setText(document.getString("Precio"));
+                                }
+                                if (nDescarga==2){
+                                    codReciboNumero2.setText(document.getId());
+                                    resumenReciboNumero2.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero2.setText(document.getString("Precio"));
+                                }
+                                if (nDescarga==3){
+                                    codReciboNumero3.setText(document.getId());
+                                    resumenReciboNumero3.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero3.setText(document.getString("Precio"));
+                                }
+                                if (nDescarga==4){
+                                    codReciboNumero4.setText(document.getId());
+                                    resumenReciboNumero4.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero4.setText(document.getString("Precio"));
+                                }
+
+
+
+
+
+
+                            }
+                        } else {
+                            Log.d(Values.tag_log, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
 
 
 
@@ -170,7 +236,7 @@ public class RecibosFragment extends Fragment {
                 mDoc.add(new Paragraph(mresumen));
                 mDoc.add(new Paragraph(mprecio));
                 mDoc.close();
-                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), mFileName+".pdf\n guardado \n", Toast.LENGTH_LONG).show();
             }
             catch (Exception e){
                 System.out.println(e);
@@ -194,7 +260,7 @@ public class RecibosFragment extends Fragment {
                 mDoc.add(new Paragraph(mresumen));
                 mDoc.add(new Paragraph(mprecio));
                 mDoc.close();
-                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), mFileName+".pdf\n guardado \n", Toast.LENGTH_LONG).show();
             }
             catch (Exception e){
                 System.out.println(e);
@@ -218,7 +284,7 @@ public class RecibosFragment extends Fragment {
                 mDoc.add(new Paragraph(mresumen));
                 mDoc.add(new Paragraph(mprecio));
                 mDoc.close();
-                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), mFileName+".pdf\n guardado \n", Toast.LENGTH_LONG).show();
             }
             catch (Exception e){
                 System.out.println(e);
@@ -242,7 +308,7 @@ public class RecibosFragment extends Fragment {
                 mDoc.add(new Paragraph(mresumen));
                 mDoc.add(new Paragraph(mprecio));
                 mDoc.close();
-                Toast.makeText(getActivity(), mFileName+".pdf\n is saved to \n"+ mFilePath, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), mFileName+".pdf\n guardado \n", Toast.LENGTH_LONG).show();
             }
             catch (Exception e){
                 System.out.println(e);

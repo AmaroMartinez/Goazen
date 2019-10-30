@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.goazen.Cliente.ui.servicios.Calendario;
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
 import com.example.goazen.Values;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -210,7 +211,8 @@ public class PopUpPagos extends Activity {
 
         Map<String, Object> datos = new HashMap<>();
         datos.put("Nombre", DescServicio);
-        datos.put("Precio", PrecioServicio);
+        datos.put("Precio", PrecioServicio+"€");
+        datos.put("Cliente", DatosUsuario.getDNI());
         Recibos.document(formatter.format(curretDate)).set(datos);
         
     }

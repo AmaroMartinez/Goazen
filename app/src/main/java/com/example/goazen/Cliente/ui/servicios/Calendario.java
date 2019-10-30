@@ -58,7 +58,6 @@ public class Calendario extends AppCompatActivity {
     private Button btn_asignar;
     private Button btn_Atras;
     private static FirebaseFirestore db;
-    private ArrayList EventosCliente;
 
     public String servicio;
 
