@@ -13,6 +13,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,6 +29,11 @@ public class EventosCalendario{
     private static Date fecha;
     private static String tarea;
     private static String dni_trabajador;
+
+    private static DateFormat simple = new SimpleDateFormat("dd MMM yyyy");
+    private static long milliseconds;
+    private static String Fecha;
+    private static Date d;
 
     private static ArrayList<RecyclerViewCalTrabajador> listaEventos;
     private static ArrayList<RecyclerViewCalTrabajador> listaEventosDias;
@@ -56,11 +64,25 @@ public class EventosCalendario{
                                 /*Cogemos el dato fecha de la bbdd y hacemos el casting
                                 * a millisegundos para darselo a el evento.*/
 
-                                Timestamp f = (Timestamp) document.get("Fecha");
+                                // Pasa la fecha de formato (dd-mm-yyyy) a milisegundos
+
+
+                                //Timestamp f = (Timestamp) document.get("Fecha");
+                                Fecha = document.getString("Fecha");
                                 Log.d(Values.tag_log, "Fecha: " + document.get("Fecha"));
-                                Date f1 = f.toDate();
-                                Log.d(Values.tag_log, "Fecha: " + f1);
-                                listaEventos.add(new RecyclerViewCalTrabajador(f1,document.get("Titulo").toString(),
+                                //Date f1 = f.toDate();
+                                Log.d(Values.tag_log, "Fecha: " + d);
+
+                                try {
+                                    d = simple.parse(Fecha);
+                                    milliseconds = d.getTime();
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+
+
+                                listaEventos.add(new RecyclerViewCalTrabajador(d,document.get("Titulo").toString(),
                                         document.get("Trabajador").toString(),document.get("Adress").toString()));
                             }
                         } else {

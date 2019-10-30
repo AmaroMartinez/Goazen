@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.goazen.Cliente.ui.servicios.Calendario;
 import com.example.goazen.R;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -124,7 +125,8 @@ public class PopUpPagos extends Activity {
         btn_pagar_contrato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertarEvento();
+                //insertarEvento();
+
                 finish();
             }
         });
@@ -133,6 +135,7 @@ public class PopUpPagos extends Activity {
 
     private void insertarEvento(){
 
+
         CollectionReference Evento = db.collection("Evento");
 
         Map<String, Object> datos = new HashMap<>();
@@ -140,6 +143,12 @@ public class PopUpPagos extends Activity {
         datos.put("Nom_servicio", "Plancha");
         Evento.document("E").set(datos);
 
+
+    }
+
+    private void CrearRecibo(){
+
+        
     }
 
 
