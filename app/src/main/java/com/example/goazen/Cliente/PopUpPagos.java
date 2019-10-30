@@ -55,10 +55,6 @@ public class PopUpPagos extends Activity {
     private double PrecioServicio=0;
     private double precioValor=0;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,52 +142,41 @@ public class PopUpPagos extends Activity {
             @Override
             public void onClick(View v) {
 
-
-
-
+                // arraylist de la clase Calendario
                 for(int i=0;i<Calendario.getArrlEvento().size();i++){
 
-
-
-
+                    //Condiciones para aplicar el precio dependiendo del servicio
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Limpieza general") ){
-
                         precioValor=13;
                     }
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Limpieza de cristales") ){
-
                         precioValor=8;
                     }
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Cocina") ){
-
                         precioValor=11;
                     }
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Lavanderia") ){
-
                         precioValor=6.50;
                     }
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Plancha") ){
-
                         precioValor=5;
                     }
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Regado de plantas") ){
-
                         precioValor=4;
                     }
                     if (Calendario.getArrlEvento().get(i).getTitulo().equals("Paseo de mascotas") ){
-
                         precioValor=6;
                     }
 
-
-                    System.out.println(Calendario.getArrlEvento().get(i).getNombreEvento());
+                    //Segun avanza en el arraylist, se van añadiendo las descripciones y se hace el calculo del precio total
                     DescServicio=DescServicio+" "+Calendario.getArrlEvento().get(i).getTitulo();
                     PrecioServicio= PrecioServicio+precioValor;
 
-                    System.out.println(DescServicio);
-                    System.out.println(PrecioServicio);
+                    //System.out.println(DescServicio);
+                    //System.out.println(PrecioServicio);
                 }
 
+                //Llamamos al metodo para crear el recibo en la base de datos
                 CrearRecibo();
 
                 finish();
@@ -213,10 +198,10 @@ public class PopUpPagos extends Activity {
         datos.put("Nombre", DescServicio);
         datos.put("Precio", PrecioServicio+"€");
         datos.put("Cliente", DatosUsuario.getDNI());
+        //Le damos la fecha actual al documento que se crea en la base de datos
         Recibos.document(formatter.format(curretDate)).set(datos);
         
     }
-
 
 
 }

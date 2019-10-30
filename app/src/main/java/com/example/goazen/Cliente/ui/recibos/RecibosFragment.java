@@ -49,12 +49,7 @@ public class RecibosFragment extends Fragment {
     private TextView codReciboNumero4, resumenReciboNumero4, precioReciboNumero4;
 
     private static FirebaseFirestore db;
-
-    private String Preciore;
     private int nDescarga=0;
-    private String ndesc;
-    private String nprecio;
-    private String ncod;
 
     // Permisos de almacenamiento
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -93,62 +88,10 @@ public class RecibosFragment extends Fragment {
         resumenReciboNumero4=root.findViewById(R.id.textViewResumenRecibo4);
         precioReciboNumero4=root.findViewById(R.id.textViewPrecioRecibo4);
 
+        //Llama al metodo para cargar los recibos de la base de datos
+        CargarRecibos();
 
-
-
-        // Carga los recibos
-        db = FirebaseFirestore.getInstance();
-        db.collection("Recibos")
-                .whereEqualTo("Cliente", DatosUsuario.getDNI())
-                .orderBy(FieldPath.documentId(), Query.Direction.DESCENDING)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(Values.tag_log, document.getId() + " => " + document.getData());
-                                nDescarga++;
-
-                                if (nDescarga==1){
-                                    codReciboNumero1.setText(document.getId());
-                                    resumenReciboNumero1.setText(document.getString("Nombre"));
-
-                                    precioReciboNumero1.setText(document.getString("Precio"));
-                                }
-                                if (nDescarga==2){
-                                    codReciboNumero2.setText(document.getId());
-                                    resumenReciboNumero2.setText(document.getString("Nombre"));
-
-                                    precioReciboNumero2.setText(document.getString("Precio"));
-                                }
-                                if (nDescarga==3){
-                                    codReciboNumero3.setText(document.getId());
-                                    resumenReciboNumero3.setText(document.getString("Nombre"));
-
-                                    precioReciboNumero3.setText(document.getString("Precio"));
-                                }
-                                if (nDescarga==4){
-                                    codReciboNumero4.setText(document.getId());
-                                    resumenReciboNumero4.setText(document.getString("Nombre"));
-
-                                    precioReciboNumero4.setText(document.getString("Precio"));
-                                }
-
-
-
-
-
-
-                            }
-                        } else {
-                            Log.d(Values.tag_log, "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
-
-
+        //En cada botón de descarga se aplica un string para descargar dicho recibo
         btnDescargarPrimerRecibo.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
@@ -218,12 +161,15 @@ public class RecibosFragment extends Fragment {
 
     private void savePdf() {
         Document mDoc =new Document();
+        //El nombre del pdf es la fecha actual
         String mFileName =new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(System.currentTimeMillis());
+        //La direccion en la que se guarda el pdf
         String mFilePath= Environment.getExternalStorageDirectory()+"/" + mFileName+ ".pdf";
 
         if (numeroDescarga.equals("DescargaUno")){
 
             try{
+                //Crear el archivo, lo abre e inserta las tres variables con sus datos
                 PdfWriter.getInstance(mDoc, new FileOutputStream(mFilePath));
                 mDoc.open();
                 String mcod= codReciboNumero1.getText().toString();
@@ -236,6 +182,7 @@ public class RecibosFragment extends Fragment {
                 mDoc.add(new Paragraph(mresumen));
                 mDoc.add(new Paragraph(mprecio));
                 mDoc.close();
+                //Muestra un mensaje de guardado
                 Toast.makeText(getActivity(), mFileName+".pdf\n guardado \n", Toast.LENGTH_LONG).show();
             }
             catch (Exception e){
@@ -319,6 +266,59 @@ public class RecibosFragment extends Fragment {
 
     }
 
+    private void CargarRecibos(){
+
+        // Carga los recibos a cada usuario por fecha descendente
+        db = FirebaseFirestore.getInstance();
+        db.collection("Recibos")
+                .whereEqualTo("Cliente", DatosUsuario.getDNI())
+                .orderBy(FieldPath.documentId(), Query.Direction.DESCENDING)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(Values.tag_log, document.getId() + " => " + document.getData());
+
+                               //Se utiliza nDescarga para mostrar los datos en cada layout
+                                nDescarga++;
+
+                                if (nDescarga==1){
+                                    codReciboNumero1.setText(document.getId());
+                                    resumenReciboNumero1.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero1.setText(document.getString("Precio"));
+                                }
+                                if (nDescarga==2){
+                                    codReciboNumero2.setText(document.getId());
+                                    resumenReciboNumero2.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero2.setText(document.getString("Precio"));
+                                }
+                                if (nDescarga==3){
+                                    codReciboNumero3.setText(document.getId());
+                                    resumenReciboNumero3.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero3.setText(document.getString("Precio"));
+                                }
+                                if (nDescarga==4){
+                                    codReciboNumero4.setText(document.getId());
+                                    resumenReciboNumero4.setText(document.getString("Nombre"));
+
+                                    precioReciboNumero4.setText(document.getString("Precio"));
+                                }
+
+                            }
+                        } else {
+                            Log.d(Values.tag_log, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+    }
+
+    //Permisos
     private void checkReadPermission(){
         int permissionCheck = ContextCompat.checkSelfPermission(
                 getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE);
@@ -340,7 +340,6 @@ public class RecibosFragment extends Fragment {
             Log.i("Mensaje", "Tienes permiso.");
         }
     }
-
 
 
 
