@@ -1,6 +1,5 @@
 package com.example.goazen.Trabajador.ui.nominas;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -16,10 +15,10 @@ import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -129,7 +128,7 @@ public class NominasFragment extends Fragment {
         cuantiaAnt.setText(Integer.toString(ant));
         deduccionANT.setText(Integer.toString(ant*20));
 
-        Double total = km + ant + Double.parseDouble(DatosUsuario.getSueldo());
+        Double total = km + (ant*20) + Double.parseDouble(DatosUsuario.getSueldo());
         totalNomina.setText(Double.toString(total));
 
         /*Gestionamos la descarga de datos en formato pdf*/

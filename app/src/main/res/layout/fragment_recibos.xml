@@ -18,8 +18,7 @@
 
         <TextView
             android:id="@+id/textViewCod_recibo1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_cod1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +29,7 @@
 
         <TextView
             android:id="@+id/textViewResumenRecibo1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_resumen1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +40,7 @@
 
         <TextView
             android:id="@+id/textViewPrecioRecibo1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_Precio1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,9 +51,7 @@
 
         <Button
             android:id="@+id/buttonDescargaRecibo1"
-            android:layout_width="111dp"
-            android:layout_height="40dp"
-            android:text="@string/st_recibo_descarga"
+            style="@style/ButtonDescargarRecibos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.929"
@@ -77,8 +72,7 @@
 
         <TextView
             android:id="@+id/textViewCod_recibo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_cod2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,8 +83,7 @@
 
         <TextView
             android:id="@+id/textViewResumenRecibo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_resumen2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -101,8 +94,7 @@
 
         <TextView
             android:id="@+id/textViewPrecioRecibo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_Precio2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,9 +105,7 @@
 
         <Button
             android:id="@+id/buttonDescargaRecibo2"
-            android:layout_width="111dp"
-            android:layout_height="40dp"
-            android:text="@string/st_recibo_descarga"
+            style="@style/ButtonDescargarRecibos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.929"
@@ -136,8 +126,7 @@
 
         <TextView
             android:id="@+id/textViewCod_recibo3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_cod3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,8 +137,7 @@
 
         <TextView
             android:id="@+id/textViewResumenRecibo3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_resumen3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -160,8 +148,7 @@
 
         <TextView
             android:id="@+id/textViewPrecioRecibo3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_Precio3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -172,9 +159,7 @@
 
         <Button
             android:id="@+id/buttonDescargaRecibo3"
-            android:layout_width="111dp"
-            android:layout_height="40dp"
-            android:text="@string/st_recibo_descarga"
+            style="@style/ButtonDescargarRecibos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.929"
@@ -195,8 +180,7 @@
 
         <TextView
             android:id="@+id/textViewCod_recibo4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_cod4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -207,8 +191,7 @@
 
         <TextView
             android:id="@+id/textViewResumenRecibo4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_resumen4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -219,8 +202,7 @@
 
         <TextView
             android:id="@+id/textViewPrecioRecibo4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewRecibos"
             android:text="@string/st_recibo_Precio4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -231,9 +213,7 @@
 
         <Button
             android:id="@+id/buttonDescargaRecibo4"
-            android:layout_width="111dp"
-            android:layout_height="40dp"
-            android:text="@string/st_recibo_descarga"
+            style="@style/ButtonDescargarRecibos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.929"

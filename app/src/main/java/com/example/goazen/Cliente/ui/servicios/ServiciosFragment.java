@@ -15,15 +15,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.goazen.Cliente.Eventos;
 import com.example.goazen.Cliente.PopUpPagos;
 import com.example.goazen.R;
 import com.example.goazen.Servicios;
 import com.example.goazen.Values;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 
@@ -140,6 +144,38 @@ public class ServiciosFragment extends Fragment {
             public void onClick(View v) {
                 Intent popUp = new Intent(getContext(), PopUpPagos.class);
                 startActivity(popUp);
+            }
+        });
+
+        btncancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                for(int i=0;i<Calendario.getArrlEvento().size();i++){
+
+                    System.out.println(Calendario.getArrlEvento().get(i).getNombreEvento());
+                    db.collection("Evento").document(Calendario.getArrlEvento().get(i).getNombreEvento())
+                            .delete()
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(Values.tag_log, "DocumentSnapshot successfully deleted!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(Values.tag_log, "Error deleting document", e);
+                                }
+                            });
+
+
+                }
+
+
+
+
             }
         });
 

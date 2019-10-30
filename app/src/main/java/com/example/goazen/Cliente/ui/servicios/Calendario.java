@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,22 +13,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.goazen.Administrador.MainActivityAdmin;
-import com.example.goazen.Cliente.MainActivity;
+import com.example.goazen.Cliente.Eventos;
 import com.example.goazen.DatosUsuario;
-import com.example.goazen.LoginActivity;
 import com.example.goazen.R;
-import com.example.goazen.Trabajador.MainActivity_Trabajador;
-import com.example.goazen.Trabajador.ui.calendario.EventosCalendario;
 import com.example.goazen.Values;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -40,7 +32,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -69,7 +60,7 @@ public class Calendario extends AppCompatActivity {
     private static FirebaseFirestore db;
     private ArrayList EventosCliente;
 
-    private String servicio;
+    public String servicio;
 
     private String Adress;
     private String Fecha;
@@ -78,6 +69,8 @@ public class Calendario extends AppCompatActivity {
     private String Cliente;
 
     private int ColorCalendario;
+
+    public static ArrayList<Eventos> ArrlEvento= new ArrayList<Eventos>();
 
 
 
@@ -253,7 +246,8 @@ public class Calendario extends AppCompatActivity {
 
     }
 
-    private void crearEventobd(){
+    public void crearEventobd(){
+
 
         db = FirebaseFirestore.getInstance();
         CollectionReference Eventos = db.collection("Evento");
@@ -267,6 +261,20 @@ public class Calendario extends AppCompatActivity {
         //El nombre del evento(el documento) es el servicio + la fecha
         //con simple.format(dia) se pasa la fecha de milisegundos a formato simple (dd-mm-yyyy)
         Eventos.document(servicio+ " "+simple.format(dia) ).set(datos);
+
+        ArrlEvento.add(new Eventos( simple.format(dia),servicio,"22222222A",DatosUsuario.getDNI(),DatosUsuario.getAdress(),servicio+ " "+simple.format(dia) ));
+
+        for(int i=0;i<ArrlEvento.size();i++){
+
+            System.out.println(ArrlEvento.get(i).getTitulo());
+
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("key", ArrlEvento);
+
+
+
 
     }
 
@@ -331,5 +339,13 @@ public class Calendario extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public static ArrayList<Eventos> getArrlEvento() {
+        return ArrlEvento;
+    }
+
+    public void setArrlEvento(ArrayList<Eventos> arrlEvento) {
+        ArrlEvento = arrlEvento;
     }
 }

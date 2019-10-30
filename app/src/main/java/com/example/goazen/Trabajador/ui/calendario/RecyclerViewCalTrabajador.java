@@ -3,6 +3,7 @@ package com.example.goazen.Trabajador.ui.calendario;
 
 import android.util.Log;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +26,7 @@ public class RecyclerViewCalTrabajador {
 
 
 
-    public RecyclerViewCalTrabajador(Date fecha, String titulo, String trabajador, String adress) {
+    public RecyclerViewCalTrabajador(Timestamp fecha, String titulo, String trabajador, String adress) {
         this.st_tarea_trabajador = titulo;
         this.st_dir_trabajo = adress;
 
