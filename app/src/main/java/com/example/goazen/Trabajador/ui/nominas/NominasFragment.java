@@ -43,6 +43,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import static androidx.core.content.ContextCompat.getSystemService;
+
 
 /*------------------------------------------------------------------------------------------------
  * EN ESTA CLASE SE VA A CONFIGURAR LA PANTALLA DE VISUALIZACIÓN DE LA ÚLTIMA NOMINA DEL TRABAJADOR
@@ -153,8 +155,8 @@ public class NominasFragment extends Fragment {
     }
 
     private void createPdf(){
-        WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        //  Display display = wm.getDefaultDisplay();
+        WindowManager wm =getSystemService(Context.WINDOW_SERVICE);
+        //Display display = wm.getDefaultDisplay();
         DisplayMetrics displaymetrics = new DisplayMetrics();
         this.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         float hight = displaymetrics.heightPixels ;
