@@ -32,8 +32,7 @@
 
         <TextView
             android:id="@+id/textViewLoginNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewLogin"
             android:text="@string/st_login_dni_usuario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +43,7 @@
 
         <EditText
             android:id="@+id/editTextLoginUsuario"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
+            style="@style/EditTextLogin"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:text=""
@@ -59,8 +56,7 @@
 
         <TextView
             android:id="@+id/textViewLoginContraseña"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewLogin"
             android:text="@string/st_login_contraseña_usuario"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,9 +67,7 @@
 
         <EditText
             android:id="@+id/editTextLoginContraseña"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
+            style="@style/EditTextLogin"
             android:inputType="textPassword"
             android:text=""
             app:layout_constraintBottom_toBottomOf="parent"
@@ -121,8 +115,7 @@
 
         <TextView
             android:id="@+id/textViewContraseñaOlvidada"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewLogin"
             android:clickable="true"
             android:text="@string/st_login_contrseña_olvidada"
             android:textColor="#2471A3"
@@ -135,8 +128,7 @@
 
         <TextView
             android:id="@+id/textViewDatosErroneos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewLogin"
             android:text="@string/st_login_datos_erroneos"
             android:textColor="#F00"
             android:visibility="invisible"

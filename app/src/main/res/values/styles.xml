@@ -8,6 +8,92 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ButtonServicios" parent="android:style/Widget.Button">
+        <item name="android:layout_width">197dp</item>
+        <item name="android:layout_height">87dp</item>
+        <item name="android:textColor">@color/color_letra_boton_servicios</item>
+        <item name="android:background">@color/color_boton_servicios</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewCrearCuenta" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">81dp</item>
+        <item name="android:layout_gravity">fill</item>
+    </style>
+
+    <style name="ButtonContratarAceptar" parent="android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_letra_boton_servicios</item>
+        <item name="android:background">@color/color_boton_contratar</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ButtonCancelarEliminar" parent="android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_letra_boton_servicios</item>
+        <item name="android:background">@color/color_boton_cancelar_contrato</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditTextCrearModificarCuenta" parent="android:style/Widget.EditText">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+    </style>
+
+    <style name="EditTextLogin" parent="android:style/Widget.EditText">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ems">10</item>
+    </style>
+
+    <style name="TextViewLogin" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ImageViewNavHeader" parent="android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">106dp</item>
+        <item name="android:contentDescription">@string/st_nav_header_desc</item>
+        <item name="android:paddingTop">@dimen/nav_header_vertical_spacing</item>
+    </style>
+
+    <style name="TextViewNavHeader" parent="android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/nav_header_vertical_spacing</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+    </style>
+
+    <style name="SwitchServicios" parent="android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.13</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/color_boton_servicios</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="ButtonDescargarRecibos" parent="android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/st_recibo_descarga</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/color_letra_boton_servicios</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextViewRecibos" parent="android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

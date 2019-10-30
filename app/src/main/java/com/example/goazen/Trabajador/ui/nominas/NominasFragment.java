@@ -1,9 +1,13 @@
 package com.example.goazen.Trabajador.ui.nominas;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -109,12 +113,17 @@ public class NominasFragment extends Fragment {
         btnDescargar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                createPDF();
             }
         });
 
         return root;
 
     }
+
+    private void createPDF() {
+        
+    }
+
 
 }

@@ -39,16 +39,12 @@
 
                         <TextView
                             android:id="@+id/textViewCCNombre"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="99dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_nombre" />
 
                         <EditText
                             android:id="@+id/editTextCCNombre"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:inputType="textPersonName"
                             android:text="" />
 
@@ -58,16 +54,12 @@
 
                         <TextView
                             android:id="@+id/textViewCCApellido"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="99dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_apellido" />
 
                         <EditText
                             android:id="@+id/editTextCCApellido"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:inputType="textPersonName"
                             android:text="" />
 
@@ -77,16 +69,12 @@
 
                         <TextView
                             android:id="@+id/textViewCCDNI"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="114dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_dni" />
 
                         <EditText
                             android:id="@+id/editTextCCDNI"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:maxLength="9"
                             android:inputType="textPersonName"
                             android:text="" />
@@ -97,17 +85,13 @@
 
                         <TextView
                             android:id="@+id/textViewCCEmail"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="108dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_email" />
 
 
                         <EditText
                             android:id="@+id/editTextCCEmail"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:inputType="textEmailAddress" />
 
                         <Space
@@ -116,18 +100,14 @@
 
                         <TextView
                             android:id="@+id/textViewCCTelefono"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="61dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_movil" />
 
 
 
                         <EditText
                             android:id="@+id/editTextCCTelefono"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:maxLength="9"
                             android:inputType="number" />
 
@@ -137,17 +117,13 @@
 
                         <TextView
                             android:id="@+id/textViewCCNacimiento"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="59dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_fnacimiento" />
 
 
                         <EditText
                             android:id="@+id/editTextCCFNacimiento"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:maxLength="10"
                             android:inputType="date" />
 
@@ -157,16 +133,12 @@
 
                         <TextView
                             android:id="@+id/textViewCCDireccion"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="95dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_direccion" />
 
                         <EditText
                             android:id="@+id/editTextCCDireccion"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:inputType="textPersonName"
                             android:text="" />
                         <Space
@@ -175,17 +147,13 @@
 
                         <TextView
                             android:id="@+id/textViewCCContraseña"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="88dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_contraseña" />
 
 
                         <EditText
                             android:id="@+id/editTextCCContraseña"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:inputType="textPassword" />
 
                         <Space
@@ -194,16 +162,12 @@
 
                         <TextView
                             android:id="@+id/textViewCCConfirmarContraseña"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="55dp"
+                            style="@style/TextViewCrearCuenta"
                             android:text="@string/st_crear_cuenta_confirmarcontra" />
 
                         <EditText
                             android:id="@+id/editTextCCConfirmarContra"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
+                            style="@style/EditTextCrearModificarCuenta"
                             android:inputType="textPassword" />
 
                         <Space
@@ -225,8 +189,7 @@
 
                     <Button
                             android:id="@+id/buttonCC"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/ButtonContratarAceptar"
                             android:text="@string/st_login_boton_crear_cuenta" />
                         <Space
                             android:layout_width="match_parent"

@@ -31,7 +31,7 @@ public class MainActivityAdmin extends AppCompatActivity {
         // menu should be considered as top level destinations.
         Trabajador.leertrabajadores();
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_adminServiciosFragment, R.id.nav_contratosFragment, R.id.nav_trabajadoresFragment)
+                R.id.nav_adminServiciosFragment, R.id.nav_contratosFragment, R.id.nav_trabajadoresFragment, R.id.nav_building)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_admin);

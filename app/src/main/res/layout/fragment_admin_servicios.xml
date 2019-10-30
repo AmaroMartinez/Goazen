@@ -20,72 +20,37 @@
 
         <Switch
             android:id="@+id/sw_servicio_admin_limpieza_general"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_limpieza_general"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_limpieza_general"/>
 
         <Switch
             android:id="@+id/sw_servicio_admin_limpieza_cristales"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_limpieza_cristales"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_limpieza_cristales"/>
 
         <Switch
             android:id="@+id/sw_servicio_admin_lavanderia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_lavanderia"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_lavanderia"/>
 
         <Switch
             android:id="@+id/sw_servicio_admin_paseo_mascotas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_paseo_mascotas"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_paseo_mascotas"/>
 
         <Switch
             android:id="@+id/sw_servicio_admin_regado_plantas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_regado_plantas"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_regado_plantas"/>
 
         <Switch
             android:id="@+id/sw_servicio_admin_plancha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_plancha"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_plancha"/>
 
         <Switch
             android:id="@+id/sw_servicio_admin_cocina"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.13"
-            android:text="@string/st_cocina"
-            android:textAlignment="center"
-            android:textColor="@color/color_boton_servicios"
-            android:textSize="24sp" />
+            style="@style/SwitchServicios"
+            android:text="@string/st_cocina"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,8 +43,7 @@
 
         <Button
             android:id="@+id/buttonEnviarRecuContra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ButtonContratarAceptar"
             android:text="Enviar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

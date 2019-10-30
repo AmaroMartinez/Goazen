@@ -140,9 +140,18 @@
     <string name="action_settings">Settings</string>
 
     //String menu Admin
+    //Ventas
     <string name="st_menu_servicios_admin">Servicios</string>
-    <string name="st_menu_trabajadores">Trabajadores</string>
     <string name="st_menu_contratos">Contratos</string>
+    //Compras
+    <string name="st_menu_proveedor">Proveedores</string>
+    <string name="st_menu_facturas">Facturas</string>
+    //RRHH
+    <string name="st_menu_trabajadores">Trabajadores</string>
+    <string name="st_menu_control_de_asistencia">Control de asistencia</string>
+    //Cliente
+    <string name="st_menu_clientes">G. Clientes</string>
+
 
     //String menu Trabajador
     <string name="st_menu_calendario_trabajador">Calendario</string>

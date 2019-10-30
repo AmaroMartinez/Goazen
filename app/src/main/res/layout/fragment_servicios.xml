@@ -26,11 +26,7 @@
 
             <Button
                 android:id="@+id/btn_limpieza_general"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_limpieza_general" />
 
             <Space
@@ -39,11 +35,7 @@
 
             <Button
                 android:id="@+id/btn_limpieza_cristales"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_limpieza_cristales" />
 
 
@@ -53,11 +45,7 @@
 
             <Button
                 android:id="@+id/btn_cocina"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_cocina" />
 
             <Space
@@ -66,11 +54,7 @@
 
             <Button
                 android:id="@+id/btn_lavanderia"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_lavanderia" />
 
             <Space
@@ -79,11 +63,7 @@
 
             <Button
                 android:id="@+id/btn_plancha"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_plancha" />
 
             <Space
@@ -92,11 +72,7 @@
 
             <Button
                 android:id="@+id/btn_regado_plantas"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_regado_plantas" />
 
             <Space
@@ -105,11 +81,7 @@
 
             <Button
                 android:id="@+id/btn_paseo_mascotas"
-                android:layout_width="197dp"
-                android:layout_height="87dp"
-                android:background="@color/color_boton_servicios"
-                android:textColor="@color/color_letra_boton_servicios"
-                android:textStyle="bold"
+                style="@style/ButtonServicios"
                 android:text="@string/st_paseo_mascotas" />
 
             <Space
@@ -132,11 +104,7 @@
 
                     <Button
                         android:id="@+id/btn_cancelar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/color_boton_cancelar_contrato"
-                        android:textColor="@color/color_letra_boton_servicios"
-                        android:textStyle="bold"
+                        style="@style/ButtonCancelarEliminar"
                         android:text="@string/st_cancelar" />
 
                     <Space
@@ -146,11 +114,7 @@
 
                     <Button
                         android:id="@+id/btn_contratar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/color_boton_contratar"
-                        android:textColor="@color/color_letra_boton_servicios"
-                        android:textStyle="bold"
+                        style="@style/ButtonContratarAceptar"
                         android:text="@string/st_contratar" />
 
                     <Space
