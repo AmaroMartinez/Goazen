@@ -30,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".RecuperarContraseña.RecuperarContrasena"></activity>
+        <activity android:name=".RecuperarContraseña.RecuperarContrasena" />
         <activity android:name=".CrearCuentaActivity" />
         <activity
             android:name=".Trabajador.MainActivity_Trabajador"
@@ -69,8 +69,7 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".perfil.PopUpCambiarContrasena"
-            android:theme="@style/AppTheme.PopUpPagos" />
-        <!-- Meta-data para el funcionamiento del mapa -->
+            android:theme="@style/AppTheme.PopUpPagos" /> <!-- Meta-data para el funcionamiento del mapa -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBBEi4g21muf9ndZL8PN2VFc9a95WJRw_o" />

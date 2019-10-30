@@ -3,20 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_adminServiciosFragment"
-            android:icon="@drawable/escoba"
-            android:title="@string/st_menu_servicios_admin" />
-        <item
-            android:id="@+id/nav_contratosFragment"
-            android:icon="@drawable/pdf"
-            android:title="@string/st_menu_contratos" />
-        <item
-            android:id="@+id/nav_trabajadoresFragment"
-            android:icon="@drawable/trabajador"
-            android:title="@string/st_menu_trabajadores" />
-    </group>
+    <item android:title="Ventas">
+        <menu>
+            <item
+                android:id="@+id/nav_adminServiciosFragment"
+                android:icon="@drawable/escoba"
+                android:title="@string/st_menu_servicios_admin" />
+            <item
+                android:id="@+id/nav_contratosFragment"
+                android:icon="@drawable/pdf"
+                android:title="@string/st_menu_contratos" />
+        </menu>
+    </item>
+    <item android:title="Compra">
+        <menu>
+            <item
+                android:id="@+id/nav_building"
+                android:icon="@android:drawable/ic_notification_clear_all"
+                android:title="@string/st_menu_proveedor" />
+            <item
+                android:id="@+id/nav_building"
+                android:icon="@android:drawable/ic_notification_clear_all"
+                android:title="@string/st_menu_facturas"
+                tools:ignore="DuplicateIds" />
+        </menu>
+    </item>
+    <item android:title="RRHH">
+        <menu>
+            <item
+                android:id="@+id/nav_trabajadoresFragment"
+                android:icon="@drawable/trabajador"
+                android:title="@string/st_menu_trabajadores" />
+            <item
+                android:id="@+id/nav_building"
+                android:icon="@android:drawable/ic_notification_clear_all"
+                android:title="@string/st_menu_control_de_asistencia"
+                tools:ignore="DuplicateIds" />
+        </menu>
+    </item>
+    <item android:title="Clientes">
+        <menu>
+            <item
+                android:id="@+id/nav_building"
+                android:icon="@android:drawable/ic_notification_clear_all"
+                android:title="@string/st_menu_clientes"
+                tools:ignore="DuplicateIds" />
+        </menu>
+    </item>
     <item android:title="@string/titulo_op_menu2">
         <menu>
             <item
