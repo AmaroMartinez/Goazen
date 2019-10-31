@@ -10,9 +10,10 @@
                 android:icon="@drawable/escoba"
                 android:title="@string/st_menu_servicios_admin" />
             <item
-                android:id="@+id/nav_contratosFragment"
+                android:id="@+id/nav_building"
                 android:icon="@drawable/pdf"
-                android:title="@string/st_menu_contratos" />
+                android:title="@string/st_menu_contratos"
+                tools:ignore="DuplicateIds" />
         </menu>
     </item>
     <item android:title="Compra">
@@ -20,7 +21,8 @@
             <item
                 android:id="@+id/nav_building"
                 android:icon="@android:drawable/ic_notification_clear_all"
-                android:title="@string/st_menu_proveedor" />
+                android:title="@string/st_menu_proveedor"
+                tools:ignore="DuplicateIds" />
             <item
                 android:id="@+id/nav_building"
                 android:icon="@android:drawable/ic_notification_clear_all"
