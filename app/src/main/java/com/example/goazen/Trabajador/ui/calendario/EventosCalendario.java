@@ -30,10 +30,13 @@ public class EventosCalendario{
     private static String tarea;
     private static String dni_trabajador;
 
-    private static DateFormat simple = new SimpleDateFormat("dd MMM yyyy");
-    private static long milliseconds;
+    private  DateFormat simple = new SimpleDateFormat("dd MMM yyyy");
+    private  long milliseconds;
     private static String Fecha;
     private static Date d;
+    private Timestamp ts;
+    private static java.sql.Timestamp timestamp;
+    private static Date parsedDate;
 
     private static ArrayList<RecyclerViewCalTrabajador> listaEventos;
     private static ArrayList<RecyclerViewCalTrabajador> listaEventosDias;
@@ -64,26 +67,31 @@ public class EventosCalendario{
                                 /*Cogemos el dato fecha de la bbdd y hacemos el casting
                                 * a millisegundos para darselo a el evento.*/
 
-                                // Pasa la fecha de formato (dd-mm-yyyy) a milisegundos
 
-
-                                //Timestamp f = (Timestamp) document.get("Fecha");
+                               // Timestamp f = (Timestamp) document.get("Fecha");
                                 Fecha = document.getString("Fecha");
+                                System.out.println(Fecha);
                                 Log.d(Values.tag_log, "Fecha: " + document.get("Fecha"));
                                 //Date f1 = f.toDate();
-                                Log.d(Values.tag_log, "Fecha: " + d);
+                                Log.d(Values.tag_log, "Fecha: " );
 
                                 try {
-                                    d = simple.parse(Fecha);
-                                    milliseconds = d.getTime();
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
+                                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
+                                    parsedDate = dateFormat.parse(Fecha);
+                                     timestamp = new java.sql.Timestamp(parsedDate.getTime());
+                                } catch(Exception e) { //this generic but you can control another types of exception
+                                    // look the origin of excption
                                 }
 
 
-
-                                listaEventos.add(new RecyclerViewCalTrabajador(d,document.get("Titulo").toString(),
+                                listaEventos.add(new RecyclerViewCalTrabajador(timestamp,document.get("Titulo").toString(),
                                         document.get("Trabajador").toString(),document.get("Adress").toString()));
+                                //Date f1 = f.toDate();
+                                Log.d(Values.tag_log, "Fecha: " + d);
+
+
+                               /* listaEventos.add(new RecyclerViewCalTrabajador(d,document.get("Titulo").toString(),
+                                        document.get("Trabajador").toString(),document.get("Adress").toString()));*/
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());

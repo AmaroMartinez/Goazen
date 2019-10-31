@@ -3,6 +3,7 @@ package com.example.goazen.Cliente;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -11,12 +12,22 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.example.goazen.Cliente.ui.servicios.Calendario;
+import com.example.goazen.DatosUsuario;
 import com.example.goazen.R;
+import com.example.goazen.Values;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,8 +47,13 @@ public class PopUpPagos extends Activity {
     private Button btn_pagar_contrato;
     private FirebaseFirestore db;
 
+    private Date curretDate;
+    private SimpleDateFormat formatter;
 
 
+    private String DescServicio="";
+    private double PrecioServicio=0;
+    private double precioValor=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +141,43 @@ public class PopUpPagos extends Activity {
         btn_pagar_contrato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //insertarEvento();
+
+                // arraylist de la clase Calendario
+                for(int i=0;i<Calendario.getArrlEvento().size();i++){
+
+                    //Condiciones para aplicar el precio dependiendo del servicio
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Limpieza general") ){
+                        precioValor=13;
+                    }
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Limpieza de cristales") ){
+                        precioValor=8;
+                    }
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Cocina") ){
+                        precioValor=11;
+                    }
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Lavanderia") ){
+                        precioValor=6.50;
+                    }
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Plancha") ){
+                        precioValor=5;
+                    }
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Regado de plantas") ){
+                        precioValor=4;
+                    }
+                    if (Calendario.getArrlEvento().get(i).getTitulo().equals("Paseo de mascotas") ){
+                        precioValor=6;
+                    }
+
+                    //Segun avanza en el arraylist, se van añadiendo las descripciones y se hace el calculo del precio total
+                    DescServicio=DescServicio+" "+Calendario.getArrlEvento().get(i).getTitulo();
+                    PrecioServicio= PrecioServicio+precioValor;
+
+                    //System.out.println(DescServicio);
+                    //System.out.println(PrecioServicio);
+                }
+
+                //Llamamos al metodo para crear el recibo en la base de datos
+                CrearRecibo();
 
                 finish();
             }
@@ -133,25 +185,23 @@ public class PopUpPagos extends Activity {
 
     }
 
-    private void insertarEvento(){
-
-
-        CollectionReference Evento = db.collection("Evento");
-
-        Map<String, Object> datos = new HashMap<>();
-        datos.put("Fecha", "10 enero cvfgbv");
-        datos.put("Nom_servicio", "Plancha");
-        Evento.document("E").set(datos);
-
-
-    }
 
     private void CrearRecibo(){
 
+        formatter= new SimpleDateFormat("dd-MM-yyyy HH:mm:ss z");
+        curretDate = new Date(System.currentTimeMillis());
+        //System.out.println(formatter.format(date));
+
+        CollectionReference Recibos = db.collection("Recibos");
+
+        Map<String, Object> datos = new HashMap<>();
+        datos.put("Nombre", DescServicio);
+        datos.put("Precio", PrecioServicio+"€");
+        datos.put("Cliente", DatosUsuario.getDNI());
+        //Le damos la fecha actual al documento que se crea en la base de datos
+        Recibos.document(formatter.format(curretDate)).set(datos);
         
     }
-
-
 
 
 }
