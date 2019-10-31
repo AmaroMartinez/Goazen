@@ -98,7 +98,7 @@ public class NominasFragment extends Fragment {
         totalNomina = root.findViewById(R.id.et_total);
         cuantiaAnt = root.findViewById(R.id.cuantiaAnt);
         cuantiaKM = root.findViewById(R.id.cuantiaKM);
-        llPdf = root.findViewById(R.id.nominas);
+        //llPdf = root.findViewById(R.id.nominas);
 
         //Cargamos lo datos de la base de datos, para anexarlos a los textos.
 
